@@ -52,6 +52,7 @@ By the end of CS 1050, a student can:
 
 ## Proposed schedule (15 weeks)
 
+> **For a real term, use the dated schedule:** [`cs1050_schedule_fall2026.md`](cs1050_schedule_fall2026.md) maps the units onto MSU's Fall 2026 calendar with actual dates, holidays, drop/withdraw deadlines, and finals. The table below is the generic, date-free version.
 > Front-loaded so weeks 1–5 form a complete "teachable spine." Zelle chapter numbers below follow the 3rd-ed ToC; reconcile to the 4th ed when confirmed.
 
 | Wk | Topic | Zelle ch. | Unit |

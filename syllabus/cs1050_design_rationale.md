@@ -75,6 +75,7 @@ A no-prerequisite course cannot assume a working interpreter, so **Module 0 is e
 - Lead with concrete, runnable examples; introduce vocabulary after the experience, not before.
 - Every unit ships a low-stakes "finger exercise" (à la MIT) before the graded assignment, so students self-check before they're evaluated.
 - Starter code runs on a stock Python install; no heavyweight setup gates participation.
+- **Informed-drop front-loading (calendar-aware instances):** when the course is mapped to a real term, Week 1–3 give an honest taste of the workload plus an early low-stakes graded signal *before* the institution's refund/drop deadlines, so students self-select on accurate information rather than after the refund window closes. The portable design stays date-free; a per-term overlay (e.g., [`cs1050_schedule_fall2026.md`](cs1050_schedule_fall2026.md)) carries the dates, holidays, and deadlines. Swap that one file to retarget another term or school.
 
 ## How this maps back to MSU
 
