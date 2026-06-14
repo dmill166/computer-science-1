@@ -30,6 +30,8 @@ macOS does **not** come with a Python you should use for this course (the system
 
 The python.org installer also installs **IDLE** and the `python3` command. Skip to [Verify](#verify-it-works).
 
+> **"Am I installing a second Python?"** Not in a way that bites you. Modern macOS no longer ships a general-use Python — `/usr/bin/python3` is just a stub that prompts to install Apple's developer tools. The python.org installer puts a clean, current Python in its own location and points the `python3` command at it. So after this step, `python3` *is* your course Python, separate from anything Apple-managed. The **Verify** step below confirms you're on the right one (current version, not a system stub). You do **not** need pyenv or virtual environments for this course — see ["Keeping it clean"](#keeping-your-environment-clean-optional).
+
 ---
 
 ## Windows 🪟
@@ -82,6 +84,13 @@ print("Hello, CS 1050!")
 
 Press **Enter**. If you see `Hello, CS 1050!` printed back, you're done — Python works. 🎉
 
+**One-command environment check.** This repo includes [`check_env.py`](check_env.py). Download it, then run it to confirm you're on the right Python (current version, *not* a macOS system stub):
+
+- macOS / Linux: `python3 check_env.py`
+- Windows: `python check_env.py`
+
+It prints PASS/FAIL with your version and interpreter location. Run it any time an assignment "won't run right" — it's the fastest way to catch a wrong-Python problem. You'll use the same command before every assignment.
+
 ---
 
 ## Editors: where you write code
@@ -95,6 +104,8 @@ You'll outgrow the `>>>` shell quickly (it forgets everything when closed). Thre
 | **VS Code** | when you want a "real" pro editor later | [code.visualstudio.com](https://code.visualstudio.com) + the Python extension. More powerful, more setup — graduate to it when you're comfortable. |
 
 Pick **one** and stick with it for now. More tools ≠ more learning early on.
+
+> **Why IDLE first (on purpose).** IDLE is intentionally bare. No aggressive autocomplete, no AI suggestions, no red-squiggle hand-holding — so you actually learn the syntax and the concepts instead of leaning on an IDE to write code for you. Once the fundamentals are yours, graduate to VS Code and let the power tools earn their keep. Starting in a "dumber" editor is a feature, not a limitation.
 
 ---
 
@@ -110,9 +121,25 @@ Pick **one** and stick with it for now. More tools ≠ more learning early on.
 
 ---
 
-## A note on virtual environments (you don't need this yet)
+## Keeping your environment clean (optional)
 
-You may see guides mention `python -m venv` ("virtual environments") — isolated sandboxes for a project's packages. **You do not need one for CS 1050**, which uses only the standard library and the textbook's `graphics.py`. We'll mention venvs when they matter; for now, a single system Python is exactly right. (Filed here so you know the term isn't a gap you're missing.)
+Short version: **for CS 1050 you don't need virtual environments or pyenv.** Here's the honest reasoning so it's a choice, not a mystery.
+
+- **Why people isolate environments:** to stop one project's installed *packages* from clashing with another's. CS 1050 installs **no third-party packages** — we use only Python's standard library plus the textbook's `graphics.py`. The main reason to isolate simply doesn't apply here.
+- **What you're already doing right:** installing from python.org (not relying on a system Python) and confirming it with [`check_env.py`](check_env.py). That alone keeps you off any OS-managed interpreter.
+- **The cost of venvs in week 1:** you'd have to *activate* the environment every session, and "my code won't run" almost always turns out to be "I forgot to activate." That's more support headaches than isolation is worth when there are no packages to isolate.
+
+**If you still want a clean, isolated setup** (great instinct for later projects), the lightweight way ships *with* Python — no pyenv needed:
+
+```bash
+# from your course folder, once:
+python3 -m venv .venv            # Windows: python -m venv .venv
+# then each session, activate it:
+source .venv/bin/activate        # Windows (PowerShell): .venv\Scripts\Activate.ps1
+python check_env.py              # confirm you're on the venv's Python
+```
+
+> **Instructor / power-user note:** the maintainer runs `pyenv` + `pyenv-virtualenv` on personal and work machines, which is the right tool once you juggle multiple Python *versions* across many projects. That's deliberately **out of scope for students** — it's setup overhead with no CS1 payoff. If a future course in the sequence needs third-party packages, we'll introduce venvs there, where the benefit is real.
 
 ---
 
