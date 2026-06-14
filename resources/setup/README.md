@@ -8,6 +8,15 @@ If you get stuck, that's normal — jump to [Troubleshooting](#troubleshooting).
 
 ---
 
+## What's in this module (and what's not)
+
+- **Goal:** a working, current Python you can run a program with — no prior experience assumed.
+- **Covered:** installing Python on macOS / Windows / Linux, picking an editor (IDLE), verifying it works, and fixing the common setup failures.
+- **Not covered (and where it lives):** writing actual programs — that's Unit 1 onward. Virtual environments and version managers are **optional** and sit in [Advanced Instructions](#advanced-instructions-optional), not the required path.
+- **Prerequisites:** none.
+
+---
+
 ## What you're installing and why
 
 - **Python** — the language we write in. We install the **current stable version** (Python **3.13 or newer**; 3.14.x is current as of mid-2026). Always take the latest stable release from the official site — *not* an older one. (If you've read older guides that say "pick the oldest version still getting security updates," ignore that here: as a learner you want a current, fully supported version.)
@@ -121,26 +130,60 @@ Pick **one** and stick with it for now. More tools ≠ more learning early on.
 
 ---
 
-## Keeping your environment clean (optional)
+## Advanced Instructions (optional)
 
-Short version: **for CS 1050 you don't need virtual environments or pyenv.** Here's the honest reasoning so it's a choice, not a mystery.
+> **You do not need any of this to do the course.** CS 1050 installs no third-party packages, so a plain python.org interpreter + IDLE is the whole requirement. This section is for students who *want* a cleaner setup or already have programming experience. Skipping it costs you nothing.
 
-- **Why people isolate environments:** to stop one project's installed *packages* from clashing with another's. CS 1050 installs **no third-party packages** — we use only Python's standard library plus the textbook's `graphics.py`. The main reason to isolate simply doesn't apply here.
-- **What you're already doing right:** installing from python.org (not relying on a system Python) and confirming it with [`check_env.py`](check_env.py). That alone keeps you off any OS-managed interpreter.
-- **The cost of venvs in week 1:** you'd have to *activate* the environment every session, and "my code won't run" almost always turns out to be "I forgot to activate." That's more support headaches than isolation is worth when there are no packages to isolate.
+### Option A — an isolated environment with `venv` (recommended if you want isolation)
 
-**If you still want a clean, isolated setup** (great instinct for later projects), the lightweight way ships *with* Python — no pyenv needed:
+A virtual environment is a project-local sandbox so one project's packages can't clash with another's. It ships *with* Python — no pyenv required. We include a helper script that creates one and verifies it:
 
 ```bash
-# from your course folder, once:
-python3 -m venv .venv            # Windows: python -m venv .venv
-# then each session, activate it:
-source .venv/bin/activate        # Windows (PowerShell): .venv\Scripts\Activate.ps1
-python check_env.py              # confirm you're on the venv's Python
+# macOS / Linux, from your course folder:
+bash resources/setup/setup_env.sh
+
+# Windows (PowerShell):
+powershell -ExecutionPolicy Bypass -File resources\setup\setup_env.ps1
 ```
 
-> **Instructor / power-user note:** the maintainer runs `pyenv` + `pyenv-virtualenv` on personal and work machines, which is the right tool once you juggle multiple Python *versions* across many projects. That's deliberately **out of scope for students** — it's setup overhead with no CS1 payoff. If a future course in the sequence needs third-party packages, we'll introduce venvs there, where the benefit is real.
+Or do it by hand:
+
+```bash
+python3 -m venv .venv             # Windows: python -m venv .venv
+source .venv/bin/activate         # Windows (PowerShell): .venv\Scripts\Activate.ps1
+python check_env.py               # confirm you're on the venv's Python
+```
+
+The one catch: you must **activate** the environment in each new terminal session (`source .venv/bin/activate`), and `deactivate` to leave. Forgetting to activate is the #1 "why won't my code run?" cause — which is exactly why it's optional, not required.
+
+### Option B — multiple Python versions with `pyenv` (power users)
+
+If you juggle several Python *versions* across many projects, [`pyenv`](https://github.com/pyenv/pyenv) (+ `pyenv-virtualenv`) is the right tool — it's what the maintainer uses on personal/work machines. It's **overkill for CS 1050** and adds real setup overhead, so it's listed here only for those who already want it. We introduce environment isolation properly in a later course in the sequence, where third-party dependencies make it worthwhile.
 
 ---
+
+## FAQs & design decisions
+
+**Why IDLE instead of VS Code / PyCharm?**
+IDLE ships with Python (zero extra install) and is intentionally bare — no aggressive autocomplete or AI suggestions — so you learn the syntax and concepts yourself instead of leaning on the editor. Graduate to VS Code once the fundamentals are yours. (See [Editors](#editors-where-you-write-code).)
+
+**Why don't we use virtual environments or `pyenv` by default?**
+The reason to isolate environments is third-party *package* conflicts, and CS 1050 installs no third-party packages (just the standard library + the textbook's `graphics.py`). Requiring venvs in week 1 mostly produces "I forgot to activate" problems. We enforce the thing that actually matters — a correct interpreter — with [`check_env.py`](check_env.py) instead. Want isolation anyway? See [Advanced Instructions](#advanced-instructions-optional).
+
+**Why install from python.org instead of Homebrew / Anaconda / the Microsoft Store?**
+One predictable, official source keeps everyone's setup the same and easy to support. Homebrew/Anaconda/Store installs each have their own quirks and PATH behaviors that generate avoidable confusion in a beginner course.
+
+**Why the "latest stable" version and not the one in "security" status?**
+Older guides (including the author's earlier posts) suggested the oldest still-supported version. For a *learner* that's backwards — you want a current, fully supported release. Any 3.13+ is ideal; 3.11/3.12 still work.
+
+**On macOS, am I installing a second Python that conflicts with the system one?**
+No — modern macOS has no general-use system Python (just a stub). Your python.org install becomes the `python3` you use. `check_env.py` confirms you're on it.
+
+**Can I use ChatGPT / Claude to help?**
+Yes, to *explain* errors or concepts in plain language — not to hand in code you can't explain. Course academic-integrity rules apply.
+
+---
+
+*Follows the [Module Standard](https://github.com/dmill166/cs-teaching/blob/main/MODULE_STANDARD.md). Adapted and modernized from two earlier walk-throughs by the author ([2023](https://dakotalearns.wordpress.com/2023/04/03/installation-guide-for-python-macos-windows/), [2024](https://dakotalearns.wordpress.com/2024/04/01/installation-guide-python-3-x-%f0%9f%90%8d/)) — updated for current Python, expanded to Linux, IDLE-first, single-install.*
 
 *Adapted and modernized from two earlier walk-throughs by the author ([2023](https://dakotalearns.wordpress.com/2023/04/03/installation-guide-for-python-macos-windows/), [2024](https://dakotalearns.wordpress.com/2024/04/01/installation-guide-python-3-x-%f0%9f%90%8d/)) — updated for current Python, expanded to Linux, and aligned to this course's IDLE-first, single-install approach.*
