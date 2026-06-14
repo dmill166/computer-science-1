@@ -7,7 +7,7 @@ Guided, in-class lab prompts and starter code. Labs are short, scaffolded exerci
 - One folder per lab: `labNN_topic/`
 - Each lab folder contains:
   - `README.md` — the prompt, learning goals, and the ABET/CS2023 outcome(s) it exercises
-  - `starter/` — starter code students begin from (MIT)
+  - `starter/` — starter code students begin from (PolyForm Noncommercial)
   - (Solutions live in the **private** `msudenver-cs1050-solutions` repo, never here.)
 
 ## Writing/presentation thread

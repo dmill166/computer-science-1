@@ -32,11 +32,15 @@ See [`syllabus/cs1050_design_rationale.md`](syllabus/cs1050_design_rationale.md)
 
 ## Licensing
 
-- **Course content** (text, slides, assignment prompts): [CC BY 4.0](LICENSE-CONTENT.md)
-- **Code** (starter code, examples, scripts): [MIT](LICENSE)
+- **Course content** (text, slides, assignment prompts): [CC BY-NC-ND 4.0](LICENSE-CONTENT.md) — free to read and share for noncommercial use with attribution; no derivatives.
+- **Code** (starter code, examples, scripts): [PolyForm Noncommercial 1.0.0](LICENSE) — free for noncommercial use.
 
-Use it, remix it, teach with it — attribution appreciated.
+Read it, learn from it, share it (with credit) — for free. **For commercial use or to create and share an adaptation, [contact me](https://github.com/dmill166) for permission;** it may well be welcome.
+
+## Attribution & copyright
+
+This repository contains only original work. It teaches *from* the course textbook but does **not** reproduce it — concepts are explained in original words and examples, and the book is referenced by chapter, not copied. The license above covers this repo's original content only and grants no rights to any third-party material. See the initiative's [copyright policy](https://github.com/dmill166/cs-teaching/blob/main/COPYRIGHT_POLICY.md).
 
 ## Contributing / corrections
 
-Spotted an error or have a suggestion? Open an issue or PR. This is built in public on purpose.
+Spotted an error or have a suggestion? Open an issue. (Note the NoDerivatives terms: suggestions are welcome via issues; please don't publish modified copies.)

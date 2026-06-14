@@ -20,4 +20,4 @@ Lecture notes and slides, organized by the **9 CS 1050 content units**. Each uni
 
 - One folder per unit: `NN_unit_name/`
 - Notes in Markdown; slides exported alongside (or authored in Markdown + a slide tool).
-- Keep runnable example code in the unit folder; it's MIT-licensed and may be reused as starter code.
+- Keep runnable example code in the unit folder; it's under the repo's code license (PolyForm Noncommercial) and may be reused as starter code.
