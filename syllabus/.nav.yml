@@ -1,0 +1,9 @@
+# Controls how the syllabus bucket renders on dakotalearns.com. This file is
+# pulled into the site at build time (single source of truth = this repo), so
+# the course repo owns its own navigation — order and short titles included.
+title: Syllabus & schedule
+nav:
+  - Syllabus: cs1050_syllabus_v1.md
+  - Schedule (Fall 2026): cs1050_schedule_fall2026.md
+  - Design rationale: cs1050_design_rationale.md
+  - Outcomes map (ABET/CS2023): outcomes_map_abet_cs2023.md
