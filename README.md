@@ -8,6 +8,8 @@ Part of the [`cs-teaching`](https://github.com/dmill166/cs-teaching) initiative 
 
 > **Status:** scaffold (2026-06-14). Syllabus v1 and the ABET/CS2023 outcomes map are drafted; lecture/lab/assignment content is in progress.
 
+> **Where to read this:** This public repo is the **single source of truth** for the course — prose *and* code, authored once here. The readable lessons render on **[dakotalearns.com](https://dakotalearns.com)**, pulled from this repo at build time; the **runnable code** is grabbed here as a ZIP. The site is a read surface, never a second copy.
+
 ## What's here
 
 | Folder | Contents |

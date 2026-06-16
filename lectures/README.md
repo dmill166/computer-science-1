@@ -20,4 +20,5 @@ Lecture notes and slides, organized by the **9 CS 1050 content units**. Each uni
 
 - One folder per unit: `NN_unit_name/`
 - Notes in Markdown; slides exported alongside (or authored in Markdown + a slide tool).
+- These notes are the **source of truth** and render on dakotalearns.com via the site's build-time sync — there is no separate "article" copy to keep in step.
 - Keep runnable example code in the unit folder; it's under the repo's code license (PolyForm Noncommercial) and may be reused as starter code.
