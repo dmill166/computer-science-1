@@ -1,0 +1,29 @@
+name: Rebuild dakotalearns
+
+# When public course content changes, tell the dakotalearns site to rebuild —
+# it pulls this repo's prose at build time, so a push here must trigger a site
+# build. Requires the SITE_REBUILD_TOKEN secret: a fine-grained PAT scoped to
+# dmill166/dakotalearns with Contents: read and write.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "syllabus/**"
+      - "lectures/**"
+      - "labs/**"
+      - "assignments/**"
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger dakotalearns site rebuild
+        run: |
+          curl -sf -X POST \
+            -H "Authorization: Bearer ${{ secrets.SITE_REBUILD_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/dmill166/dakotalearns/dispatches \
+            -d '{"event_type":"course-content"}'
