@@ -25,7 +25,7 @@ Because the **100% drop deadline is the end of Week 1** and the **50% deadline i
 
 - **Week 1** ships Module 0 (setup) **and** a genuine first taste of programming, with a **low-stakes graded finger exercise due before Aug 24**.
 - **By Sep 2 (50% deadline)** students have completed assignment **a01** and an early quiz — enough signal to judge fit.
-- The syllabus states this explicitly: *"By the drop deadlines you will have done X and Y; here is how to gauge whether this course fits your time and goals."* Honesty over enrollment-protection.
+- By the drop deadlines you'll have completed the setup exercise, your first assignment (a01), and Quiz 1 — enough to gauge whether the course fits your time and goals. Honesty over enrollment-protection.
 
 ## Week-by-week (15 instructional weeks)
 
@@ -59,7 +59,7 @@ Because the **100% drop deadline is the end of Week 1** and the **50% deadline i
 - **Midterm at W8** — natural midpoint, covers the procedural half (Units 0–7) before the OOP/recursion/algorithms half.
 - **CS2-bridge units (6, 10, 11, 12)** carry extra time and dedicated assessment — these are what make or break CS 2050.
 - **Communication thread** (ABET SO-3): research paper due W13, oral presentations W14–W15 — deliberately *not* crammed into finals.
-- **Grading-due constraint (~Dec 16):** the final and late deliverables must be gradeable fast → autograding for code + rubrics finalized before finals week. (Tracked on the build board: "Set up CI autograding.")
+- **Grading-due constraint (~Dec 16):** the final and late deliverables must be gradeable fast → autograding for code + rubrics finalized before finals week.
 
 ## Portability note
 

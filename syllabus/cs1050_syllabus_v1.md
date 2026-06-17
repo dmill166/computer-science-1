@@ -96,8 +96,6 @@ The course-of-record assesses across code **and** communication:
 
 Solution keys, exams, and rubrics are maintained privately and are not published. Collaboration policy, AI-use policy, and the institution's academic-integrity standards will be stated per the official section syllabus.
 
-## Open items before this becomes an official section syllabus
+## Accessibility & use
 
-- Confirm current textbook **edition/printing** and any department-standard Python version.
-- Confirm **grading weights** and exam structure against a recent section.
-- Add MSU Denver required boilerplate (accessibility/disability services, Title IX, drop dates, student support resources).
+These are **independent, open materials** for self-paced learners and instructors. When taught for credit, accessibility/disability accommodations, academic-integrity, and other institutional policies are governed by the official section syllabus at the offering institution. Spotted an access barrier in these materials? Please [open an issue](https://github.com/dmill166/msudenver-cs1050/issues).
