@@ -185,5 +185,3 @@ Yes, to *explain* errors or concepts in plain language — not to hand in code y
 ---
 
 *Follows the [Module Standard](https://github.com/dmill166/cs-teaching/blob/main/MODULE_STANDARD.md). Adapted and modernized from two earlier walk-throughs by the author ([2023](https://dakotalearns.wordpress.com/2023/04/03/installation-guide-for-python-macos-windows/), [2024](https://dakotalearns.wordpress.com/2024/04/01/installation-guide-python-3-x-%f0%9f%90%8d/)) — updated for current Python, expanded to Linux, IDLE-first, single-install.*
-
-*Adapted and modernized from two earlier walk-throughs by the author ([2023](https://dakotalearns.wordpress.com/2023/04/03/installation-guide-for-python-macos-windows/), [2024](https://dakotalearns.wordpress.com/2024/04/01/installation-guide-python-3-x-%f0%9f%90%8d/)) — updated for current Python, expanded to Linux, and aligned to this course's IDLE-first, single-install approach.*
