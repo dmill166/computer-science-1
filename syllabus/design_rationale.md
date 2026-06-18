@@ -1,4 +1,4 @@
-# CS 1050 — Course Design Rationale
+# Computer Science 1 — Course Design Rationale
 
 > **Purpose:** define the *content scope* of this CS1 from first principles — portable enough to teach anywhere, but compatible with MSU Denver's program and the courses that follow it. This doc explains **what** we teach and **why**; the syllabus says **when**.
 >

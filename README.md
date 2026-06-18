@@ -1,4 +1,4 @@
-# CS 1050 — Computer Science 1 (Python)
+# Computer Science 1 (Python)
 
 Open, MSU Denver–aligned course materials for **CS 1050: Computer Science 1**, taught in **Python 3** using Zelle's *Python Programming: An Introduction to Computer Science* (4th ed, 2024).
 

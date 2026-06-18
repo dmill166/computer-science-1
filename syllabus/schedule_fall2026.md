@@ -1,4 +1,4 @@
-# CS 1050 — Fall 2026 Schedule (MSU Denver instance)
+# Computer Science 1 — Fall 2026 Schedule (MSU Denver instance)
 
 > **What this is:** a *dated instance* of the portable course design ([`design_rationale.md`](design_rationale.md)) mapped onto MSU Denver's **Fall 2026** academic calendar. The portable design stays general; this file is the term-specific overlay — schedule, deadlines, and how assessment is timed around the institution's drop/withdraw dates.
 >
