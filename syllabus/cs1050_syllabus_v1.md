@@ -76,7 +76,7 @@ By the end of CS 1050, a student can:
 
 ★ = critical CS2 bridge (extra time + dedicated assessment). Graphics (Zelle Ch 4) is woven in as motivating enrichment, not a required week (see design rationale).
 
-## Assessment (proposed weights — confirm with department)
+## Assessment (proposed weights)
 
 The course-of-record assesses across code **and** communication:
 
