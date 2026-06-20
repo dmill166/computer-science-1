@@ -1,6 +1,6 @@
 # Computer Science 1 (Python)
 
-Open, MSU Denver–aligned course materials for **CS 1050: Computer Science 1**, taught in **Python 3** using Zelle's *Python Programming: An Introduction to Computer Science* (4th ed, 2024).
+Open, beginner-first course materials for **Computer Science 1**, taught in **Python 3** using Zelle's *Python Programming: An Introduction to Computer Science* (4th ed, 2024). Designed to be portable — a strong CS1 you'd recognize anywhere — and aligned to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and, for alignment only, MSU Denver's CS 1050 objectives.
 
 Part of the [`cs-teaching`](https://github.com/dmill166/cs-teaching) initiative — building CS course materials in public.
 
@@ -15,7 +15,7 @@ Part of the [`cs-teaching`](https://github.com/dmill166/cs-teaching) initiative 
 | Folder | Contents |
 |---|---|
 | [`syllabus/`](syllabus/) | Course syllabus, schedule, and the ABET CAC / ACM-IEEE CS2023 outcomes-mapping table |
-| [`lectures/`](lectures/) | Lecture notes and slides, organized by the 9 course units |
+| [`lectures/`](lectures/) | Lecture notes and slides, ordered by the design-rationale teaching spine (13 units) |
 | [`labs/`](labs/) | In-class / guided lab prompts and starter code |
 | [`assignments/`](assignments/) | Programming assignment prompts, specs, and starter code |
 | [`resources/`](resources/) | Textbook reference, toolchain setup, and supplementary material |
