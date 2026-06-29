@@ -7,8 +7,8 @@
 ## Design goals
 
 1. **Portable, not parochial.** Build a CS1 that satisfies MSU Denver's CS 1050 objectives but isn't custom-fit to only their catalog. It should be recognizable as a strong CS1 at any institution.
-2. **Accessibility-first, no prerequisites.** MSU's current Curriculog revision **removes the math-readiness (MTH 1110) prerequisite** and assumes **no prior Python**. We design accordingly: every concept is introduced from scratch; no assumed programming background; math is taught inline where a topic needs it, never assumed.
-3. **Serves many destinations.** At MSU, CS 1050 feeds CS, Data Science & Machine Learning, Cybersecurity, Computer Engineering, and several science majors. The course must build *general* computational competence, not CS-major-only trivia.
+2. **Accessibility-first, no prerequisites.** MSU Denver's current Curriculog revision **removes the math-readiness (MTH 1110) prerequisite** and assumes **no prior Python**. We design accordingly: every concept is introduced from scratch; no assumed programming background; math is taught inline where a topic needs it, never assumed.
+3. **Serves many destinations.** At MSU Denver, CS 1050 feeds CS, Data Science & Machine Learning, Cybersecurity, Computer Engineering, and several science majors. The course must build *general* computational competence, not CS-major-only trivia.
 4. **Explicitly bridges to CS2.** The single most important job of CS1 is to make CS2 (data structures) learnable. We name the bridge concepts and make sure they're solid.
 
 ## Three sources we triangulated
@@ -35,9 +35,9 @@ If a student leaves CS1 shaky on **aliasing**, **classes**, or **recursion**, th
 
 ## Topic spine (13 units)
 
-Ordered for a no-prerequisite learner; each unit lists the MSU objective(s) it satisfies and whether it's a CS2 bridge. Math-light throughout.
+Ordered for a no-prerequisite learner; each unit lists the MSU Denver objective(s) it satisfies and whether it's a CS2 bridge. Math-light throughout.
 
-| # | Unit | Covers MSU obj. | CS2 bridge | Zelle 4e | Zelle 3e | MIT 6.100L |
+| # | Unit | Covers MSU Denver obj. | CS2 bridge | Zelle 4e | Zelle 3e | MIT 6.100L |
 |---|---|---|---|---|---|---|
 | 00 | **Module 0 — Set up Python** (per-OS install, editor, verify) | — (enabler) | — | — | — | — |
 | 0 | What is computation; how programs run | 12 (SDLC intro) | — | 1 | 1 | L1 |
@@ -54,7 +54,7 @@ Ordered for a no-prerequisite learner; each unit lists the MSU objective(s) it s
 | 11 | **Recursion** (numeric + non-numeric) | 1, 9 | ★★★ | 14 | 13 | L15–16 |
 | 12 | Algorithms: linear/binary **search**, a **sort**, **intro Big-O** | 1, 9 | ★★★ | 14 | 13 | L21–24 |
 | — | **SE & SDLC thread** (style, documentation, top-down design) | 2, 3, 9, 12 | — | 2, 11 | 2, 9 | woven |
-| — | **Communication thread** (research paper/report + oral presentation) | (MSU-specific) | — | — | — | — |
+| — | **Communication thread** (research paper/report + oral presentation) | (MSU Denver-specific) | — | — | — | — |
 
 ★ = touches a CS2 prerequisite; ★★★ = critical CS2 bridge.
 
@@ -65,7 +65,7 @@ Ordered for a no-prerequisite learner; each unit lists the MSU objective(s) it s
 - **In, beyond a minimal CS1 (because MIT includes them and CS2 needs them):** aliasing/mutability as a first-class topic, recursion on non-numeric data, intro Big-O, intro inheritance.
 - **Light touch / optional:** Zelle's graphics chapters (Ch. 4, 10) are great for engagement but not load-bearing for CS2 — use as motivating examples, not required mastery. MIT's numerical methods (float approximation, bisection on functions) become *one* lesson on binary/bisection search rather than a numerical-methods unit, to stay math-light.
 - **Out (belongs to CS2 / later):** ADT *implementation* (linked lists, stacks, queues, trees), formal complexity proofs, advanced sorting (merge/quurt analysis beyond a demo). CS1 builds the intuition; CS2 builds the structures.
-- **Kept because MSU requires it and it's genuinely valuable:** the **written report + oral presentation**. Communication is an ABET outcome (SO-3) and rarely assessed this early — it's a differentiator, not overhead.
+- **Kept because MSU Denver requires it and it's genuinely valuable:** the **written report + oral presentation**. Communication is an ABET outcome (SO-3) and rarely assessed this early — it's a differentiator, not overhead.
 
 ## Module 0 — environment setup (the true day-one step)
 
@@ -79,9 +79,9 @@ A no-prerequisite course cannot assume a working interpreter, so **Module 0 is e
 - Starter code runs on a stock Python install; no heavyweight setup gates participation.
 - **Informed-drop front-loading (calendar-aware instances):** when the course is mapped to a real term, Week 1–3 give an honest taste of the workload plus an early low-stakes graded signal *before* the institution's refund/drop deadlines, so students self-select on accurate information rather than after the refund window closes. The portable design stays date-free; a per-term overlay (e.g., [`schedule_fall2026.md`](schedule_fall2026.md)) carries the dates, holidays, and deadlines. Swap that one file to retarget another term or school.
 
-## How this maps back to MSU
+## How this maps back to MSU Denver
 
-Every one of MSU's 12 objectives and 9 course-of-record units is covered (see the table above and [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md)). We **add** depth where MIT and the CS2 prerequisites justify it (aliasing, recursion, Big-O, inheritance) and **preserve** MSU's distinctive writing/presentation requirement. The result satisfies MSU without being shaped *only* for MSU.
+Every one of MSU Denver's 12 objectives and 9 course-of-record units is covered (see the table above and [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md)). We **add** depth where MIT and the CS2 prerequisites justify it (aliasing, recursion, Big-O, inheritance) and **preserve** MSU Denver's distinctive writing/presentation requirement. The result satisfies MSU Denver without being shaped *only* for MSU Denver.
 
 ## Sources
 

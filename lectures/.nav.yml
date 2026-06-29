@@ -1,0 +1,7 @@
+# On-site nav for the Lectures bucket (single source of truth — synced to dakotalearns).
+# Topics are ordered by the 13-unit design-rationale spine, NOT alphabetically.
+# Add each new topic folder here in teaching order as it's built.
+title: Lectures
+nav:
+  - 00_what_is_computation
+  - 01_values_types_variables

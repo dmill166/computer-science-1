@@ -24,7 +24,7 @@
 
 ## Mapping table
 
-| # | CS 1050 objective | ABET SO | CS2023 KA | Covering unit(s) |
+| # | CS 1050 objective | ABET SO | CS2023 KA | Course-of-record unit(s) |
 |---|---|---|---|---|
 | 1 | Solve simple-to-medium problems by writing correct programs | SO-1, SO-2, SO-6 | SDF, AL | 1, 2, all |
 | 2 | Document code clearly and appropriately | SO-3, SO-6 | SE, SDF | 2, 6 |
@@ -40,6 +40,8 @@
 | 12 | State the steps of the software development life cycle | SO-1, SO-6 | SE | 2 |
 | — | Written report / oral presentation (course-of-record) | SO-3, SO-4 | SEP, SE | labs/assignments writing thread |
 
+> **Reading the last column — and how to tag a lecture.** The **Course-of-record unit(s)** column uses the **9 catalog (course-of-record) units** from [`lectures/README`](../lectures/README.md) (e.g. CoR unit 4 = *Data Types & Variables*). These are **NOT** the 13-unit teaching-spine numbers used for lecture folders (`lectures/NN_topic/`), where 4 = *Strings*. The two schemes deliberately reuse the same integers, so **never tag a lecture by matching unit numbers.** The stable join key is the **objective # (1–12)**: a lecture declares the objective(s) it covers (see the [crosswalk below](#lecture-to-objective-crosswalk-tagging-key)), then this table maps each objective → ABET SO + CS2023 KA.
+
 ## Coverage summary (ABET SO → where assessed)
 
 | ABET SO | Covered by objectives | Primary assessment |
@@ -52,3 +54,27 @@
 | SO-6 (CS theory + dev fundamentals) | 1–12 | assignments, labs, exams |
 
 > **Gap note:** SO-5 (teamwork) is only lightly touched by a single-author CS1. That's expected — it's carried more heavily by later courses. If the department wants CS1 to contribute to SO-5, add at least one paired/collaborative lab and assess it explicitly.
+
+## Lecture-to-objective crosswalk (tagging key)
+
+> Added 2026-06-20. **The authoritative source for tagging a lecture's outcomes — join on the `objective #`, never on a unit integer.** Spine unit + week are exact (spine→obj mirrors [`design_rationale`](design_rationale.md); weeks from [`schedule_fall2026`](schedule_fall2026.md)). The **CoR unit** column is a best-effort accreditation cross-reference only — the 9-unit catalog scheme doesn't map 1:1 to the spine.
+
+| Spine unit (folder `NN_`) | Topic | Week(s) | Objective(s) | CoR unit(s) |
+|---|---|---|---|---|
+| 0 | What is computation / how programs run | 1 | 12 | 1 (+2) |
+| 1 | Values, types, variables, expressions, I/O | 1–2 | 6, 7, 8 | 4, 5 |
+| 2 | Decisions / branching | 2 | 6 | 7 |
+| 3 | Iteration / loops | 3 | 6 | 8 |
+| 4 | Strings & sequence basics | 4 | 6, 7 | 4 |
+| 5 | Functions: decomposition, parameters, scope | 5 | 3, 4, 5, 10 | 2 (decomposition) |
+| 6 | Lists, tuples, mutability & aliasing | 6 | 7 | 9 |
+| 7 | Dictionaries & sets | 7 | 7 | 9 |
+| 8 | Files & exceptions | 9 | 8 | 5 |
+| 9 | Testing & debugging | 7 | 11 | 3 |
+| 10 | Classes & OOP (+ intro inheritance) | 10–11 | 4, 10 | 6 |
+| 11 | Recursion | 12 | 1, 9 | — (problem-solving; no clean CoR unit) |
+| 12 | Algorithms: search, sort, intro Big-O | 13 | 1, 9 | 9 |
+
+*(Module 0 — Python setup — is an enabler with no objective mapping.)*
+
+**To fill a lecture's "Objectives (ABET-mapped)" section:** spine unit → its **Objective(s)** here → each objective's **ABET SO + CS2023 KA** from the [mapping table](#mapping-table). Example: `00_what_is_computation` (spine 0) → objective 12 → **SO-1, SO-6 / CS2023 SE**.

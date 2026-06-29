@@ -52,7 +52,7 @@ By the end of CS 1050, a student can:
 
 ## Proposed schedule (15 weeks)
 
-> **For a real term, use the dated schedule:** [`schedule_fall2026.md`](schedule_fall2026.md) maps the units onto MSU's Fall 2026 calendar with actual dates, holidays, drop/withdraw deadlines, and finals. The table below is the generic, date-free version.
+> **For a real term, use the dated schedule:** [`schedule_fall2026.md`](schedule_fall2026.md) maps the units onto MSU Denver's Fall 2026 calendar with actual dates, holidays, drop/withdraw deadlines, and finals. The table below is the generic, date-free version.
 > Ordered by the **[design-rationale topic spine](design_rationale.md)** (control-structures-first, MIT-aligned) — *not* the textbook's chapter order. "Unit" = spine unit; chapter columns give **Zelle 4e (primary)** and **3e (budget)**. Front-loaded so weeks 1–5 form a complete "teachable spine."
 
 | Wk | Focus | Unit | Zelle 4e | Zelle 3e |
