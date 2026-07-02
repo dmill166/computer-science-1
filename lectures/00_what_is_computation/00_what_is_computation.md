@@ -24,6 +24,8 @@ That's a mouthful. Let's break it down into the shape that actually matters — 
 
 ```mermaid
 flowchart LR
+    accTitle: The shape of computation as an inputs-to-output flow
+    accDescr: A left-to-right flowchart with three stages. First, Inputs — what you start with. An arrow leads to Steps — a set of rules, followed exactly and in order. A second arrow leads to Predictable output — the same result every time. This is the inputs-to-steps-to-output shape the whole lecture is built on.
     I[Inputs<br/>what you start with] --> P[Steps<br/>a set of rules, followed<br/>exactly and in order] --> O[Predictable output<br/>the same result, every time]
 ```
 
@@ -32,12 +34,21 @@ flowchart LR
 
 That's it. That's the whole idea. And here's why I want you to care about it before anything else: **this applies to everyone — technical and non-technical folks alike.**
 
-In my case, I'm a Data Engineer. My whole job is building things that pull and transform data *reliably and accurately every time* — same inputs, same steps, same output. But you don't have to write code for this to matter to you. Think about buying groceries: if there's a specific set of groceries you always buy, wouldn't it be nice to have them show up on a consistent schedule with a consistent result? (Hint, hint — there's an entire *market* built on exactly that: think Amazon's Subscribe & Save, or grocery delivery like Instacart and Walmart+.) Computation is in all of our lives. Some of us will use it directly in our jobs, some directly in our personal lives, and some of us indirectly without ever thinking about it.
+In my case, I'm a Data Engineer. My whole job is building things that pull and transform data *reliably and accurately every time* — same inputs, same steps, same output. But you don't have to write code for this to matter to you. Think about buying groceries: if there's a specific set of groceries you always buy, wouldn't it be nice to have them show up on a consistent schedule with a consistent result? (Hint, hint — there's an entire *market* built on exactly that.) Computation is in all of our lives — the same **inputs → steps → output** shape, whether you notice it or not:
 
-And here's the encouraging part: computers are more accessible than they have ever been. I'd bet most of you reading this are holding one right now — your cell phone. In fact, the phone in your pocket has **far more computing power than the systems that put a person on the moon**[^moon]. So when you watch a movie with a "hacking" scene, or someone hammering 200 keys a minute like they're casting a spell — it can look like magic. I'm here to tell you: **you can do this too, and it's not nearly as hard as you think.**
+| Everyday setup | Same inputs + steps → | Predictable output |
+|---|---|---|
+| Groceries on Subscribe & Save or Instacart | ordered on a schedule | the same box, on time |
+| A data pipeline (my day job) | same data in, same rules | the same report, every run |
+
+Some of us use it directly in our jobs, some directly in our personal lives, and some of us indirectly without ever thinking about it.
+
+And here's the encouraging part: computers are more accessible than they have ever been. I'd bet most of you reading this are holding one right now — your cell phone. In fact, the phone in your pocket has **far more computing power than the systems that put a person on the moon**[^moon].
+
+So when you watch a movie with a "hacking" scene, or someone hammering 200 keys a minute like they're casting a spell — it can look like magic. I'm here to tell you: **you can do this too, and it's not nearly as hard as you think.**
 <!-- /author_status -->
 
-[^def]: That definition is an AI-generated search summary — it appears synthesized from [Wolfram MathWorld — *Computation*](https://mathworld.wolfram.com/Computation.html) and [this CS StackExchange discussion](https://cs.stackexchange.com/questions/43938/what-exactly-is-computation).
+[^def]: That definition is an AI-generated search summary — it appears synthesized from [Wolfram MathWorld — *Computation*](https://mathworld.wolfram.com/Computation.html) and [a CS StackExchange discussion](https://cs.stackexchange.com/questions/43938/what-exactly-is-computation).
 
 [^moon]: A modern smartphone dwarfs the 1960s NASA flight computers by an enormous margin — see [EIT](https://www.eit.edu.au/smartphones-hold-more-tech-than-60s-nasa-computers/) and [this 2025 iPhone teardown comparison](https://global.dday.it/2025/10/08/509/apple-iphone-17-review-ordinary-but-only-on-the-surface).
 
@@ -70,6 +81,8 @@ A coffee maker takes a specific set of **inputs** (beans or grounds, water, mayb
 
 ```mermaid
 flowchart LR
+    accTitle: A coffee maker as an inputs-to-output computation
+    accDescr: A left-to-right flowchart of making coffee. Inputs — grounds, water, and creamer — flow by an arrow into Steps, where the machine brews. A second arrow leads to the Output — your coffee. It is the same inputs-to-steps-to-output shape as the definition of computation, shown with an everyday machine.
     A[Inputs<br/>grounds · water · creamer] --> B[Steps<br/>the machine brews]
     B --> C[Output<br/>your coffee]
 ```
@@ -179,13 +192,13 @@ Keep it short. The goal is just to start seeing the input → steps → output s
 ## Things people get wrong (FAQ)
 
 <!-- author_status: assistant-shared | section: Misconceptions & FAQ (Dakota seeded #1) -->
-??? question "Don't I have to be some kind of nerd, or learn a whole programming language, to do this?"
+??? faq "Don't I have to be some kind of nerd, or learn a whole programming language, to do this?"
     Nope — and I mean that. Technology keeps getting more accessible to everyone. My wife recently set up a routine in our smart-home system to turn the lights on at a certain time of day. She doesn't work in tech and doesn't code for fun, but she built a real *program* through a visual interface all the same. The biggest takeaway of this whole lesson: **this is something everyone can do.** What you do with it is up to you.
 
-??? question "Why are we doing coffee makers instead of writing code already?"
+??? faq "Why are we doing coffee makers instead of writing code already?"
     Because the *idea* is the hard part, not the typing. Once "inputs → exact, in-order steps → predictable output" feels obvious, Python is mostly learning the words for things you already understand. We write your first real program in the very next lesson.
 
-??? question "Do I need to memorize 'syntax' and 'semantics'?"
+??? faq "Do I need to memorize 'syntax' and 'semantics'?"
     Not to pass — they're here so the words don't surprise you later. You'll find them in **Key terms** below. We'll mostly just say "the code you write" and "what it means."
 <!-- /author_status -->
 

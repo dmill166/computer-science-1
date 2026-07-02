@@ -15,7 +15,9 @@ Objectives → MSU Denver obj 6, 7, 8 → ABET SO-2, SO-6 / CS2023 SDF, FPL.
 <!-- author_status: dakota-authored | section: Frame -->
 Welcome back! Last time we figured out what computation *is* — inputs, exact in-order steps, a predictable output. Today we meet the building blocks that every program is made of: **values, types, and variables.**
 
-I want to be straight with you about why we're starting here. These three terms are critical to *every* future lesson — get a good grasp on them now and the rest of this course gets dramatically easier. If we try to brute-force past them, it'd be like trying to speak a language without using any parts of speech. If you're lucky, you end up with caveman speak — *"Me hungry! We eat?"* — and that's the **best** case.
+I want to be straight with you about why we're starting here. These three terms are critical to *every* future lesson — get a good grasp on them now and the rest of this course gets dramatically easier.
+
+If we try to brute-force past them, it'd be like trying to speak a language without using any parts of speech. If you're lucky, you end up with caveman speak — *"Me hungry! We eat?"* — and that's the **best** case.
 
 So let's dive right in.
 <!-- /author_status -->
@@ -32,8 +34,8 @@ By the end of this lesson, you'll be able to:
 3. **Explain what a variable is** — a name you attach to a value — and write a good, descriptive variable name.
 4. **Write and run your first real Python program**, assigning values to variables and printing them.
 
-!!! abstract "Why this counts (outcomes alignment)"
-    Aligns with **MSU Denver CS 1050 objectives 6–8** (expressions, core data types, I/O) and **ABET SO-2 / SO-6** under **CS2023 SDF + FPL**. *(Alignment, not an accreditation claim — see [disclaimers](https://dakotalearns.com/disclaimers/).)*
+??? note "For instructors — outcome alignment"
+    Aligns with **MSU Denver CS 1050 objectives 6–8** (expressions, core data types, I/O); more broadly, with **ABET** student outcomes **SO-2** and **SO-6**, under the **ACM/IEEE-CS CS2023** *SDF + FPL* knowledge areas. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
 
 !!! note "Before you start"
     This lesson assumes you've installed Python and can open **IDLE** — the [install guide](https://dakotalearns.com/guides/install-python/) walks you through it. If not, do that first — it's the one gate everything else depends on.
@@ -65,7 +67,13 @@ In just that one example we already had two different kinds of numbers:
 
 Computers actually store those two differently under the hood. The good news: you almost certainly won't be building computers or operating systems in your first course, so we don't have to care about the *how* — just know they're treated as different types.
 
-There are other types, too. The words on this page are text — many languages, Python included, call text a **string** (`str`). And it isn't all words and numbers; some values are just plain true-or-false facts. Picture a **statement** you could stamp as true or false: *"It rained today." "We're getting takeout tonight." "My flight is cancelled."* — each one is either **True** or **False**, nothing in between. That's a type all its own, called a **boolean** (`bool`). (Notice these are *statements*, not questions — a boolean is the truth of a statement, and that becomes the thing you'll test with `if` down the road.)
+There are other types, too. The words on this page are text — many languages, Python included, call text a **string** (`str`). And it isn't all words and numbers; some values are just plain true-or-false facts. Picture a **statement** you could stamp as true or false:
+
+- *"It rained today."*
+- *"We're getting takeout tonight."*
+- *"My flight is cancelled."*
+
+Each one is either **True** or **False**, nothing in between — a type all its own, called a **boolean** (`bool`). (Notice these are *statements*, not questions — a boolean is the truth of a statement, and that becomes the very thing you'll test with `if` down the road.)
 
 I hope those examples show you that types tie right into everyday life — and that values aren't always words or numbers.
 
@@ -77,7 +85,9 @@ I hope those examples show you that types tie right into everyday life — and t
     | `str` | text ("string") | `"21 Jump Street"` |
     | `bool` | a true/false fact | `False` |
 
-These four are the building blocks we'll lean on constantly — but they aren't the *only* types. Python has [more types](https://docs.python.org/3/library/stdtypes.html), and you'll meet the big ones — **lists** and **dictionaries** — in their own lessons later. Heads up: that link is the *official* Python documentation, and it's thorough and a little dense — that's normal. You're not meant to read it all today; just getting comfortable knowing the official docs exist (and that you *can* look things up there) is a real skill we'll build the whole way through.
+These four are the building blocks we'll lean on constantly — but they aren't the *only* types. Python has plenty more (you can see them all in [the official Python type docs](https://docs.python.org/3/library/stdtypes.html)), and you'll meet the big ones — **lists** and **dictionaries** — in their own lessons later.
+
+Heads up: that link is the *official* documentation — thorough and a little dense, which is completely normal. You're not meant to read it all today; just getting comfortable knowing the official docs exist (and that you *can* look things up there) is a real skill we'll build the whole way through.
 <!-- /author_status -->
 
 ---
@@ -98,12 +108,15 @@ Notice those names actually *say what they hold*. `bank_balance` tells you exact
 ### The rules for naming things
 
 <!-- author_status: assistant-shared | section: Variable naming rules (Dakota to confirm framing) -->
-Before you go wild naming things, Python has a few **hard rules** — break one and your program simply won't run:
+Before you go wild naming things, Python has a few **hard rules** — break one and your program won't run:
 
-- **Use letters, digits, and underscores** (`_`) only. `bank_balance` and `player1` are fine; `bank-balance` (Python reads the `-` as a minus sign) and `my variable` (spaces) are not.
-- **Don't start with a digit.** `score1` is fine; `1score` is an error.
-- **Case matters.** `Score`, `score`, and `SCORE` are three *different* names.
-- **Avoid Python's reserved words** — a small set the language keeps for itself (`if`, `for`, `True`, `class`, …). You'll meet them as we go; for now, just know `if = 5` won't fly.
+| ✅ Valid | ❌ Won't run | The rule |
+|---|---|---|
+| `bank_balance`, `player1` | `bank-balance`, `my variable` | letters, digits, and `_` only (that `-` is a minus sign; spaces aren't allowed) |
+| `score1` | `1score` | can't start with a digit |
+| `total`, `class_size` | `class`, `if`, `for` | can't be one of Python's reserved words |
+
+One more gotcha (not an error, just surprising): **case matters** — `score`, `Score`, and `SCORE` are three *different* names.
 
 And two **habits** — not rules, but they'll save you (and anyone who reads your code):
 
@@ -116,7 +129,7 @@ And two **habits** — not rules, but they'll save you (and anyone who reads you
 ## Your first program
 
 <!-- author_status: assistant-shared | section: Worked example (uses the shell; IDLE mechanics live in the install guide) -->
-Enough words — let's make the machine do something with what we just learned. Open **IDLE's interactive shell** (new to it? the [setup guide's quick primer](https://dakotalearns.com/guides/install-python/#meet-idle) has you covered) and type these one at a time:
+Enough words — let's make the machine do something with what we just learned. Open **IDLE's interactive shell** (new to it? [the IDLE primer in the setup guide](https://dakotalearns.com/guides/install-python/#meet-idle) has you covered) and type these one at a time:
 
 ```pycon
 >>> 650
@@ -134,7 +147,7 @@ See it? Typing a value echoes it back; assigning `bank_balance = 650` stores it 
 
 ### Now save it as a real program
 
-The shell forgets everything when you close it, so when you want to **keep** your steps, put them in a file (`first_program.py`) and run it — the [setup guide](https://dakotalearns.com/guides/install-python/#meet-idle) shows you how in IDLE:
+The shell forgets everything when you close it, so when you want to **keep** your steps, put them in a file (`first_program.py`) and run it — [the IDLE primer in the setup guide](https://dakotalearns.com/guides/install-python/#meet-idle) shows you how:
 
 ```python
 # Attach values to descriptive names (variables)
@@ -206,13 +219,13 @@ Make a new file and create one variable of **each** of the four types, with a de
 ## Things people get wrong (FAQ)
 
 <!-- author_status: dakota-authored | section: Misconceptions & FAQ (Dakota seeded both) -->
-??? question "Isn't the variable the same as its value?"
+??? faq "Isn't the variable the same as its value?"
     This is the big one, so let's nail it. People think the variable *is* the value — but the bank balance is **independent** of the number attached to it. Your balance might be $650 today and something else next week; the *value* changes, but you keep signing into the **same account** with the same credentials to check it. The variable (`bank_balance`) is the account; the value ($650) is just what's in it right now. **The variable doesn't change — the value assigned to it does.** Hold that thought; it's exactly what makes Week 5/6 click.
 
-??? question "How do I know if something is a number or text?"
+??? faq "How do I know if something is a number or text?"
     Look at how it's written. The number `5` with no quotes means the *value* five. But sometimes you want a number that isn't a *quantity* — like talking about how much I love the movie **21 Jump Street**. That `21` isn't "twenty-one streets they jump across"; it's part of a name — a place. So it's text — a **string** — even though it looks like a number. Quotes are the tell.
 
-??? question "Why aren't we doing math or asking the user for input yet?"
+??? faq "Why aren't we doing math or asking the user for input yet?"
     On purpose. We're locking in values, types, and variables first. Doing math with them (**expressions**) and asking the user to type things in (**input**) are next week — one new idea at a time.
 <!-- /author_status -->
 
