@@ -3,18 +3,16 @@ title: "Values, Types, and Variables (and Your First Program)"
 ---
 
 <!--
-LECTURE STATUS: DRAFT — voice-core shaped from Dakota's Author Input Sheet (wk1_author_inputs.md, Lecture B), pending his review/edits.
-Do NOT commit/push to the public repo until: (1) Dakota has reviewed + promoted the dakota-voice-draft blocks, AND (2) the publish-lock CI gate exists (oneshot_build_requirements.md §5, gate 1).
+LECTURE STATUS: voice-core APPROVED by Dakota 2026-07-02 (author_status: dakota-authored). Finalized.
 Scope: Week 1 portion of spine Unit 1 — values, types, variables, first program. Expressions + interactive input() are deferred to WEEK 2 (per the Week-1 board card). Do not pull them forward here.
+Confirmed with Dakota (2026-07-02): first program uses his own examples (bank_balance, "21 Jump Street", …); expressions + input() stay in Week 2; the examples carry the topic (no personal "clicked" story).
+author_status legend: dakota-authored = Dakota's, final · assistant-mechanical = assistant-drafted · assistant-shared = shared (Dakota narrates, assistant drafts).
 Objectives → MSU Denver obj 6, 7, 8 → ABET SO-2, SO-6 / CS2023 SDF, FPL.
 -->
 
-!!! warning "Draft — pending author review"
-    This lesson's voice-bearing sections are a **draft shaped from Dakota's notes**, not yet finalized in his voice. Remove this banner on promotion.
-
 # Values, Types, and Variables (and Your First Program)
 
-<!-- author_status: dakota-voice-draft | section: Frame -->
+<!-- author_status: dakota-authored | section: Frame -->
 Welcome back! Last time we figured out what computation *is* — inputs, exact in-order steps, a predictable output. Today we meet the building blocks that every program is made of: **values, types, and variables.**
 
 I want to be straight with you about why we're starting here. These three terms are critical to *every* future lesson — get a good grasp on them now and the rest of this course gets dramatically easier. If we try to brute-force past them, it'd be like trying to speak a language without using any parts of speech. If you're lucky, you end up with caveman speak — *"Me hungry! We eat?"* — and that's the **best** case.
@@ -45,7 +43,7 @@ By the end of this lesson, you'll be able to:
 
 ## Values: what something is worth
 
-<!-- author_status: dakota-voice-draft | section: Core explanation (values) -->
+<!-- author_status: dakota-authored | section: Core explanation (values) -->
 A **value** is just what something is actually worth.
 
 Imagine you open your bank app and see you have **$650** — that's your value for that account. Take an antique doll to get appraised and it might be worth **$75**. Or say you're trying out for an NFL team and have to run a 40-meter dash; if you're *really* fast, the stopwatch might read **4.3 seconds**. Those are all values — worths, measurements.
@@ -57,7 +55,7 @@ Here's the key thing I want you to take away: **a value is always associated wit
 
 ## Types: not all values are the same kind of thing
 
-<!-- author_status: dakota-voice-draft | section: Core explanation (types) -->
+<!-- author_status: dakota-authored | section: Core explanation (types) -->
 Look again at those values and you'll notice they're not all the same *kind* of thing. That "kind" is what we call a **type**.
 
 In just that one example we already had two different kinds of numbers:
@@ -67,7 +65,7 @@ In just that one example we already had two different kinds of numbers:
 
 Computers actually store those two differently under the hood. The good news: you almost certainly won't be building computers or operating systems in your first course, so we don't have to care about the *how* — just know they're treated as different types.
 
-There are other types, too. The words on this page are text — many languages, Python included, call text a **string** (`str`). And it isn't all words and numbers; some values are just simple facts. *"Did it rain today?" "Are we getting takeout tonight?" "Is my flight cancelled?"* — every one of those is answered the same way: **True** or **False**. That's a type all its own, called a **boolean** (`bool`).
+There are other types, too. The words on this page are text — many languages, Python included, call text a **string** (`str`). And it isn't all words and numbers; some values are just plain true-or-false facts. Picture a **statement** you could stamp as true or false: *"It rained today." "We're getting takeout tonight." "My flight is cancelled."* — each one is either **True** or **False**, nothing in between. That's a type all its own, called a **boolean** (`bool`). (Notice these are *statements*, not questions — a boolean is the truth of a statement, and that becomes the thing you'll test with `if` down the road.)
 
 I hope those examples show you that types tie right into everyday life — and that values aren't always words or numbers.
 
@@ -86,7 +84,7 @@ These four are the building blocks we'll lean on constantly — but they aren't 
 
 ## Variables: names for your values
 
-<!-- author_status: dakota-voice-draft | section: Core explanation (variables) -->
+<!-- author_status: dakota-authored | section: Core explanation (variables) -->
 I know the word **variable** scares a lot of people — it drags up memories of algebra class and solving for *x*. Take a breath: this is gentler than that.
 
 A **variable** is simply a human-readable name you attach to a value. Honestly, you've already met a bunch of them today. That bank balance worth $650? If you were writing a program, you might keep it in a variable named `bank_balance`. The doll appraisal worth $75? You might call it `doll_appraisal_dollar_amount`. That's it — **variables are just a readable way to refer to things, and you usually assign some value to them.**
@@ -95,6 +93,22 @@ Notice those names actually *say what they hold*. `bank_balance` tells you exact
 
 !!! warning "★ Hold onto this — it comes back"
     A variable is a **name that refers to a value** — it is *not* the value itself. That distinction feels small right now, but it's the seed of one of the most important (and most under-taught) ideas in this whole course. We'll come back to it hard in **Week 5/6** when we look at how Python *really* stores your data.
+<!-- /author_status -->
+
+### The rules for naming things
+
+<!-- author_status: assistant-shared | section: Variable naming rules (Dakota to confirm framing) -->
+Before you go wild naming things, Python has a few **hard rules** — break one and your program simply won't run:
+
+- **Use letters, digits, and underscores** (`_`) only. `bank_balance` and `player1` are fine; `bank-balance` (Python reads the `-` as a minus sign) and `my variable` (spaces) are not.
+- **Don't start with a digit.** `score1` is fine; `1score` is an error.
+- **Case matters.** `Score`, `score`, and `SCORE` are three *different* names.
+- **Avoid Python's reserved words** — a small set the language keeps for itself (`if`, `for`, `True`, `class`, …). You'll meet them as we go; for now, just know `if = 5` won't fly.
+
+And two **habits** — not rules, but they'll save you (and anyone who reads your code):
+
+- **Say what it holds:** `total_price` beats `tp` beats `x`.
+- **Use `snake_case`:** lowercase words joined by underscores (`first_name`, `is_logged_in`). It's the standard Python style, so your code looks like everyone else's.
 <!-- /author_status -->
 
 ---
@@ -155,7 +169,7 @@ And there it is — a real program: you gave it **inputs** (the values), it foll
 ## Check yourself
 
 <!-- author_status: assistant-mechanical | section: Retrieval checks -->
-No grade — just retrieval. Try each before opening the answer. *(These become auto-scoring widgets once the site's quiz renderer ships.)*
+No grade — just retrieval. Try each before opening the answer.
 
 ??? question "1. What type is the value `4.3`?"
     A **float** — a number with a decimal part. (`650` and `75`, with no decimal, are **ints**.)
@@ -166,8 +180,8 @@ No grade — just retrieval. Try each before opening the answer. *(These become 
 ??? question "3. In `bank_balance = 650`, which part is the variable and which is the value?"
     `bank_balance` is the **variable** (the name); `650` is the **value**. The name refers to the value — it isn't the value itself.
 
-??? question "4. Which type answers a yes/no question like 'Is my flight cancelled?'"
-    A **boolean** (`bool`) — its only values are `True` and `False`.
+??? question "4. Which type would you use for a statement that's either true or false, like *\"My flight is cancelled\"*?"
+    A **boolean** (`bool`) — its only two values are `True` and `False`.
 <!-- /author_status -->
 
 ---
@@ -184,29 +198,29 @@ Make a new file and create one variable of **each** of the four types, with a de
 
 `print()` each one and run it. Then add `print(type(your_variable))` for one of them and see what Python says.
 
-*(This is the warm-up for **Finger Exercise 0** — your first low-stakes graded check, coming right up.)*
+*(This is the warm-up for your **first low-stakes graded check** — coming right up this week.)*
 <!-- /author_status -->
 
 ---
 
 ## Things people get wrong (FAQ)
 
-<!-- author_status: dakota-voice-draft | section: Misconceptions & FAQ (Dakota seeded both) -->
-**"Isn't the variable the same as its value?"**
-This is the big one, so let's nail it. People think the variable *is* the value — but the bank balance is **independent** of the number attached to it. Your balance might be $650 today and something else next week; the *value* changes, but you keep signing into the **same account** with the same credentials to check it. The variable (`bank_balance`) is the account; the value ($650) is just what's in it right now. **The variable doesn't change — the value assigned to it does.** Hold that thought; it's exactly what makes Week 5/6 click.
+<!-- author_status: dakota-authored | section: Misconceptions & FAQ (Dakota seeded both) -->
+??? question "Isn't the variable the same as its value?"
+    This is the big one, so let's nail it. People think the variable *is* the value — but the bank balance is **independent** of the number attached to it. Your balance might be $650 today and something else next week; the *value* changes, but you keep signing into the **same account** with the same credentials to check it. The variable (`bank_balance`) is the account; the value ($650) is just what's in it right now. **The variable doesn't change — the value assigned to it does.** Hold that thought; it's exactly what makes Week 5/6 click.
 
-**"How do I know if something is a number or text?"**
-Look at how it's written. The number `5` with no quotes means the *value* five. But sometimes you want a number that isn't a *quantity* — like talking about how much I love the movie **21 Jump Street**. That `21` isn't "twenty-one streets they jump across"; it's part of a name — a place. So it's text — a **string** — even though it looks like a number. Quotes are the tell.
+??? question "How do I know if something is a number or text?"
+    Look at how it's written. The number `5` with no quotes means the *value* five. But sometimes you want a number that isn't a *quantity* — like talking about how much I love the movie **21 Jump Street**. That `21` isn't "twenty-one streets they jump across"; it's part of a name — a place. So it's text — a **string** — even though it looks like a number. Quotes are the tell.
 
-**"Why aren't we doing math or asking the user for input yet?"**
-On purpose. We're locking in values, types, and variables first. Doing math with them (**expressions**) and asking the user to type things in (**input**) are next week — one new idea at a time.
+??? question "Why aren't we doing math or asking the user for input yet?"
+    On purpose. We're locking in values, types, and variables first. Doing math with them (**expressions**) and asking the user to type things in (**input**) are next week — one new idea at a time.
 <!-- /author_status -->
 
 ---
 
 ## Say it in your own words (communicate)
 
-<!-- author_status: dakota-voice-draft | section: Communicate -->
+<!-- author_status: dakota-authored | section: Communicate -->
 Here's your day-one communication rep: in **2–3 sentences**, explain to a friend the difference between a **variable** and its **value**, using an everyday example that *isn't* the bank account. (Think lockers, name tags, parking spots — anything where a name points to a thing that can change.)
 
 If your friend gets it, you've understood the single most important idea in this lesson.
@@ -243,9 +257,9 @@ If your friend gets it, you've understood the single most important idea in this
 **Next lesson (Week 2):** we put these building blocks to work — doing math with them (**expressions**) and letting your program **ask the user for input** so it can respond to whatever they type.
 
 !!! info "Coming this week"
-    **Finger Exercise 0** — your first low-stakes graded check — lands right after this lesson, and it's built straight from today's "Your turn" practice. It's due before the add/drop deadline so you get an honest, early taste of the course's rhythm.
+    Your **first low-stakes graded check** lands right after this lesson, built straight from today's "Your turn" practice. It's due before the add/drop deadline, so you get an honest, early taste of the course's rhythm.
 <!-- /author_status -->
 
-<!-- author_status: dakota-voice-draft | section: Sign-off (Dakota's standard skeleton — confirm/customize the day) -->
+<!-- author_status: dakota-authored | section: Sign-off (Dakota's standard skeleton — confirm/customize the day) -->
 Thanks for taking the time to read along. Until the next time we learn something together, have a wonderful day! 👋
 <!-- /author_status -->

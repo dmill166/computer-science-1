@@ -20,29 +20,15 @@ I'll be honest with you about how I started this answer: I Googled it. (I do thi
 
 *(Quick gut-check before we lean on that: it's an AI-generated search summary, not gospel. I tracked down where it seems to come from and cited it below — always worth knowing who you're quoting, even when it's a computer handing you the answer.)*
 
-That's a mouthful. Let's break it down into the part that actually matters:
+That's a mouthful. Let's break it down into the shape that actually matters — one you'll see again and again:
 
-<div class="grid cards" markdown>
+```mermaid
+flowchart LR
+    I[Inputs<br/>what you start with] --> P[Steps<br/>a set of rules, followed<br/>exactly and in order] --> O[Predictable output<br/>the same result, every time]
+```
 
--   :material-target:{ .lg .middle } **What's going to happen…**
-
-    ---
-
-    The result you're after — the *output*.
-
--   :material-format-list-numbered:{ .lg .middle } **…when a set of steps/rules are followed…**
-
-    ---
-
-    A specific, well-defined *recipe* the machine follows.
-
--   :material-check-circle-outline:{ .lg .middle } **…in a way that makes the outcome predictable.**
-
-    ---
-
-    Same inputs + same steps → the *same result*, every time.
-
-</div>
+!!! tip "You'll see this in your textbook, too"
+    Zelle (and most CS texts) call this same shape **Input → Process → Output (IPO)**. When you're reading the book, that's the phrase to look for; in my lessons I'll usually just say **inputs → steps → output** — same idea, my words for it.
 
 That's it. That's the whole idea. And here's why I want you to care about it before anything else: **this applies to everyone — technical and non-technical folks alike.**
 
@@ -51,9 +37,9 @@ In my case, I'm a Data Engineer. My whole job is building things that pull and t
 And here's the encouraging part: computers are more accessible than they have ever been. I'd bet most of you reading this are holding one right now — your cell phone. In fact, the phone in your pocket has **far more computing power than the systems that put a person on the moon**[^moon]. So when you watch a movie with a "hacking" scene, or someone hammering 200 keys a minute like they're casting a spell — it can look like magic. I'm here to tell you: **you can do this too, and it's not nearly as hard as you think.**
 <!-- /author_status -->
 
-[^moon]: A modern smartphone dwarfs the 1960s NASA flight computers by an enormous margin — see [EIT](https://www.eit.edu.au/smartphones-hold-more-tech-than-60s-nasa-computers/) and [this 2025 iPhone teardown comparison](https://global.dday.it/2025/10/08/509/apple-iphone-17-review-ordinary-but-only-on-the-surface).
-
 [^def]: That definition is an AI-generated search summary — it appears synthesized from [Wolfram MathWorld — *Computation*](https://mathworld.wolfram.com/Computation.html) and [this CS StackExchange discussion](https://cs.stackexchange.com/questions/43938/what-exactly-is-computation).
+
+[^moon]: A modern smartphone dwarfs the 1960s NASA flight computers by an enormous margin — see [EIT](https://www.eit.edu.au/smartphones-hold-more-tech-than-60s-nasa-computers/) and [this 2025 iPhone teardown comparison](https://global.dday.it/2025/10/08/509/apple-iphone-17-review-ordinary-but-only-on-the-surface).
 
 ---
 
@@ -67,8 +53,8 @@ By the end of this lesson, you'll be able to:
 3. **Explain why "exact" and "in order" matter** to how a machine runs your instructions.
 4. **Recognize that programming is a language** with its own rules — and that you already learn rules like this all the time.
 
-!!! abstract "Why this counts (outcomes alignment)"
-    This lesson aligns with **MSU Denver CS 1050 objective 12** (state the steps of the software process) and, more broadly, **ABET SO-1** (analyze a problem) and **SO-6** (apply CS fundamentals) under the **CS2023 SE** knowledge area. *(Alignment, not an accreditation claim — see [disclaimers](https://dakotalearns.com/disclaimers/).)*
+??? note "For instructors — outcome alignment"
+    This lesson aligns with **MSU Denver CS 1050 objective 12** (state the steps of the software development process); more broadly, with **ABET** student outcomes **SO-1** (analyze a computing problem) and **SO-6** (apply CS fundamentals), under the **ACM/IEEE-CS CS2023** *Software Engineering* knowledge area. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
 <!-- /author_status -->
 
 ---
@@ -148,7 +134,7 @@ Trace it the way the machine would — one step at a time, top to bottom:
 Now break the rules on purpose and feel why *exact* and *in order* matter:
 
 - **Out of order:** press start (step 3) *before* adding water (step 2). Nothing brews. The machine didn't "figure it out" — it did exactly what the steps said, in the order they came.
-- **Wrong input:** load tea leaves instead of coffee grounds. The machine still runs every step perfectly… and hands you something you didn't want. *Garbage in, garbage out.*
+- **Wrong input:** load tea leaves instead of coffee grounds. It runs every step perfectly and hands you a cup of tea — exactly what its inputs told it to make. **What you put in shapes what you get out.**
 
 That's the entire mental model you need going forward: **the computer follows your steps exactly, in order, on the inputs you actually gave it.**
 <!-- /author_status -->
@@ -158,7 +144,7 @@ That's the entire mental model you need going forward: **the computer follows yo
 ## Check yourself
 
 <!-- author_status: assistant-mechanical | section: Retrieval checks -->
-Quick, low-stakes retrieval — no grade, just to see if it stuck. Try each before you open the answer. *(These collapsible self-checks will become auto-scoring widgets once the site's quiz renderer ships.)*
+Quick, low-stakes retrieval — no grade, just to see if it stuck. Try each before you open the answer.
 
 ??? question "1. In one sentence, what is computation?"
     Taking some **inputs** and transforming them into a **predictable output** by following a **well-defined set of steps**.
@@ -193,14 +179,14 @@ Keep it short. The goal is just to start seeing the input → steps → output s
 ## Things people get wrong (FAQ)
 
 <!-- author_status: assistant-shared | section: Misconceptions & FAQ (Dakota seeded #1) -->
-**"Don't I have to be some kind of nerd, or learn an entire programming language, to do this?"**
-Nope — and I mean that. Technology keeps getting more accessible to everyone. My wife recently set up a routine in our smart-home system to turn the lights on at a certain time of day. She doesn't work in tech and doesn't code for fun, but she built a real *program* through a visual interface all the same. The biggest takeaway of this whole lesson: **this is something everyone can do.** What you do with it is up to you.
+??? question "Don't I have to be some kind of nerd, or learn a whole programming language, to do this?"
+    Nope — and I mean that. Technology keeps getting more accessible to everyone. My wife recently set up a routine in our smart-home system to turn the lights on at a certain time of day. She doesn't work in tech and doesn't code for fun, but she built a real *program* through a visual interface all the same. The biggest takeaway of this whole lesson: **this is something everyone can do.** What you do with it is up to you.
 
-**"Why are we doing coffee makers instead of writing code already?"**
-Because the *idea* is the hard part, not the typing. Once "inputs → exact, in-order steps → predictable output" feels obvious, Python is mostly learning the words for things you already understand. We write your first real program in the very next lesson.
+??? question "Why are we doing coffee makers instead of writing code already?"
+    Because the *idea* is the hard part, not the typing. Once "inputs → exact, in-order steps → predictable output" feels obvious, Python is mostly learning the words for things you already understand. We write your first real program in the very next lesson.
 
-**"Do I need to memorize 'syntax' and 'semantics'?"**
-Not to pass — they're here so the words don't surprise you later. You'll find them in **Key terms** below. We'll mostly just say "the code you write" and "what it means."
+??? question "Do I need to memorize 'syntax' and 'semantics'?"
+    Not to pass — they're here so the words don't surprise you later. You'll find them in **Key terms** below. We'll mostly just say "the code you write" and "what it means."
 <!-- /author_status -->
 
 ---
