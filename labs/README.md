@@ -6,7 +6,8 @@ Guided, in-class lab prompts and starter code. Labs are short, scaffolded exerci
 
 - One folder per lab: `labNN_topic/`
 - Each lab folder contains:
-  - `README.md` — the prompt, learning goals, and the ABET/CS2023 outcome(s) it exercises
+  - `index.md` — the prompt page (renders on the site at the folder's clean URL, e.g. `/labs/lab01_topic/`; files named `README.md` are repo-internal and excluded from the site sync). Includes learning goals and the ABET/CS2023 outcome(s) exercised.
+  - `.nav.yml` — the folder's on-site nav title
   - `starter/` — starter code students begin from (PolyForm Noncommercial)
   - (Solutions live in the **private** `computer-science-1-solutions` repo, never here.)
 

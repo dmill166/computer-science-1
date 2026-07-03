@@ -1,5 +1,6 @@
 ---
 title: "What Is Computation (and How Do Programs Actually Run)?"
+date_published: 2026-07-03
 ---
 
 <!--
@@ -51,6 +52,8 @@ So when you watch a movie with a "hacking" scene, or someone hammering 200 keys 
 [^def]: That definition is an AI-generated search summary — it appears synthesized from [Wolfram MathWorld — *Computation*](https://mathworld.wolfram.com/Computation.html) and [a CS StackExchange discussion](https://cs.stackexchange.com/questions/43938/what-exactly-is-computation).
 
 [^moon]: A modern smartphone dwarfs the 1960s NASA flight computers by an enormous margin — see [EIT](https://www.eit.edu.au/smartphones-hold-more-tech-than-60s-nasa-computers/) and [this 2025 iPhone teardown comparison](https://global.dday.it/2025/10/08/509/apple-iphone-17-review-ordinary-but-only-on-the-surface).
+
+[^toc]: For the curious: **Theory of Computation** is an upper-level CS course about what machines can compute *at all*, and how efficiently — using precise mathematical models of a "machine." Want a taste? [This introduction](https://www.geeksforgeeks.org/theory-of-computation/introduction-of-theory-of-computation/) is a reasonable place to peek — but fair warning before you click: it may seem really, *really* dense or confusing. That's not just because it's brand new to you; it's a genuinely complicated topic to begin with, especially if you're new to computer science as a whole. Absolutely **not** required background for this course; it just happens to be where this idea finally clicked for me.
 
 ---
 
@@ -110,7 +113,7 @@ Or they can be big. Years ago, when I was first learning Python, I rebuilt the c
 ### Programming is a language (and you already learn languages)
 
 <!-- author_status: dakota-authored | section: Core explanation (cont.) -->
-This finally clicked for me in one of the most trying courses I ever took — Theory of Computation. (It wasn't taught or supported well, and I struggled, and that's okay; I still walked away with something worth keeping.) Here it is:
+This finally clicked for me in one of the most trying courses I ever took — Theory of Computation.[^toc] (I didn't feel the specific section I was enrolled in was taught or supported well at the time, and I struggled — and that's okay; I still walked away with something worth keeping.) Here it is:
 
 **Programming is a language, like any other.** A language has **syntax** (the exact words and symbols you write) and **semantics** (what those words actually *mean* — the rules of the language). Together, those two things power every piece of technology around you.
 
@@ -136,13 +139,17 @@ We don't have any Python yet — that's next lesson — so let's "run" a program
 
 Trace it the way the machine would — one step at a time, top to bottom:
 
-| Step | What the machine does | State after |
-|---|---|---|
-| 1 | grounds in basket | basket: full |
-| 2 | water in reservoir | reservoir: full |
-| 3 | start pressed | brewing… |
-| 4 | brew finishes | pot: full of coffee |
-| 5 | pour | mug: full ☕ |
+```mermaid
+flowchart TD
+    accTitle: Tracing the make_coffee program from top to bottom
+    accDescr: A top-to-bottom flowchart of the five make_coffee steps, one arrow flowing from each step down to the next. Step 1, add grounds to the basket — the basket is now full. Step 2, add water to the reservoir — the reservoir is now full. Step 3, press start — the machine is now brewing. Step 4, wait for the brew to finish — the pot is now full of coffee. Step 5, pour into a mug — the mug is full.
+    S1["1 · Add grounds to the basket<br/>state: basket full"]
+    S2["2 · Add water to the reservoir<br/>state: reservoir full"]
+    S3["3 · Press start<br/>state: brewing…"]
+    S4["4 · Wait for the brew to finish<br/>state: pot full of coffee"]
+    S5["5 · Pour into a mug<br/>state: mug full ☕"]
+    S1 --> S2 --> S3 --> S4 --> S5
+```
 
 Now break the rules on purpose and feel why *exact* and *in order* matter:
 
@@ -156,19 +163,50 @@ That's the entire mental model you need going forward: **the computer follows yo
 
 ## Check yourself
 
-<!-- author_status: assistant-mechanical | section: Retrieval checks -->
-Quick, low-stakes retrieval — no grade, just to see if it stuck. Try each before you open the answer.
+<!-- author_status: assistant-mechanical | section: Retrieval checks (quiz/parsons data — rendered by the site) -->
+Quick, low-stakes retrieval — no grade, just to see if it stuck. The first few score themselves (be honest with your first answer!); the last two are yours to say out loud before peeking.
 
-??? question "1. In one sentence, what is computation?"
+```quiz
+{
+  "questions": [
+    {
+      "prompt": "True or false: the order of a program's steps usually doesn't matter.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explain": "Steps run **in order**, and the order often changes the result — press start before adding water and nothing brews."
+    },
+    {
+      "prompt": "A friend says, \"My computer did something I didn't tell it to.\" Using today's lesson, what most likely happened?",
+      "options": [
+        "The computer improvised a new step on its own.",
+        "The computer followed its instructions exactly — the steps (or the inputs) just weren't what your friend thought they were.",
+        "The computer ran the right steps, but in a random order."
+      ],
+      "answer": 1,
+      "explain": "Machines don't improvise — they follow the steps, exactly and **in order**, on the inputs they were actually given."
+    }
+  ]
+}
+```
+
+```parsons
+{
+  "title": "Order the make_coffee program",
+  "prompt": "Drag the steps (or use the arrow buttons) into the order the $20 coffee maker needs. Remember this machine's spec: grounds load before water.",
+  "lines": [
+    "Add grounds to the basket.",
+    "Add water to the reservoir.",
+    "Press start.",
+    "Wait for the brew to finish.",
+    "Pour into a mug."
+  ]
+}
+```
+
+??? question "In one sentence, what is computation?"
     Taking some **inputs** and transforming them into a **predictable output** by following a **well-defined set of steps**.
 
-??? question "2. A friend says, 'My computer did something I didn't tell it to.' Using today's lesson, what's a more accurate way to describe what probably happened?"
-    The computer did *exactly* what it was instructed to do — the instructions (or the inputs) just weren't what the friend *thought* they were. The machine follows the steps, in order; it doesn't improvise.
-
-??? question "3. True or false: the order of a program's steps usually doesn't matter."
-    **False.** Steps run *in order*, and the order often changes the result — like adding water before grounds, or pressing start before either.
-
-??? question "4. Name one program from your own life that isn't a 'computer' program."
+??? question "Name one program from your own life that isn't a 'computer' program."
     Lots of good answers: a coffee maker, a microwave dinner's instructions, a recipe, a smart-home routine, an automatic sprinkler timer. Anything that takes inputs and follows fixed steps to a predictable output.
 <!-- /author_status -->
 

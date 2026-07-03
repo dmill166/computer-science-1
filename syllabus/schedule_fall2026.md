@@ -23,7 +23,7 @@
 
 Because the **100% drop deadline is the end of Week 1** and the **50% deadline is Week 3**, the course deliberately gives an honest preview of its real rhythm early, so students self-select with accurate information rather than discovering the workload after the refund window closes:
 
-- **Week 1** ships Module 0 (setup) **and** a genuine first taste of programming, with a **low-stakes graded finger exercise due before Aug 24**.
+- **Week 1** ships Module 0 (setup) **and** a genuine first taste of programming, with a **low-stakes graded checkpoint (Checkpoint 1) due before Aug 24**.
 - **By Sep 2 (50% deadline)** students have completed assignment **a01** and an early quiz — enough signal to judge fit.
 - By the drop deadlines you'll have completed the setup exercise, your first assignment (a01), and Quiz 1 — enough to gauge whether the course fits your time and goals. Honesty over enrollment-protection.
 
@@ -33,7 +33,7 @@ Because the **100% drop deadline is the end of Week 1** and the **50% deadline i
 
 | Wk | Week of | Units / focus | Calendar notes | Assessment milestones |
 |---|---|---|---|---|
-| 1 | Aug 17 | **Module 0** setup · **Unit 0** what is computation · **Unit 1** values, types, variables, first program | Classes begin Aug 17 | **Finger exercise 0 due before Aug 24** (pre-100%-drop taste) |
+| 1 | Aug 17 | **Module 0** setup · **Unit 0** what is computation · **Unit 1** values, types, variables, first program | Classes begin Aug 17 | **Checkpoint 1 due before Aug 24** (pre-100%-drop taste) |
 | 2 | Aug 24 | **Unit 1** expressions, I/O · **Unit 2** decisions | **Aug 24: 100% drop deadline** | **a01** assigned |
 | 3 | Aug 31 | **Unit 3** iteration / loops | **Sep 2: 50% drop deadline** | **a01 due**; Quiz 1 |
 | 4 | Sep 7 | **Unit 4** strings & sequences | **Mon Sep 7 Labor Day — no class** | a02 assigned |
@@ -55,7 +55,7 @@ Because the **100% drop deadline is the end of Week 1** and the **50% deadline i
 
 ## Assessment timing rationale
 
-- **Early + low-stakes before the drop deadlines** (finger exercise W1, a01 + quiz by W3) so students judge fit honestly.
+- **Early + low-stakes before the drop deadlines** (Checkpoint 1 in W1, a01 + quiz by W3) so students judge fit honestly.
 - **Midterm at W8** — natural midpoint, covers the procedural half (Units 0–7) before the OOP/recursion/algorithms half.
 - **CS2-bridge units (6, 10, 11, 12)** carry extra time and dedicated assessment — these are what make or break CS 2050.
 - **Communication thread** (ABET SO-3): research paper due W13, oral presentations W14–W15 — deliberately *not* crammed into finals.

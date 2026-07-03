@@ -31,16 +31,22 @@ if (v.major, v.minor) < MIN_OK:
     )
 elif (v.major, v.minor) < IDEAL:
     notes.append(
-        f"Python {v.major}.{v.minor} will work, but {IDEAL[0]}.{IDEAL[1]}+ is recommended."
+        f"Python {v.major}.{v.minor} will work, but "
+        f"{IDEAL[0]}.{IDEAL[1]}+ is recommended."
     )
 
 # 2. macOS system-Python / Apple-developer-tools stub check.
 lower_exe = exe.lower()
-system_markers = ("/usr/bin/python", "/system/library/", "/library/developer/commandlinetools")
+system_markers = (
+    "/usr/bin/python",
+    "/system/library/",
+    "/library/developer/commandlinetools",
+)
 if sys.platform == "darwin" and any(m in lower_exe for m in system_markers):
     problems.append(
-        "You're running macOS's system/developer Python, not a course install.\n"
-        "   Install Python from https://www.python.org/downloads/ and use `python3`."
+        "You're running macOS's system/developer Python, not a "
+        "course install.\n   Install Python from "
+        "https://www.python.org/downloads/ and use `python3`."
     )
 
 # Report.

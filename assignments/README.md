@@ -6,7 +6,8 @@ Programming assignment prompts, specifications, and starter code — the larger 
 
 - One folder per assignment: `aNN_topic/`
 - Each assignment folder contains:
-  - `README.md` — problem statement, requirements, grading criteria (point allocation), submission format, and the ABET/CS2023 outcome(s) assessed
+  - `index.md` — the problem-statement page (renders on the site at the folder's clean URL, e.g. `/assignments/a01_topic/`; files named `README.md` are repo-internal and excluded from the site sync). Includes requirements, grading criteria (point allocation), submission format, and the ABET/CS2023 outcome(s) assessed.
+  - `.nav.yml` — the folder's on-site nav title
   - `starter/` — starter code / templates (PolyForm Noncommercial)
   - `tests/` — public test cases students can run (private/hidden tests live in the solutions repo)
 - Solution keys, rubrics, and autograders live in the **private** `computer-science-1-solutions` repo.

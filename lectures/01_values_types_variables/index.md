@@ -1,5 +1,6 @@
 ---
 title: "Values, Types, and Variables (and Your First Program)"
+date_published: 2026-07-03
 ---
 
 <!--
@@ -179,22 +180,93 @@ And there it is — a real program: you gave it **inputs** (the values), it foll
 
 ---
 
+## Comments: notes to future you
+
+<!-- author_status: dakota-authored | section: Comments (shaped from Dakota's 2026-07-03 brain-dump; approved + promoted 2026-07-03 — raw voice-core in life-os wk1_author_inputs.md) -->
+Did you catch those lines starting with `#` in the program above? Those weren't for Python — they were for *you*. Let's give them a proper introduction, because you'll be writing them for the rest of this course (and, honestly, the rest of your programming life).
+
+A **comment** is a special kind of code: a human-readable note that lives right beside the code it describes. Python skips comments entirely when it runs your program — zero effect on the output — and that's exactly what makes them so valuable. They're a space for *humans* in a file otherwise written for a machine.
+
+Here's one of the biggest lessons I can hand you on day one: **you will not remember why you wrote what you wrote.** Not 12 months from now — sometimes not even 12 days from now. A comment is a note to *future you* (and, as you grow, to future *others* who read your code) explaining what past-you was thinking. Future you will be grateful.
+
+Writing one is simple: type a hashtag — or "pound sign," for those of us who had Yahoo Messenger accounts and played outside — then a space, then your note:
+
+```python
+# Attach values to descriptive names (variables)
+bank_balance = 650  # checking account, not savings
+```
+
+A comment can take a whole line, or ride at the end of one. Need more room? Go to a new line and start it with another `#`. (How long is too long for one line? The official Python style guide — [PEP 8](https://peps.python.org/pep-0008/) — wraps code at 79 characters and comments at 72, and plenty of workplaces stretch that to ~100. Don't memorize the numbers; just don't write novels sideways.)
+
+And if you're wondering *how many* comments to write: if I had to pick, I'd rather you leave too many than too few. You'll find the right balance over time — every programmer does. Watch for it through this course, too: I'll use comments constantly in the sample files — assignment instructions, spacing out sections, little explanations right where you need them.
+
+*(Python also has a way to write longer, multi-line documentation — we'll meet it in Week 5 when we start defining our own functions. One new idea at a time.)*
+<!-- /author_status -->
+
+---
+
 ## Check yourself
 
-<!-- author_status: assistant-mechanical | section: Retrieval checks -->
-No grade — just retrieval. Try each before opening the answer.
+<!-- author_status: assistant-mechanical | section: Retrieval checks (quiz/parsons data — rendered by the site) -->
+No grade — just retrieval. These score themselves, so be honest with your first answer.
 
-??? question "1. What type is the value `4.3`?"
-    A **float** — a number with a decimal part. (`650` and `75`, with no decimal, are **ints**.)
+```quiz
+{
+  "questions": [
+    {
+      "prompt": "What type is the value `4.3`?",
+      "options": ["`int`", "`float`", "`str`", "`bool`"],
+      "answer": 1,
+      "explain": "The decimal part is the giveaway — `650` and `75`, with no decimal part, are `int` values."
+    },
+    {
+      "prompt": "Is `\"21 Jump Street\"` a number or text?",
+      "options": [
+        "A number — it starts with `21`.",
+        "Text — the quotes are the giveaway.",
+        "Both — Python splits it into a number and words."
+      ],
+      "answer": 1,
+      "explain": "It's a **string** (`str`). That `21` is part of a name — a place — not a quantity."
+    },
+    {
+      "prompt": "In `bank_balance = 650`, which part is the variable?",
+      "options": ["`bank_balance`", "`650`", "The `=` sign"],
+      "answer": 0,
+      "explain": "`bank_balance` is the **name**; `650` is the **value** it refers to. The name isn't the value itself — hold onto that for Week 5/6."
+    },
+    {
+      "prompt": "Which type fits a statement that's either true or false, like \"My flight is cancelled\"?",
+      "options": ["`int`", "`float`", "`str`", "`bool`"],
+      "answer": 3,
+      "explain": "A **boolean** (`bool`) — its only two values are `True` and `False`."
+    },
+    {
+      "prompt": "What does Python do when it runs a line like `# update this next week`?",
+      "options": [
+        "Prints the note to the screen.",
+        "Stops with an error — that isn't valid code.",
+        "Skips it entirely — comments are notes for humans, not instructions."
+      ],
+      "answer": 2,
+      "explain": "Comments have zero effect on your program — they exist for future you (and anyone else reading your code)."
+    }
+  ]
+}
+```
 
-??? question "2. Is `\"21 Jump Street\"` a number or text? How can you tell?"
-    Text — a **string** (`str`). The quotes are the giveaway: `21` here is part of a name, not a quantity. (The `21` *means* a place, not "21 streets.")
-
-??? question "3. In `bank_balance = 650`, which part is the variable and which is the value?"
-    `bank_balance` is the **variable** (the name); `650` is the **value**. The name refers to the value — it isn't the value itself.
-
-??? question "4. Which type would you use for a statement that's either true or false, like *\"My flight is cancelled\"*?"
-    A **boolean** (`bool`) — its only two values are `True` and `False`.
+```parsons
+{
+  "title": "Build the program",
+  "prompt": "Put the lines in order so the program stores a dash time, prints its value, and then prints its type — in that order.",
+  "code": true,
+  "lines": [
+    "dash_time = 4.3",
+    "print(dash_time)",
+    "print(type(dash_time))"
+  ]
+}
+```
 <!-- /author_status -->
 
 ---
@@ -211,7 +283,7 @@ Make a new file and create one variable of **each** of the four types, with a de
 
 `print()` each one and run it. Then add `print(type(your_variable))` for one of them and see what Python says.
 
-*(This is the warm-up for your **first low-stakes graded check** — coming right up this week.)*
+*(This is the warm-up for [**Checkpoint 1**](../../checkpoints/01_values_types_variables/index.md), your first low-stakes graded check — due this week.)*
 <!-- /author_status -->
 
 ---
@@ -253,6 +325,7 @@ If your friend gets it, you've understood the single most important idea in this
 | **String (`str`)** | Text. |
 | **Boolean (`bool`)** | A true/false fact. |
 | **Variable** | A readable name that refers to a value. |
+| **Comment** | A `#`-prefixed note for humans, right beside the code; Python skips it entirely. |
 
 *(Durable terms also live in the site-wide [Glossary](https://dakotalearns.com/glossary/).)*
 <!-- /author_status -->
@@ -266,11 +339,12 @@ If your friend gets it, you've understood the single most important idea in this
 - A **type** is the *kind* of value. Your four workhorses: **`int`** (whole number), **`float`** (decimal), **`str`** (text), **`bool`** (true/false).
 - A **variable** is a readable **name** that refers to a value — *not* the value itself. ★ That last part returns in a big way in Week 5/6.
 - You wrote and ran a real program: assign values to variables, then `print` them. Inputs → exact, in-order steps → predictable output.
+- **Comments** (`# like this`) are notes for humans — Python skips them, and future you will thank present you for writing them.
 
 **Next lesson (Week 2):** we put these building blocks to work — doing math with them (**expressions**) and letting your program **ask the user for input** so it can respond to whatever they type.
 
 !!! info "Coming this week"
-    Your **first low-stakes graded check** lands right after this lesson, built straight from today's "Your turn" practice. It's due before the add/drop deadline, so you get an honest, early taste of the course's rhythm.
+    [**Checkpoint 1**](../../checkpoints/01_values_types_variables/index.md) — your first low-stakes graded check — lands right after this lesson, built straight from today's "Your turn" practice. It's due before the add/drop deadline, so you get an honest, early taste of the course's rhythm.
 <!-- /author_status -->
 
 <!-- author_status: dakota-authored | section: Sign-off (Dakota's standard skeleton — confirm/customize the day) -->

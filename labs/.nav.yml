@@ -1,0 +1,4 @@
+# On-site nav for the Labs bucket (synced to dakotalearns; teaching order).
+title: Labs
+nav:
+  - lab01_setup_and_first_program
