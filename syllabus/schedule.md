@@ -37,7 +37,7 @@ Because the **100% drop deadline is the end of Week 1** and the **50% deadline i
 
 | Wk | Week of | Units / focus | Calendar notes | Assessment milestones |
 |---|---|---|---|---|
-| 1 | Aug 17 | **Module 0** [setup](https://dakotalearns.com/guides/install-python/) · **Unit 0** [what is computation](../lectures/00_what_is_computation/index.md) · **Unit 1** [values, types, variables, first program](../lectures/01_values_types_variables/index.md) · [Lab 1](../labs/lab01_setup_and_first_program/index.md) | Classes begin Aug 17 | **[Checkpoint 1](../checkpoints/01_values_types_variables/index.md) due before Aug 24** (pre-100%-drop taste) |
+| 1 | Aug 17 | **Module 0** [setup](https://dakotalearns.com/guides/install-python/) · **Unit 0** [what is computation](../unit00_what_is_computation/index.md) · **Unit 1** [values, types, variables, first program](../unit01_values_types_variables/index.md) · [Lab 1](../unit01_values_types_variables/lab/index.md) | Classes begin Aug 17 | **[Checkpoint 1](../unit01_values_types_variables/checkpoint/index.md) due before Aug 24** (pre-100%-drop taste) |
 | 2 | Aug 24 | **Unit 1** expressions, I/O · **Unit 2** decisions | **Aug 24: 100% drop deadline** | **a01** assigned |
 | 3 | Aug 31 | **Unit 3** iteration / loops | **Sep 2: 50% drop deadline** | **a01 due**; Quiz 1 |
 | 4 | Sep 7 | **Unit 4** strings & sequences | **Mon Sep 7 Labor Day — no class** | a02 assigned |

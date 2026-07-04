@@ -15,10 +15,17 @@ Part of the [`cs-teaching`](https://github.com/dmill166/cs-teaching) initiative 
 | Folder | Contents |
 |---|---|
 | [`syllabus/`](syllabus/) | Course syllabus, schedule, and the ABET CAC / ACM-IEEE CS2023 outcomes-mapping table |
-| [`lectures/`](lectures/) | Lecture notes and slides, ordered by the design-rationale teaching spine (13 units) |
-| [`labs/`](labs/) | In-class / guided lab prompts and starter code |
-| [`assignments/`](assignments/) | Programming assignment prompts, specs, and starter code |
+| `unitNN_topic/` | The content tree — one folder per teaching-spine unit at the repo root, each containing its lecture (`index.md`), `lab/`, `checkpoint/`, and (where one lands) `assignment/`. Convention below; cross-course [structure standard](https://github.com/dmill166/cs-teaching/blob/main/COURSE_STRUCTURE.md) |
 | [`resources/`](resources/) | Textbook reference, toolchain setup, and supplementary material |
+
+## Unit folder convention
+
+- One folder per unit at the repo root: `unitNN_topic/`, numbered by the design-rationale teaching spine (not by week — pacing lives in [`syllabus/schedule.md`](syllabus/schedule.md), the swappable per-term overlay). Zero-padded numbers keep them in teaching order everywhere.
+- Inside each unit, in learner order: `index.md` (the **lecture** — renders on the site at the folder's clean URL), `lab/` (that unit's guided practice, only where the unit warrants one), `checkpoint/` (the unit's low-stakes graded check — its `starter/` self-check **fails on the untouched starter**), `assignment/` (the larger deliverable, living in the **last** unit it covers), and `.nav.yml` (the unit's on-site title).
+- Labs and checkpoints are numbered by **unit** (Checkpoint 1 = Unit 1's).
+- Solutions, rubrics, hidden tests, and exams live in the **private** `computer-science-1-solutions` repo, mirroring these paths — never here.
+- Course-spanning artifacts (the research paper + oral presentation thread) get a course-level home when built; they belong to no unit.
+
 
 ## What's *not* here
 
@@ -32,7 +39,7 @@ Solution keys, exams, rubrics, and grading scripts live in a **private** sibling
 - **Textbook:** John Zelle, *Python Programming: An Introduction to Computer Science*, 4th ed. (Franklin, Beedle & Associates, 2024)
 - **Focus:** algorithm development, correctness, programming style, intro to software engineering and the development life cycle
 
-See [`syllabus/design_rationale.md`](syllabus/design_rationale.md) for the course-design philosophy (portable, MIT-informed, CS2-ready, no-prerequisite), [`syllabus/syllabus_v1.md`](syllabus/syllabus_v1.md) for the full syllabus, and [`syllabus/outcomes_map_abet_cs2023.md`](syllabus/outcomes_map_abet_cs2023.md) for how the 12 course objectives map to ABET CAC student outcomes and the ACM/IEEE-CS CS2023 knowledge areas.
+See [`syllabus/design_rationale.md`](syllabus/design_rationale.md) for the course-design philosophy (portable, MIT-informed, CS2-ready, no-prerequisite), [`syllabus/index.md`](syllabus/index.md) for the full syllabus, and [`syllabus/outcomes_map_abet_cs2023.md`](syllabus/outcomes_map_abet_cs2023.md) for how the 12 course objectives map to ABET CAC student outcomes and the ACM/IEEE-CS CS2023 knowledge areas.
 
 ## Licensing
 

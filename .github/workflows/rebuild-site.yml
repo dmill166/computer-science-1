@@ -10,9 +10,7 @@ on:
     branches: [main]
     paths:
       - "syllabus/**"
-      - "lectures/**"
-      - "labs/**"
-      - "assignments/**"
+      - "unit*/**"
   workflow_dispatch:
 
 jobs:

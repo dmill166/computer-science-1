@@ -43,7 +43,7 @@
 | 12 | State the steps of the software development life cycle | SO-1, SO-6 | SE | 2 |
 | — | Written report / oral presentation (course-of-record) | SO-3, SO-4 | SEP, SE | labs/assignments writing thread |
 
-> **Reading the last column — and how to tag a lecture.** The **Course-of-record unit(s)** column uses the **9 catalog (course-of-record) units** (the course-of-record coverage table in the lectures README; e.g. CoR unit 4 = *Data Types & Variables*). These are **NOT** the 13-unit teaching-spine numbers used for lecture folders (`lectures/NN_topic/`), where 4 = *Strings*. The two schemes deliberately reuse the same integers, so **never tag a lecture by matching unit numbers.** The stable join key is the **objective # (1–12)**: a lecture declares the objective(s) it covers (see the [crosswalk below](#lecture-to-objective-crosswalk-tagging-key)), then this table maps each objective → ABET SO + CS2023 KA.
+> **Reading the last column — and how to tag a lecture.** The **Course-of-record unit(s)** column uses the **9 catalog (course-of-record) units** (the course-of-record coverage scheme; e.g. CoR unit 4 = *Data Types & Variables*). These are **NOT** the 13-unit teaching-spine numbers used for unit folders (`unitNN_topic/`), where 4 = *Strings*. The two schemes deliberately reuse the same integers, so **never tag a lecture by matching unit numbers.** The stable join key is the **objective # (1–12)**: a lecture declares the objective(s) it covers (see the [crosswalk below](#lecture-to-objective-crosswalk-tagging-key)), then this table maps each objective → ABET SO + CS2023 KA.
 
 ## Coverage summary (ABET SO → where assessed)
 

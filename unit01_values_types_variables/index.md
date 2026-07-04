@@ -283,7 +283,7 @@ Make a new file and create one variable of **each** of the four types, with a de
 
 `print()` each one and run it. Then add `print(type(your_variable))` for one of them and see what Python says.
 
-*(This is the warm-up for [**Checkpoint 1**](../../checkpoints/01_values_types_variables/index.md), your first low-stakes graded check — due this week.)*
+*(This is the warm-up for [**Checkpoint 1**](checkpoint/index.md), your first low-stakes graded check — due this week.)*
 <!-- /author_status -->
 
 ---
@@ -344,7 +344,7 @@ If your friend gets it, you've understood the single most important idea in this
 **Next lesson (Week 2):** we put these building blocks to work — doing math with them (**expressions**) and letting your program **ask the user for input** so it can respond to whatever they type.
 
 !!! info "Coming this week"
-    [**Checkpoint 1**](../../checkpoints/01_values_types_variables/index.md) — your first low-stakes graded check — lands right after this lesson, built straight from today's "Your turn" practice. It's due before the add/drop deadline, so you get an honest, early taste of the course's rhythm.
+    [**Checkpoint 1**](checkpoint/index.md) — your first low-stakes graded check — lands right after this lesson, built straight from today's "Your turn" practice. It's due before the add/drop deadline, so you get an honest, early taste of the course's rhythm.
 <!-- /author_status -->
 
 <!-- author_status: dakota-authored | section: Sign-off (Dakota's standard skeleton — confirm/customize the day) -->

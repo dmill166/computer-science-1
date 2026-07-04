@@ -17,7 +17,7 @@ Grading bucket: TBD pending syllabus finalization (flagged in the private rubric
 <!-- author_status: assistant-shared | section: Checkpoint prompt (Dakota reviews the framing) -->
 This is your first graded check-in — and it's deliberately a small one. A **checkpoint** is a low-stakes exercise that tells *you* (and me) whether the week's core idea stuck, while the stakes are still tiny. It's also an honest preview of what working in this course feels like, **before** the drop deadline — so you can judge the fit with real information. (In Fall 2026, that means it's due **before Monday, Aug 24** — see the [schedule](../../syllabus/schedule.md).)
 
-Everything you need comes straight from [the Unit 1 lesson](../../lectures/01_values_types_variables/index.md). If you did the "Your turn" practice there, this will feel very familiar — that was the warm-up for exactly this.
+Everything you need comes straight from [the Unit 1 lesson](../index.md). If you did the "Your turn" practice there, this will feel very familiar — that was the warm-up for exactly this.
 
 ## The task
 
@@ -57,7 +57,7 @@ It checks each variable exists and holds the right *type* of value, and tells yo
 ## FAQ
 
 ??? faq "What if a check still says FAIL and I can't figure out why?"
-    Read the message under the FAIL line — each one says what it expected in plain language (the classic: `9` is an `int`, but `9.5` is a `float` — the decimal part is the whole point of that variable). Still stuck? In a formal section, bring it to class or office hours *before* the due date — a checkpoint is exactly the right place to get unstuck cheaply. Self-learning? Step away, re-read [the lesson's variables section](../../lectures/01_values_types_variables/index.md), and run the check again — the FAIL messages name exactly what to fix.
+    Read the message under the FAIL line — each one says what it expected in plain language (the classic: `9` is an `int`, but `9.5` is a `float` — the decimal part is the whole point of that variable). Still stuck? In a formal section, bring it to class or office hours *before* the due date — a checkpoint is exactly the right place to get unstuck cheaply. Self-learning? Step away, re-read [the lesson's variables section](../index.md), and run the check again — the FAIL messages name exactly what to fix.
 
 ??? faq "How heavily is this graded?"
     It's a small number of points, and every one of them is earnable before the deadline: the self-check tells you exactly what's wrong, and you can fix and resubmit until everything passes. Full credit comes from *meeting the spec* — not from getting close — but you have every tool to get there. What it's really for: showing you, concretely and early, what this course asks of you each week.
