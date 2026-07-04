@@ -4,6 +4,9 @@
 >
 > **Design date:** 2026-06-14.
 
+??? note "How to read this page"
+    This is the **"why" document** — where the course scope comes from and what every decision protects. **Students:** you never *need* this page, but if you've wondered "why are we learning it in this order?", the answer lives here. **Instructors:** read this before proposing scope changes; every unit traces to a source and a downstream need.
+
 ## Design goals
 
 1. **Portable, not parochial.** Build a CS1 that satisfies MSU Denver's CS 1050 objectives but isn't custom-fit to only their catalog. It should be recognizable as a strong CS1 at any institution.
@@ -33,7 +36,7 @@ CS 2050 assumes students arrive able to do these. CS1 must deliver them, not jus
 
 If a student leaves CS1 shaky on **aliasing**, **classes**, or **recursion**, they will struggle in CS2. These get extra time and dedicated assessment.
 
-## Topic spine (13 units)
+## Topic spine
 
 Ordered for a no-prerequisite learner; each unit lists the MSU Denver objective(s) it satisfies and whether it's a CS2 bridge. Math-light throughout.
 
@@ -77,7 +80,7 @@ A no-prerequisite course cannot assume a working interpreter, so **Module 0 is e
 - Lead with concrete, runnable examples; introduce vocabulary after the experience, not before.
 - Every unit ships a low-stakes **checkpoint** (our name for what MIT calls a "finger exercise"; numbered by unit — Checkpoint 1 covers Unit 1) before the graded assignment, so students self-check before they're evaluated.
 - Starter code runs on a stock Python install; no heavyweight setup gates participation.
-- **Informed-drop front-loading (calendar-aware instances):** when the course is mapped to a real term, Week 1–3 give an honest taste of the workload plus an early low-stakes graded signal *before* the institution's refund/drop deadlines, so students self-select on accurate information rather than after the refund window closes. The portable design stays date-free; a per-term overlay (e.g., [`schedule_fall2026.md`](schedule_fall2026.md)) carries the dates, holidays, and deadlines. Swap that one file to retarget another term or school.
+- **Informed-drop front-loading (calendar-aware instances):** when the course is mapped to a real term, Week 1–3 give an honest taste of the workload plus an early low-stakes graded signal *before* the institution's refund/drop deadlines, so students self-select on accurate information rather than after the refund window closes. The portable design stays date-free; a per-term overlay (e.g., [`schedule.md`](schedule.md)) carries the dates, holidays, and deadlines. Swap that one file to retarget another term or school.
 
 ## How this maps back to MSU Denver
 

@@ -3,7 +3,7 @@
 # the course repo owns its own navigation — order and short titles included.
 title: Syllabus & schedule
 nav:
-  - Syllabus: syllabus_v1.md
-  - Schedule (Fall 2026): schedule_fall2026.md
+  - Syllabus: index.md
+  - Schedule (sample term): schedule.md
   - Design rationale: design_rationale.md
   - Outcomes map (ABET/CS2023): outcomes_map_abet_cs2023.md

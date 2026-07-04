@@ -13,6 +13,8 @@ Objectives → MSU Denver obj 6, 7, 8 → ABET SO-2, SO-6 / CS2023 SDF, FPL.
 
 # Values, Types, and Variables (and Your First Program)
 
+??? note "For instructors — outcome alignment"
+    Aligns with **MSU Denver CS 1050 objectives 6–8** (expressions, core data types, I/O); more broadly, with **ABET** student outcomes **SO-2** and **SO-6**, under the **ACM/IEEE-CS CS2023** *SDF + FPL* knowledge areas. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
 <!-- author_status: dakota-authored | section: Frame -->
 Welcome back! Last time we figured out what computation *is* — inputs, exact in-order steps, a predictable output. Today we meet the building blocks that every program is made of: **values, types, and variables.**
 
@@ -35,8 +37,6 @@ By the end of this lesson, you'll be able to:
 3. **Explain what a variable is** — a name you attach to a value — and write a good, descriptive variable name.
 4. **Write and run your first real Python program**, assigning values to variables and printing them.
 
-??? note "For instructors — outcome alignment"
-    Aligns with **MSU Denver CS 1050 objectives 6–8** (expressions, core data types, I/O); more broadly, with **ABET** student outcomes **SO-2** and **SO-6**, under the **ACM/IEEE-CS CS2023** *SDF + FPL* knowledge areas. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
 
 !!! note "Before you start"
     This lesson assumes you've installed Python and can open **IDLE** — the [install guide](https://dakotalearns.com/guides/install-python/) walks you through it. If not, do that first — it's the one gate everything else depends on.

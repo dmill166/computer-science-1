@@ -12,6 +12,8 @@ Spine: Unit 0 · Objectives → MSU Denver obj 12 → ABET SO-1, SO-6 / CS2023 S
 
 # What Is Computation (and How Do Programs Actually Run)?
 
+??? note "For instructors — outcome alignment"
+    This lesson aligns with **MSU Denver CS 1050 objective 12** (state the steps of the software development process); more broadly, with **ABET** student outcomes **SO-1** (analyze a computing problem) and **SO-6** (apply CS fundamentals), under the **ACM/IEEE-CS CS2023** *Software Engineering* knowledge area. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
 <!-- author_status: dakota-authored | section: Frame -->
 Oh, hello there 👋 and welcome to the very first real lesson. Before we touch a single line of Python, let's answer the question hiding under this whole course: **what *is* computation, anyway?**
 
@@ -67,8 +69,6 @@ By the end of this lesson, you'll be able to:
 3. **Explain why "exact" and "in order" matter** to how a machine runs your instructions.
 4. **Recognize that programming is a language** with its own rules — and that you already learn rules like this all the time.
 
-??? note "For instructors — outcome alignment"
-    This lesson aligns with **MSU Denver CS 1050 objective 12** (state the steps of the software development process); more broadly, with **ABET** student outcomes **SO-1** (analyze a computing problem) and **SO-6** (apply CS fundamentals), under the **ACM/IEEE-CS CS2023** *Software Engineering* knowledge area. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
 <!-- /author_status -->
 
 ---

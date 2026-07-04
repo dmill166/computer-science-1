@@ -5,6 +5,9 @@
 >
 > **Draft status (2026-06-14):** mappings are the author's reasoned alignment, not an official department or ABET determination.
 
+??? note "How to read this page"
+    This page is **instructor- and accreditation-facing** — the formal crosswalk from course objectives to ABET student outcomes and CS2023 knowledge areas. **Students:** nothing here is required reading; it exists so every lecture's "For instructors" note can trace its alignment claim to a source. **Instructors:** tag content by joining on the **objective number**, never on a unit integer (the spine and catalog use different unit schemes).
+
 ## Reference: ABET CAC student outcomes (computing programs)
 
 1. **(SO-1)** Analyze a complex computing problem and apply principles of computing and other relevant disciplines to identify solutions.
@@ -57,7 +60,7 @@
 
 ## Lecture-to-objective crosswalk (tagging key)
 
-> Added 2026-06-20. **The authoritative source for tagging a lecture's outcomes — join on the `objective #`, never on a unit integer.** Spine unit + week are exact (spine→obj mirrors [`design_rationale`](design_rationale.md); weeks from [`schedule_fall2026`](schedule_fall2026.md)). The **CoR unit** column is a best-effort accreditation cross-reference only — the 9-unit catalog scheme doesn't map 1:1 to the spine.
+> Added 2026-06-20. **The authoritative source for tagging a lecture's outcomes — join on the `objective #`, never on a unit integer.** Spine unit + week are exact (spine→obj mirrors [`design_rationale`](design_rationale.md); weeks from [`schedule_fall2026`](schedule.md)). The **CoR unit** column is a best-effort accreditation cross-reference only — the 9-unit catalog scheme doesn't map 1:1 to the spine.
 
 | Spine unit (folder `NN_`) | Topic | Week(s) | Objective(s) | CoR unit(s) |
 |---|---|---|---|---|

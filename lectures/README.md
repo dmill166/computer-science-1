@@ -1,6 +1,6 @@
 # Lectures
 
-Lecture content for **Computer Science 1**, written by Dakota Hollmann. Each topic is a folder (`NN_topic_name/`) ordered by the **13-unit teaching spine** — see the [design rationale](../syllabus/design_rationale.md) for the *why* and the [schedule](../syllabus/schedule_fall2026.md) for the *when*.
+Lecture content for **Computer Science 1**, written by Dakota Hollmann. Each topic is a folder (`NN_topic_name/`) ordered by the **13-unit teaching spine** — see the [design rationale](../syllabus/design_rationale.md) for the *why* and the [schedule](../syllabus/schedule.md) for the *when*.
 
 > **Reading the lessons:** these notes are the source that renders on **[dakotalearns.com](https://dakotalearns.com/courses/computer-science-1/)** — that's the best place to read them. This repo is where the materials live and where you can grab the runnable code.
 

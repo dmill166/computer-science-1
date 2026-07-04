@@ -1,10 +1,14 @@
-# Computer Science 1 — Fall 2026 Schedule (MSU Denver instance)
+# Computer Science 1 — Sample Term Schedule
 
-> **What this is:** a *dated instance* of the portable course design ([`design_rationale.md`](design_rationale.md)) mapped onto MSU Denver's **Fall 2026** academic calendar. The portable design stays general; this file is the term-specific overlay — schedule, deadlines, and how assessment is timed around the institution's drop/withdraw dates.
+> **What this is:** a *sample* dated instance of the portable course design ([`design_rationale.md`](design_rationale.md)), showing how the course maps onto a real semester. **This example uses MSU Denver's Fall 2026 academic calendar** — it is an illustration of the method (schedule, deadlines, and how assessment is timed around an institution's drop/withdraw dates), not a commitment to a specific offering. Retargeting another term or school means swapping this one overlay; the course design itself is date-free.
+
+??? note "How to read this page"
+    **Students / self-learners:** follow the week-by-week table as your pacing guide — each row is one week's material, and links appear as content is published. Ignore the institutional dates if you're self-paced; the *order* is what matters.
+    **Instructors:** this file is the swappable per-term overlay. To retarget a different semester or school, copy it, replace the calendar constraints, and re-map the weeks — the course design itself never changes.
 >
 > **Term:** classes Mon **Aug 17** → Sun **Dec 6, 2026**; finals **Dec 7–13**; grades posted **Dec 18**.
 
-## Key calendar constraints (Fall 2026)
+## Key calendar constraints (the sample term)
 
 | Date | Event | Why it matters for course design |
 |---|---|---|
@@ -27,13 +31,13 @@ Because the **100% drop deadline is the end of Week 1** and the **50% deadline i
 - **By Sep 2 (50% deadline)** students have completed assignment **a01** and an early quiz — enough signal to judge fit.
 - By the drop deadlines you'll have completed the setup exercise, your first assignment (a01), and Quiz 1 — enough to gauge whether the course fits your time and goals. Honesty over enrollment-protection.
 
-## Week-by-week (15 instructional weeks)
+## Week-by-week schedule
 
 > Unit numbers reference the design-rationale topic spine. Front-loaded so Weeks 1–5 form the complete "teachable spine" that gets built first. Zelle chapter↔unit mapping (**4e** primary, **3e** budget) lives in the [design rationale](design_rationale.md) and the syllabus schedule table.
 
 | Wk | Week of | Units / focus | Calendar notes | Assessment milestones |
 |---|---|---|---|---|
-| 1 | Aug 17 | **Module 0** setup · **Unit 0** what is computation · **Unit 1** values, types, variables, first program | Classes begin Aug 17 | **Checkpoint 1 due before Aug 24** (pre-100%-drop taste) |
+| 1 | Aug 17 | **Module 0** [setup](https://dakotalearns.com/guides/install-python/) · **Unit 0** [what is computation](../lectures/00_what_is_computation/index.md) · **Unit 1** [values, types, variables, first program](../lectures/01_values_types_variables/index.md) · [Lab 1](../labs/lab01_setup_and_first_program/index.md) | Classes begin Aug 17 | **[Checkpoint 1](../checkpoints/01_values_types_variables/index.md) due before Aug 24** (pre-100%-drop taste) |
 | 2 | Aug 24 | **Unit 1** expressions, I/O · **Unit 2** decisions | **Aug 24: 100% drop deadline** | **a01** assigned |
 | 3 | Aug 31 | **Unit 3** iteration / loops | **Sep 2: 50% drop deadline** | **a01 due**; Quiz 1 |
 | 4 | Sep 7 | **Unit 4** strings & sequences | **Mon Sep 7 Labor Day — no class** | a02 assigned |

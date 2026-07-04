@@ -12,8 +12,10 @@ Grading bucket: TBD pending syllabus finalization (flagged in the private rubric
 
 # Checkpoint 1 — Values, Types, and Variables
 
+??? note "For instructors — outcome alignment"
+    Assesses **MSU Denver CS 1050 objectives 6–8** (core data types, variables, output) at a formative level; aligns with **ABET** student outcomes **SO-2** and **SO-6**, under the **ACM/IEEE-CS CS2023** *SDF + FPL* knowledge areas. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](../../syllabus/outcomes_map_abet_cs2023.md).)*
 <!-- author_status: assistant-shared | section: Checkpoint prompt (Dakota reviews the framing) -->
-This is your first graded check-in — and it's deliberately a small one. A **checkpoint** is a low-stakes exercise that tells *you* (and me) whether the week's core idea stuck, while the stakes are still tiny. It's also an honest preview of what working in this course feels like, **before** the drop deadline — so you can judge the fit with real information. (In Fall 2026, that means it's due **before Monday, Aug 24** — see the [schedule](../../syllabus/schedule_fall2026.md).)
+This is your first graded check-in — and it's deliberately a small one. A **checkpoint** is a low-stakes exercise that tells *you* (and me) whether the week's core idea stuck, while the stakes are still tiny. It's also an honest preview of what working in this course feels like, **before** the drop deadline — so you can judge the fit with real information. (In Fall 2026, that means it's due **before Monday, Aug 24** — see the [schedule](../../syllabus/schedule.md).)
 
 Everything you need comes straight from [the Unit 1 lesson](../../lectures/01_values_types_variables/index.md). If you did the "Your turn" practice there, this will feel very familiar — that was the warm-up for exactly this.
 
@@ -60,6 +62,4 @@ It checks each variable exists and holds the right *type* of value, and tells yo
 ??? faq "How heavily is this graded?"
     It's a small number of points, and every one of them is earnable before the deadline: the self-check tells you exactly what's wrong, and you can fix and resubmit until everything passes. Full credit comes from *meeting the spec* — not from getting close — but you have every tool to get there. What it's really for: showing you, concretely and early, what this course asks of you each week.
 
-??? note "For instructors — outcome alignment"
-    Assesses **MSU Denver CS 1050 objectives 6–8** (core data types, variables, output) at a formative level; aligns with **ABET** student outcomes **SO-2** and **SO-6**, under the **ACM/IEEE-CS CS2023** *SDF + FPL* knowledge areas. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](../../syllabus/outcomes_map_abet_cs2023.md).)*
 <!-- /author_status -->

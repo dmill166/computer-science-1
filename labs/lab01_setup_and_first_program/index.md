@@ -11,6 +11,8 @@ PRIMM: Part C is an explicit predict→run→investigate sequence.
 
 # Lab 1 — Set Up, Meet the Shell, and Run Your First Program
 
+??? note "For instructors — outcome alignment"
+    Covers **Module 0** (environment) plus **MSU Denver CS 1050 objectives 6–8 and 12** at a formative level; aligns with **ABET** student outcomes **SO-1, SO-2, SO-6**, under the **ACM/IEEE-CS CS2023** *SDF, FPL, SE* knowledge areas. Part C is a deliberate PRIMM sequence (Predict–Run–Investigate–Modify; the final M, **Make**, is Checkpoint 1 — students build their own from scratch there); Part D carries the course-of-record written-communication thread. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](../../syllabus/outcomes_map_abet_cs2023.md).)*
 <!-- author_status: assistant-shared | section: Lab prompt (Dakota reviews the framing) -->
 Labs are where the week's ideas get into your fingers. This first one has exactly one goal: **by the end, your machine runs Python, and you've written and run a real program on it.** Work through the parts in order — each one leans on the last (steps, followed exactly and in order… sound familiar?).
 
@@ -57,6 +59,4 @@ At the bottom of `my_lab1.py`, in a comment (start the line with `#`), write **2
 - [ ] Your variable-vs-value explanation is in a comment at the bottom
 - [ ] Turned in per your section's instructions *(section-specific details are provided in class)*
 
-??? note "For instructors — outcome alignment"
-    Covers **Module 0** (environment) plus **MSU Denver CS 1050 objectives 6–8 and 12** at a formative level; aligns with **ABET** student outcomes **SO-1, SO-2, SO-6**, under the **ACM/IEEE-CS CS2023** *SDF, FPL, SE* knowledge areas. Part C is a deliberate PRIMM sequence (Predict–Run–Investigate–Modify; the final M, **Make**, is Checkpoint 1 — students build their own from scratch there); Part D carries the course-of-record written-communication thread. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](../../syllabus/outcomes_map_abet_cs2023.md).)*
 <!-- /author_status -->

@@ -3,6 +3,10 @@
 
 > **Draft (v1).** A portable Computer Science 1 syllabus — its content scope is governed by the [design rationale](design_rationale.md) (MIT-informed, CS2-ready, no-prerequisite). The units map to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and to MSU Denver's CS 1050 objectives, for alignment. Schedule and grading weights are *proposed*; this isn't yet an official section syllabus for any institution.
 
+??? note "How to read this page"
+    **Students / self-learners:** this is the course contract — what you'll learn, what you'll build, and how work is weighted. Skim the objectives and assessment mix; the [schedule](schedule.md) shows the rhythm week by week.
+    **Instructors:** this syllabus is portable by design — the [design rationale](design_rationale.md) carries the "why" behind every scope decision, and the [outcomes map](outcomes_map_abet_cs2023.md) carries the formal alignment.
+
 ---
 
 ## Course information
@@ -38,7 +42,7 @@ By the end of CS 1050, a student can:
 
 > These 12 objectives map to ABET CAC student outcomes and ACM/IEEE-CS CS2023 knowledge areas — see [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md).
 
-## Content units (9)
+## Content units
 
 1. **Computers & Programs** — what computer science is; hardware basics; languages; running Python.
 2. **Software Engineering & the Development Life Cycle** — the development process; analysis → design → implementation → testing → maintenance.
@@ -50,9 +54,9 @@ By the end of CS 1050, a student can:
 8. **Looping** — definite and indefinite loops; common loop patterns; booleans.
 9. **Arrays / Lists** — lists and arrays; list operations; **linear search** and **selection sort**.
 
-## Proposed schedule (15 weeks)
+## Proposed schedule
 
-> **For a real term, use the dated schedule:** [`schedule_fall2026.md`](schedule_fall2026.md) maps the units onto MSU Denver's Fall 2026 calendar with actual dates, holidays, drop/withdraw deadlines, and finals. The table below is the generic, date-free version.
+> **For a real term, use the dated schedule:** [`schedule.md`](schedule.md) maps the units onto MSU Denver's Fall 2026 calendar with actual dates, holidays, drop/withdraw deadlines, and finals. The table below is the generic, date-free version.
 > Ordered by the **[design-rationale topic spine](design_rationale.md)** (control-structures-first, MIT-aligned) — *not* the textbook's chapter order. "Unit" = spine unit; chapter columns give **Zelle 4e (primary)** and **3e (budget)**. Front-loaded so weeks 1–5 form a complete "teachable spine."
 
 | Wk | Focus | Unit | Zelle 4e | Zelle 3e |
