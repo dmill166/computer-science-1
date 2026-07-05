@@ -1,0 +1,35 @@
+name: Integrity & code quality
+
+# Academic-integrity firewall + published-code lint for the PUBLIC course
+# repo. Runs with no secrets and no access to the private solutions repo, so
+# it covers only the public-only checks:
+#   * tools/integrity_scan.py — public self-checks must FAIL on the shipped
+#     starter (a passing empty starter leaks the answer), and starter code
+#     carries no solution markers (B1 i + iii).
+#   * flake8 — every published .py is a style exemplar (STYLE.md: PEP 8/257).
+# The cross-repo "no private solution code in public files" check (B1 ii) and
+# the green-on-correct autograder proof run PRIVATE-side, in
+# computer-science-1-solutions/grading/ — private reaches across to public,
+# never the reverse.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install linters
+        run: pip install flake8
+      - name: Integrity scan (fail-on-empty-starter + no solution markers)
+        run: python tools/integrity_scan.py
+      - name: Lint published Python (PEP 8 / PEP 257)
+        # Every file a student opens is a style exemplar. 79-char lines.
+        run: flake8 --max-line-length=79 .
