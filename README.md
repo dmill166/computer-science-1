@@ -1,12 +1,14 @@
 # Computer Science 1 (Python)
 
+<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored) -->
+
 Open, beginner-first course materials for **Computer Science 1**, taught in **Python 3** using Zelle's *Python Programming: An Introduction to Computer Science* (4th ed, 2024). Designed to be portable — a strong CS1 you'd recognize anywhere — and aligned to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and, for alignment only, MSU Denver's CS 1050 objectives.
 
-Part of the [`cs-teaching`](https://github.com/dmill166/cs-teaching) initiative — building CS course materials in public.
+I'm building this in the open, one unit at a time — on top of a full-time job, with nothing fancier than a laptop and an internet connection — and if you've never written a line of code before, you're exactly who it's for. (Already in a CS program and the material just isn't clicking the way it's presented? You're welcome here too — sometimes a different phrasing is all it takes.) Part of the [`cs-teaching`](https://github.com/dmill166/cs-teaching) initiative.
 
 > **Affiliation:** Independent materials by Dakota Hollmann. **Not affiliated with, endorsed by, or sponsored by Metropolitan State University of Denver.** MSU Denver course codes and objectives are referenced for curriculum alignment only.
 
-> **Status:** scaffold (2026-06-14). Syllabus v1 and the ABET/CS2023 outcomes map are drafted; lecture/lab/assignment content is in progress.
+> **Status:** building in public. Unit 0 and Unit 1 are live (lectures, Lab 1, Checkpoint 1, interactive self-checks), along with the syllabus, outcomes map, and setup guide. The remaining units land as they're built — watch the [blog](https://dakotalearns.com/blog/) for each release.
 
 > **Where to read this:** This public repo is the **single source of truth** for the course — prose *and* code, authored once here. The readable lessons render on **[dakotalearns.com](https://dakotalearns.com)**, pulled from this repo at build time; the **runnable code** is grabbed here as a ZIP. The site is a read surface, never a second copy.
 

@@ -1,9 +1,9 @@
 # Computer Science 1
-## Syllabus (v1 draft)
+## Syllabus
 
 <!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored; Accessibility & use section separately marked below) -->
 
-> **Draft (v1).** A portable Computer Science 1 syllabus — its content scope is governed by the [design rationale](design_rationale.md) (MIT-informed, CS2-ready, no-prerequisite). The units map to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and to MSU Denver's CS 1050 objectives, for alignment. Schedule and grading weights are *proposed*; this isn't yet an official section syllabus for any institution.
+> A portable Computer Science 1 syllabus — its content scope is governed by the [design rationale](design_rationale.md) (MIT-informed, CS2-ready, no-prerequisite). The units map to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and, for alignment, to MSU Denver's CS 1050 objectives. **Where this stands:** the grading weights and exam structure below are proposed — they lock before any for-credit section runs — and this is not an official section syllabus for any institution.
 
 ??? note "How to read this page"
     **Students / self-learners:** this is the course contract — what you'll learn, what you'll build, and how work is weighted. Skim the objectives and assessment mix; the [schedule](schedule.md) shows the rhythm week by week.
@@ -21,28 +21,28 @@
 | **Language** | Python 3 |
 | **Textbook** | John Zelle, *Python Programming: An Introduction to Computer Science*, 4th ed. (Franklin, Beedle & Associates, 2024) |
 
-## Catalog description
+## Course description
 
-First course in the computer science core sequence. Emphasis on algorithm development, correctness, and programming style; an introduction to software engineering and the software development life cycle. Students learn to design, implement, document, test, and debug programs that solve simple-to-medium problems.
+Your first course in computer science. You'll learn to take a problem apart, design a step-by-step solution, and turn that design into a correct, readable Python program — then test it, debug it, and document it so someone else can follow your thinking. Along the way you'll meet how real software actually gets made: the full life cycle from idea through analysis, design, implementation, testing, and maintenance. By the end, simple-to-medium problems are yours to solve end to end.
 
 ## Learning objectives
 
 By the end of Computer Science 1, you'll be able to:
 
-1. Solve simple-to-medium problems by writing correct programs.
-2. Document code clearly and appropriately.
-3. Decompose a problem into modular components.
-4. Declare and use classes, methods, and variables.
-5. Use parameters and return values correctly.
-6. Write expressions and use decision and loop control structures.
-7. Use the core data types: integer, real, character, boolean, array/list, and string.
-8. Perform interactive (keyboard/screen) and file input/output.
-9. Apply top-down design and stepwise refinement.
-10. Reason about the scope and visibility of identifiers.
-11. Test and debug programs systematically.
-12. State the steps of the software development life cycle.
+1. Take a problem you haven't seen before and write a correct, working program that solves it.
+2. Write comments and documentation that make your code understandable to another human — including future you.
+3. Break a big problem into small, manageable pieces that each do one job.
+4. Create and use classes, methods, and variables — the building blocks your programs are and will be made of.
+5. Pass data into functions (parameters) and get results back (return values) without surprises.
+6. Build expressions and steer a program's flow with decisions and loops.
+7. Work confidently with the core data types: integers, floats, booleans, strings (and their characters), and lists.
+8. Move data in and out of a program — from the keyboard and screen, and from files.
+9. Design top-down: sketch the big steps first, then refine each one until it's runnable code.
+10. Reason about scope — which parts of a program can see which names, and why that matters.
+11. Test and debug systematically, so "it works" is something you've verified, not something you hope.
+12. Describe how real software gets made: the development life cycle from idea through maintenance.
 
-> These 12 objectives map to ABET CAC student outcomes and ACM/IEEE-CS CS2023 knowledge areas — see [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md).
+> These 12 objectives are written in my own words and numbered 1:1 against recognized CS1 outcomes — ABET CAC student outcomes, ACM/IEEE-CS CS2023 knowledge areas, and (for alignment) MSU Denver's course-of-record objectives. The full crosswalk: [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md).
 
 ## Content units
 
@@ -96,7 +96,7 @@ The course-of-record assesses across code **and** communication:
 | Midterm exam | 15% |
 | Final exam | 20% |
 
-> The writing + presentation components are part of the course-of-record and are intentionally preserved — CS 1050 builds written and oral communication alongside programming, not as an afterthought.
+> The writing + presentation components are here on purpose — this course builds written and oral communication alongside programming (it's an accreditation-recognized outcome, ABET SO-3), not as an afterthought.
 
 ## Academic integrity
 

@@ -1,9 +1,11 @@
 # Computer Science 1 — Outcomes Mapping
 ## Course objectives → ABET CAC student outcomes → ACM/IEEE-CS CS2023 knowledge areas
 
-> **Purpose:** demonstrate that CS 1050 materials are deliberately aligned to (1) the **ABET Computing Accreditation Commission** student outcomes under which MSU Denver's CS B.S. is accredited, and (2) the **ACM/IEEE-CS CS2023** curricular knowledge areas. Doubles as a build-in-public content asset and a tested-experience artifact.
+<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored) -->
+
+> **Purpose:** demonstrate that CS 1050 materials are deliberately aligned to (1) the **ABET Computing Accreditation Commission** student outcomes under which MSU Denver's CS B.S. is accredited, and (2) the **ACM/IEEE-CS CS2023** curricular knowledge areas. Doubles as a build-in-public content asset and a tested-experience artifact. Why an independent course bothers with this at all: I seek out the public course objectives and accreditation standards precisely so learners here get genuine preparation — whether they ever enroll in a formal program or are consuming this entirely on their own time.
 >
-> **Draft status (2026-06-14):** mappings are the author's reasoned alignment, not an official department or ABET determination.
+> **Independent alignment:** these mappings are my reasoned alignment, not an official department or ABET determination.
 
 ??? note "How to read this page"
     This page is **instructor- and accreditation-facing** — the formal crosswalk from course objectives to ABET student outcomes and CS2023 knowledge areas. **Students:** nothing here is required reading; it exists so every lecture's "For instructors" note can trace its alignment claim to a source. **Instructors:** tag content by joining on the **objective number**, never on a unit integer (the spine and catalog use different unit schemes).
@@ -27,20 +29,22 @@
 
 ## Mapping table
 
-| # | CS 1050 objective | ABET SO | CS2023 KA | Course-of-record unit(s) |
+| # | Course objective (own wording; see the [syllabus](index.md#learning-objectives)) | ABET SO | CS2023 KA | Course-of-record unit(s) |
 |---|---|---|---|---|
-| 1 | Solve simple-to-medium problems by writing correct programs | SO-1, SO-2, SO-6 | SDF, AL | 1, 2, all |
-| 2 | Document code clearly and appropriately | SO-3, SO-6 | SE, SDF | 2, 6 |
-| 3 | Decompose a problem into modular components | SO-2, SO-6 | SDF, SE | 2, 3 (functions), 9-design |
-| 4 | Declare and use classes, methods, and variables | SO-2, SO-6 | FPL, SDF | 4, 6 |
-| 5 | Use parameters and return values correctly | SO-2, SO-6 | FPL, SDF | 6 (functions) |
-| 6 | Write expressions; use decision and loop control structures | SO-2, SO-6 | SDF, FPL | 4, 7, 8 |
-| 7 | Use core data types (int, real, char, bool, array/list, string) | SO-6 | FPL, SDF | 4, 9 |
-| 8 | Perform interactive and file I/O | SO-2, SO-6 | SDF | 5 |
-| 9 | Apply top-down design and stepwise refinement | SO-1, SO-2 | SE, SDF | 2, 9-design |
-| 10 | Reason about scope and visibility of identifiers | SO-6 | FPL | 6 |
-| 11 | Test and debug programs systematically | SO-2, SO-6 | SE, SDF | 3 |
-| 12 | State the steps of the software development life cycle | SO-1, SO-6 | SE | 2 |
+| 1 | Solve unseen problems with correct, working programs | SO-1, SO-2, SO-6 | SDF, AL | 1, 2, all |
+| 2 | Write documentation another human can follow | SO-3, SO-6 | SE, SDF | 2, 6 |
+| 3 | Break big problems into single-job pieces | SO-2, SO-6 | SDF, SE | 2, 3 (functions), 9-design |
+| 4 | Create and use classes, methods, and variables | SO-2, SO-6 | FPL, SDF | 4, 6 |
+| 5 | Use parameters and return values without surprises | SO-2, SO-6 | FPL, SDF | 6 (functions) |
+| 6 | Build expressions; steer flow with decisions and loops | SO-2, SO-6 | SDF, FPL | 4, 7, 8 |
+| 7 | Work with the core data types (int, float, bool, string, list) | SO-6 | FPL, SDF | 4, 9 |
+| 8 | Move data via keyboard/screen and files | SO-2, SO-6 | SDF | 5 |
+| 9 | Design top-down; refine steps into runnable code | SO-1, SO-2 | SE, SDF | 2, 9-design |
+| 10 | Reason about scope and name visibility | SO-6 | FPL | 6 |
+| 11 | Test and debug systematically | SO-2, SO-6 | SE, SDF | 3 |
+| 12 | Describe the software development life cycle | SO-1, SO-6 | SE | 2 |
+
+> **Wording note:** objective texts here and in the syllabus are this course's own phrasing; the **numbering** is aligned 1:1 with MSU Denver's course-of-record objectives so the crosswalk below joins cleanly on objective #.
 | — | Written report / oral presentation (course-of-record) | SO-3, SO-4 | SEP, SE | labs/assignments writing thread |
 
 > **Reading the last column — and how to tag a lecture.** The **Course-of-record unit(s)** column uses the **9 catalog (course-of-record) units** (the course-of-record coverage scheme; e.g. CoR unit 4 = *Data Types & Variables*). These are **NOT** the 13-unit teaching-spine numbers used for unit folders (`unitNN_topic/`), where 4 = *Strings*. The two schemes deliberately reuse the same integers, so **never tag a lecture by matching unit numbers.** The stable join key is the **objective # (1–12)**: a lecture declares the objective(s) it covers (see the [crosswalk below](#lecture-to-objective-crosswalk-tagging-key)), then this table maps each objective → ABET SO + CS2023 KA.

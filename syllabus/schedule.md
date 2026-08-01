@@ -1,5 +1,7 @@
 # Computer Science 1 — Sample Term Schedule
 
+<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant reviewed 2026-07-09 per Dakota's no-exempt call — framing prose read as already in-voice, near-zero edits; review + promote to dakota-authored) -->
+
 > **What this is:** a *sample* dated instance of the portable course design ([`design_rationale.md`](design_rationale.md)), showing how the course maps onto a real semester. **This example uses MSU Denver's Fall 2026 academic calendar** — it is an illustration of the method (schedule, deadlines, and how assessment is timed around an institution's drop/withdraw dates), not a commitment to a specific offering. Retargeting another term or school means swapping this one overlay; the course design itself is date-free.
 
 ??? note "How to read this page"
