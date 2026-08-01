@@ -24,6 +24,17 @@ file" — needs both repos and therefore lives on the private side
 (``computer-science-1-solutions/grading/scan_public_leak.py``): the private
 repo reaches across to read the public one, never the reverse.
 
+(iv)  Every public markdown page carries an ``author_status`` marker.
+      Voice-provenance convention (locked 2026-07-09; no exempt class —
+      every page is Dakota's public work and gets his hand): pages that
+      sync to the site are re-checked there by ``dakotalearns/tools/
+      check_content.py``, but GitHub-only pages (``resources/``, the repo
+      README) would otherwise be invisible to any gate — so the coverage
+      check rides here too. Only ``LICENSE*`` files are skipped (third-
+      party legal text, not authored prose). Canonical convention doc:
+      ``cs-teaching/voice_provenance.md`` (implementation deliberately
+      vendored per repo — zero cross-repo CI dependency).
+
 Usage (from the repo root):
 
     python tools/integrity_scan.py
@@ -46,6 +57,16 @@ LEAK_MARKERS = re.compile(
     r"do\s*not\s*distribute|rubric)",
     re.IGNORECASE,
 )
+
+# Voice-provenance marker values a published page may carry (must match
+# dakotalearns/tools/check_content.py — the site-side half of this gate).
+VALID_STATUSES = (
+    "dakota-authored",
+    "dakota-voice-draft",
+    "assistant-mechanical",
+    "assistant-shared",
+)
+STATUS_MARKER = re.compile(r"author_status:\s*([A-Za-z-]+)")
 
 
 def _fail(msg: str) -> str:
@@ -107,6 +128,42 @@ def check_no_solution_markers(root: Path) -> list[str]:
     return failures
 
 
+def check_marker_coverage(root: Path) -> list[str]:
+    """Require an author_status marker on every public markdown page.
+
+    An unmarked page is invisible to the site-side publish-lock gate, so
+    "unmarked" must be impossible rather than silently passing. Markers
+    with values outside ``VALID_STATUSES`` fail too (typo protection).
+    """
+    failures: list[str] = []
+    scanned = 0
+    for md in sorted(root.rglob("*.md")):
+        if ".git" in md.parts or md.name.upper().startswith("LICENSE"):
+            continue
+        scanned += 1
+        rel = md.relative_to(root)
+        values = STATUS_MARKER.findall(md.read_text(encoding="utf-8"))
+        if not values:
+            failures.append(
+                _fail(
+                    f"{rel} carries no author_status marker — add "
+                    "dakota-authored / dakota-voice-draft / "
+                    "assistant-*, per cs-teaching/voice_provenance.md"
+                )
+            )
+        for value in values:
+            if value not in VALID_STATUSES:
+                failures.append(
+                    _fail(
+                        f"{rel} has unrecognized author_status value "
+                        f"{value!r} — expected one of "
+                        f"{', '.join(VALID_STATUSES)}"
+                    )
+                )
+    print(f"  scanned {scanned} markdown page(s) for provenance markers")
+    return failures
+
+
 def main() -> int:
     """Run the public integrity checks; report and return an exit code."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -123,6 +180,8 @@ def main() -> int:
     failures = check_starters_fail_empty(args.root)
     print("[iii] starter code must carry no solution markers:")
     failures += check_no_solution_markers(args.root)
+    print("[iv] markdown pages must carry author_status markers:")
+    failures += check_marker_coverage(args.root)
 
     print()
     if failures:

@@ -1,6 +1,8 @@
 # Computer Science 1
 ## Syllabus (v1 draft)
 
+<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored; Accessibility & use section separately marked below) -->
+
 > **Draft (v1).** A portable Computer Science 1 syllabus — its content scope is governed by the [design rationale](design_rationale.md) (MIT-informed, CS2-ready, no-prerequisite). The units map to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and to MSU Denver's CS 1050 objectives, for alignment. Schedule and grading weights are *proposed*; this isn't yet an official section syllabus for any institution.
 
 ??? note "How to read this page"
@@ -25,7 +27,7 @@ First course in the computer science core sequence. Emphasis on algorithm develo
 
 ## Learning objectives
 
-By the end of CS 1050, a student can:
+By the end of Computer Science 1, you'll be able to:
 
 1. Solve simple-to-medium problems by writing correct programs.
 2. Document code clearly and appropriately.
@@ -102,4 +104,7 @@ Solution keys, exams, and rubrics are maintained privately and are not published
 
 ## Accessibility & use
 
-I want these materials usable by as many people as possible — that's the whole point of making them free and open. They're built for self-paced learners and for instructors who teach from them. When a course is taught for credit, the formal accessibility and disability accommodations, the academic-integrity rules, and the other institutional policies come from that institution's official section syllabus — those are theirs to set. But the materials themselves should never be the thing standing in your way. If you hit an access barrier here — something hard to read, hard to navigate, or hard to use with assistive tech — please [open an issue and tell me](https://github.com/dmill166/computer-science-1/issues). I'd much rather know.
+<!-- author_status: dakota-voice-draft | section: Accessibility & use (shaped from Dakota's Sheet B voice-core dumps 2026-07-11 — review, edit, promote; closes syllabus finalization item b) -->
+I'll be honest: accessibility hasn't always been front-of-mind for me — not from ill will, just the good fortune of rarely needing it myself. What changed that was someone close to me, who is colorblind. Ever since we confirmed it, I've been noticing how games, websites, and applications handle (or fumble) accessibility — and it became something I want built in from the start, an automatic part of my work rather than an afterthought.
+
+So: I want these materials usable by as many people as possible — that's the whole point of making them free and open. They're built for self-paced learners and for instructors who teach from them, and held to the standards in the initiative's [accessibility guide](https://github.com/dmill166/cs-teaching/blob/main/a11y.md). When a course is taught for credit, the formal accessibility and disability accommodations, the academic-integrity rules, and the other institutional policies come from that institution's official section syllabus — those are theirs to set, and where my guidance differs from your institution's policy, their policy governs your formal coursework. But these materials themselves should never be the thing standing in your way. If you hit an access barrier here — something hard to read, hard to navigate, or hard to use with assistive tech — please [open an issue and tell me](https://github.com/dmill166/computer-science-1/issues). I absolutely want these reports; they're how this gets better. I'd much rather know.

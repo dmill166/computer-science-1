@@ -1,23 +1,27 @@
 # Resources
 
-Textbook reference, toolchain setup, and supplementary material for CS 1050.
+<!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota reviewed 2026-07-21 — CS 2 recommendation pulled, affiliate link + disclosure added; promoted 2026-07-21) -->
+
+Everything course-adjacent lives here — the textbook reference, toolchain setup, and supplementary material for Computer Science 1.
 
 ## Textbook
 
-**John Zelle, *Python Programming: An Introduction to Computer Science*, 4th edition** (Franklin, Beedle & Associates, 2024). ISBN-13: 978-1590282977 (print); eText 978-1590282984.
+**John Zelle, [*Python Programming: An Introduction to Computer Science*, 4th edition](https://amzn.to/3Qpgrt1)[^aff]** (Franklin, Beedle & Associates, 2024). ISBN-13: 978-1590282977 (print); eText 978-1590282984.
 
-Zelle covers all 12 CS 1050 learning objectives. Note: this book is intentionally scoped to *introductory* CS — it ends at recursion and basic searching/sorting and does **not** cover abstract data types, linked lists, stacks, queues, or trees. Those belong to CS 2050 (Computer Science 2), which uses a dedicated data-structures text.
+I've recommended this book since my own first Python coursework back in 2012 — Zelle's writing style and teaching approach earn it. It covers all 12 of the course's learning objectives. Note: this book is intentionally scoped to *introductory* CS — it ends at recursion and basic searching/sorting and does **not** cover abstract data types, linked lists, stacks, queues, or trees. Those belong to Computer Science 2, which will use a dedicated data-structures text.
 
 ## Toolchain
 
-- **Python 3** (3.11 or newer; any current Python 3 works).
-- A code editor (VS Code, Thonny for beginners, or IDLE which ships with Python).
+- **Python 3** — the current stable release (3.13 or newer) from python.org; 3.11/3.12 also run everything in this course.
+- A code editor — **IDLE first** (ships with Python; the course default), Thonny for an all-in-one beginner option, or VS Code once the fundamentals are yours.
 - Zelle's `graphics.py` module for the graphics-based examples (4e Ch 4 & 12) — bundled with the textbook materials.
 
 ## Setup — Module 0
 
 Step-by-step environment setup (install current Python on macOS/Windows/Linux, choose an editor, verify it works, troubleshoot the common failures) lives in **[`setup/`](setup/)**. This is the course's day-one gate — no prior experience assumed.
 
+[^aff]: Affiliate link — if you buy through it, Dakota Learns may earn a small commission at no extra cost to you, which helps keep this work free. [Here's why](https://dakotalearns.com/disclaimers/#affiliate-links); you're always welcome to find the book elsewhere — same book, your choice.
+
 ## Accessibility note
 
-This course is built in public partly to make CS more accessible. Where a free, high-quality resource exists, prefer or pair it (e.g., the open [Python documentation](https://docs.python.org/3/), and for CS 2050, the free [Miller & Ranum OER](https://runestone.academy/ns/books/published/pythonds3/index.html)). Keep starter code runnable on a stock Python install wherever possible.
+I'm building this course in public partly to make CS more accessible. Where a free, high-quality resource exists, I prefer it or pair it — the open [Python documentation](https://docs.python.org/3/) is the flagship example — and starter code stays runnable on a stock Python install wherever possible, so nothing here needs a paid tool to learn from.
