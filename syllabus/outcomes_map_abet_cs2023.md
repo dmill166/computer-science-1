@@ -3,7 +3,7 @@
 
 <!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored) -->
 
-> **Purpose:** demonstrate that CS 1050 materials are deliberately aligned to (1) the **ABET Computing Accreditation Commission** student outcomes under which MSU Denver's CS B.S. is accredited, and (2) the **ACM/IEEE-CS CS2023** curricular knowledge areas. Doubles as a build-in-public content asset and a tested-experience artifact. Why an independent course bothers with this at all: I seek out the public course objectives and accreditation standards precisely so learners here get genuine preparation — whether they ever enroll in a formal program or are consuming this entirely on their own time.
+> **Purpose:** demonstrate that these Computer Science 1 materials are deliberately aligned to (1) the **ABET Computing Accreditation Commission** student outcomes under which MSU Denver's CS B.S. is accredited, and (2) the **ACM/IEEE-CS CS2023** curricular knowledge areas. Doubles as a build-in-public content asset and a tested-experience artifact. Why an independent course bothers with this at all: I seek out the public course objectives and accreditation standards precisely so learners here get genuine preparation — whether they ever enroll in a formal program or are consuming this entirely on their own time.
 >
 > **Independent alignment:** these mappings are my reasoned alignment, not an official department or ABET determination.
 
