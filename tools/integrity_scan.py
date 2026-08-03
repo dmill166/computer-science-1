@@ -68,6 +68,25 @@ VALID_STATUSES = (
 )
 STATUS_MARKER = re.compile(r"author_status:\s*([A-Za-z-]+)")
 
+# Naming-rule ratchet (check v). The course is never called "CS 1050";
+# MSU course codes appear only as reviewed alignment references. This
+# is deliberately a RATCHET, not a classifier: the baseline below is
+# the human-reviewed occurrence count per file (as of 2026-08-02), and
+# ANY change — new mention or removed mention — fails until a human
+# re-reviews and updates the baseline. The machine never judges
+# legitimacy; it just makes unreviewed drift impossible.
+NAME_TOKEN = re.compile(r"CS ?1050", re.IGNORECASE)
+NAME_SUFFIXES = {".md", ".py", ".sh", ".ps1", ".yml", ".txt", ".json"}
+NAME_BASELINE = {
+    "README.md": 1,
+    "syllabus/index.md": 1,
+    "syllabus/design_rationale.md": 5,
+    "unit00_what_is_computation/index.md": 1,
+    "unit01_values_types_variables/index.md": 1,
+    "unit01_values_types_variables/lab/index.md": 1,
+    "unit01_values_types_variables/checkpoint/index.md": 1,
+}
+
 
 def _fail(msg: str) -> str:
     """Format a failing line for the report."""
@@ -164,6 +183,41 @@ def check_marker_coverage(root: Path) -> list[str]:
     return failures
 
 
+def check_name_ratchet(root: Path) -> list[str]:
+    """Fail when MSU-course-code mentions drift from the reviewed baseline.
+
+    Counts "CS 1050"/"CS1050" occurrences per text file and compares
+    against NAME_BASELINE. Higher = an unreviewed new mention; lower =
+    a removed mention the baseline should reflect. Either way a human
+    looks, then updates the table.
+    """
+    failures: list[str] = []
+    found: dict[str, int] = {}
+    for path in sorted(root.rglob("*")):
+        if ".git" in path.parts or not path.is_file():
+            continue
+        if path.suffix not in NAME_SUFFIXES:
+            continue
+        if path.name == "integrity_scan.py":
+            continue
+        rel = str(path.relative_to(root))
+        n = len(NAME_TOKEN.findall(path.read_text(encoding="utf-8")))
+        if n:
+            found[rel] = n
+    for rel in sorted(set(found) | set(NAME_BASELINE)):
+        actual, expected = found.get(rel, 0), NAME_BASELINE.get(rel, 0)
+        if actual != expected:
+            failures.append(
+                _fail(
+                    f"{rel}: {actual} CS-1050-token mention(s), baseline "
+                    f"says {expected} — review the change (our course is "
+                    "never 'CS 1050'), then update NAME_BASELINE"
+                )
+            )
+    print(f"  compared {len(found)} file(s) against the naming baseline")
+    return failures
+
+
 def main() -> int:
     """Run the public integrity checks; report and return an exit code."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -182,6 +236,8 @@ def main() -> int:
     failures += check_no_solution_markers(args.root)
     print("[iv] markdown pages must carry author_status markers:")
     failures += check_marker_coverage(args.root)
+    print("[v] MSU course-code mentions must match the reviewed baseline:")
+    failures += check_name_ratchet(args.root)
 
     print()
     if failures:

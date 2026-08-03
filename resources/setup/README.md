@@ -21,8 +21,8 @@ If you get stuck, that's normal — jump to [Troubleshooting](#troubleshooting).
 
 ## What you're installing and why
 
-- **Python** — the language we write in. It has a longer history than most people expect — created by Guido van Rossum, first released in 1991, and openly developed ever since (the [official history and license notes](https://docs.python.org/3/license.html) and [Wikipedia's History of Python](https://en.wikipedia.org/wiki/History_of_Python) are both worth a skim if you're curious where your new language came from). We install the **current stable version** (Python **3.13 or newer**; 3.14.x is current as of mid-2026). Always take the latest stable release from the official site — *not* an older one; the [FAQ below](#faqs--design-decisions) explains why.
-- **An editor** — where you write and run code. We start with **IDLE** (Python's built-in editor and interactive shell — it rides along free with every python.org install, nothing extra to get) and it matches our textbook. You'll meet it for real in the [Verify](#verify-it-works) step; alternatives are listed [below](#editors-where-you-write-code).
+- **Python** — the language we write in. It has a longer history than most people expect — created by Guido van Rossum, first released in 1991, and openly developed ever since (the [official history and license notes](https://docs.python.org/3/license.html) and [Wikipedia's History of Python](https://en.wikipedia.org/wiki/History_of_Python) are both worth a skim if you're curious where your new language came from). We install the **current stable version** (Python **3.13 or newer**; 3.14 is current as of mid-2026). Always take the latest stable release from the official site — *not* an older one; the [FAQ below](#faqs--design-decisions) explains why.
+- **An editor** — where you can write and run code. For the same reason you'd go to Microsoft Word to write a letter, you'll go to **IDLE** to write Python (or later, VS Code, PyCharm, or other editors). We start with IDLE (Python's built-in editor and interactive shell — it rides along free with every python.org install, nothing extra to get) and it matches our textbook. You'll meet it for real in the [Verify](#verify-it-works) step; alternatives are listed [below](#editors-where-you-write-code).
 
 Only install Python from **[python.org](https://www.python.org/downloads/)**. Other sources exist, but the official installer is the safest, most predictable path for this course.
 
@@ -59,16 +59,17 @@ This installs **IDLE** and the `python` command. Skip to [Verify](#verify-it-wor
 
 ## Linux 🐧 (Ubuntu / Debian shown)
 
-Most Linux distributions already include Python 3, but often not the newest and sometimes without IDLE or `venv`. Install/refresh via your package manager:
+Most Linux distributions already include Python 3, but often not the newest and sometimes without IDLE or `venv`. Install/refresh via your package manager (`sudo` runs a command with admin rights; `apt` is Debian/Ubuntu's package manager — though if you're on Linux, odds are you knew that already):
 
 ```bash
 sudo apt update
 sudo apt install python3 python3-pip python3-venv idle3
 ```
 
-Then check the version (`python3 --version`). If your distro's Python is older than 3.13 and you want the current release, use the [deadsnakes PPA](https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa) or [pyenv](https://github.com/pyenv/pyenv) — but for this course, **any Python 3.13+ is fine**, and even 3.11/3.12 will run everything we do. Don't over-engineer it.
+Then check the version (`python3 --version`). If your distro's Python is older than 3.13 and you want the current release, use the [deadsnakes PPA](https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa) or [pyenv](https://github.com/pyenv/pyenv) — but for this course, **any Python 3.13 or newer is fine**, and even 3.11/3.12 will run everything we do. Don't over-engineer it.
 
-> Fedora: `sudo dnf install python3 python3-idle`. Arch: `sudo pacman -S python tk` (Tk gives you IDLE + the graphics we use later).
+> - Fedora: `sudo dnf install python3 python3-idle`
+> - Arch: `sudo pacman -S python tk` (Tk gives you IDLE + the graphics we use later)
 
 Skip to [Verify](#verify-it-works).
 
@@ -81,7 +82,7 @@ Two ways to check the version — pick whichever tool you already have open:
 - **In IDLE:** launch it (Windows: press Start and type "IDLE"; macOS: press `Cmd+Space` and type "IDLE"; Linux: run `idle3`) and look at the **top of the shell window** — the very first line announces the version (something like `Python 3.14.6 (...)`). No command needed.
 - **In your operating system's terminal** (Terminal on macOS/Linux; Command Prompt or PowerShell on Windows — *not* IDLE's `>>>` shell, which speaks Python, not terminal commands): type `python3 --version` on macOS/Linux, or `python --version` (or `py --version`) on Windows. Never used a terminal before? The short [Terminal Basics guide](https://dakotalearns.com/guides/terminal-basics/) covers everything this course needs.
 
-Either way, you should see something like `Python 3.14.6`. Any `3.13.x` or newer is perfect; `3.11`/`3.12` will also work for this course.
+Either way, you should see something like `Python 3.14.6`. Any `3.13` or newer is perfect; `3.11`/`3.12` will also work for this course.
 
 **Run your first line of code.** In IDLE's `>>>` shell (or after typing `python3` / `python` in a terminal), type:
 
@@ -108,7 +109,7 @@ You'll outgrow the `>>>` shell quickly (it forgets everything when closed). Thre
 |---|---|---|
 | **IDLE** | starting out, matches our textbook | Ships with Python. Open it, `File → New File`, write code, press **F5** to run. **Use this for the course unless told otherwise.** |
 | **Thonny** | absolute beginners who want one simple install | [thonny.org](https://thonny.org) — bundles its *own* Python + a beginner-friendly debugger and variable viewer. A great all-in-one if the steps above felt hard. |
-| **VS Code** | when you want a "real" pro editor later | [code.visualstudio.com](https://code.visualstudio.com) + the Python extension. More powerful, more setup — graduate to it when you're comfortable. |
+| **VS Code** (Visual Studio Code) | when you want a "real" pro editor later | [code.visualstudio.com](https://code.visualstudio.com) + the Python extension. More powerful, more setup — graduate to it when you're comfortable. |
 
 Pick **one** and stick with it for now. More tools ≠ more learning early on.
 
@@ -134,7 +135,7 @@ Pick **one** and stick with it for now. More tools ≠ more learning early on.
 
 ### Option A — an isolated environment with `venv` (recommended if you want isolation)
 
-A virtual environment is a project-local sandbox so one project's packages can't clash with another's. It ships *with* Python — no pyenv required. We include a helper script that creates one and verifies it. Same pathing catch as `check_env.py`: these commands assume your terminal is **inside the course folder** (the unzipped repo) — `cd` there first ([Terminal Basics](https://dakotalearns.com/guides/terminal-basics/) shows how, and why no `chmod` is needed here):
+A virtual environment is a project-local sandbox so one project's packages can't clash with another's — think of it like an **artist's palette**: each artist squeezes out exactly the colors and types of paint *they* prefer, and at any time they can rinse it all clean and start over, without touching anyone else's palette. It ships *with* Python — no pyenv required. (Want the deeper dive? I wrote a whole post on these back in 2022: [Virtual Environments: What, Why, How?](https://dakotalearns.com/blog/virtual-environments-what-why-how/)) We include a helper script that creates one and verifies it. Same pathing catch as `check_env.py`: these commands assume your terminal is **inside the course folder** (the unzipped repo) — `cd` there first ([Terminal Basics](https://dakotalearns.com/guides/terminal-basics/) shows how, and why no `chmod` is needed here):
 
 ```bash
 # macOS / Linux, from the course folder root:
@@ -166,20 +167,20 @@ If you juggle several Python *versions* across many projects, [`pyenv`](https://
 IDLE ships with Python (zero extra install) and is intentionally bare — no aggressive autocomplete or AI suggestions — so you learn the syntax and concepts yourself instead of leaning on the editor. Graduate to VS Code once the fundamentals are yours. (See [Editors](#editors-where-you-write-code).)
 
 **Why don't we use virtual environments or `pyenv` by default?**
-The reason to isolate environments is third-party *package* conflicts, and this course installs no third-party packages — everything runs on the standard library. (If you follow the optional textbook's graphics chapters, its companion `graphics.py` is a single file you download alongside your code, not a package install.) Requiring venvs in week 1 mostly produces "I forgot to activate" problems. We enforce the thing that actually matters — a correct interpreter — with [`check_env.py`](check_env.py) instead. Want isolation anyway? See [Advanced Instructions](#advanced-instructions-optional).
+The reason to isolate environments is third-party *package* conflicts, and this course installs no third-party packages — everything runs on the standard library. (If you follow the optional textbook's graphics chapters, its companion `graphics.py` is a single file you download alongside your code, not a package install.) Requiring virtual environments in week 1 mostly produces "I forgot to activate" problems. We enforce the thing that actually matters — a correct interpreter — with [`check_env.py`](check_env.py) instead. Want isolation anyway? See [Advanced Instructions](#advanced-instructions-optional).
 
 **Why install from python.org instead of Homebrew / Anaconda / the Microsoft Store?**
 One predictable, official source keeps everyone's setup the same and easy to support. Homebrew/Anaconda/Store installs each have their own quirks and PATH behaviors that generate avoidable confusion in a beginner course.
 
 **Why the "latest stable" version and not the one in "security" status?**
-Older guides (including the author's earlier posts) suggested the oldest still-supported version. For a *learner* that's backwards — you want a current, fully supported release. Any 3.13+ is ideal; 3.11/3.12 still work.
+Older guides (including my own earlier posts) suggested the oldest still-supported version. For a *learner* that's backwards — you want a current, fully supported release. Any 3.13 or newer is ideal; 3.11/3.12 still work.
 
 **On macOS, am I installing a second Python that conflicts with the system one?**
 No — modern macOS has no general-use system Python (just a stub). Your python.org install becomes the `python3` you use. `check_env.py` confirms you're on it.
 
 **Can I use ChatGPT / Claude to help?**
-Yes, to *explain* errors or concepts in plain language — not to produce work you can't explain. If you're enrolled somewhere for credit, your institution's academic-integrity rules govern your submissions; self-learners, the standard is honesty with yourself.
+Yes, to *explain* errors or concepts in plain language — not to produce work you can't explain. If you're enrolled somewhere for credit, your institution's academic-integrity rules govern your submissions; self-learners — you're only cheating yourself with AI shortcuts and copy-pastes.
 
 ---
 
-*Follows the [Module Standard](https://github.com/dmill166/cs-teaching/blob/main/MODULE_STANDARD.md). Adapted and modernized from two earlier walk-throughs by the author ([2023](https://dakotalearns.wordpress.com/2023/04/03/installation-guide-for-python-macos-windows/), [2024](https://dakotalearns.wordpress.com/2024/04/01/installation-guide-python-3-x-%f0%9f%90%8d/)) — updated for current Python, expanded to Linux, IDLE-first, single-install.*
+*Follows the [Module Standard](https://github.com/dmill166/cs-teaching/blob/main/MODULE_STANDARD.md). Adapted and modernized from two install walk-throughs I wrote in [2023](https://dakotalearns.com/blog/installation-guide-for-python-macos-windows/) and [2024](https://dakotalearns.com/blog/installation-guide-python-3-x/).*

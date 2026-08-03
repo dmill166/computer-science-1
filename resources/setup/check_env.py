@@ -1,5 +1,5 @@
 """
-check_env.py — CS 1050 environment check.
+check_env.py — Computer Science 1 environment check.
 
 Run this any time to confirm you're using the right Python for the course:
     macOS / Linux:  python3 check_env.py
@@ -15,6 +15,14 @@ No prior knowledge needed: just run it and read the last line.
 import sys
 import platform
 
+# Rationale for the constants:
+#   MIN_OK — the floor. Chosen as the oldest release still receiving
+#            security fixes at design time AND what common Linux LTS
+#            distros ship (Debian 12 = 3.11). Course code is stdlib-only,
+#            so this is a support-policy choice, not a technical need.
+#   IDEAL  — the recommended baseline; matches the setup guide's
+#            "3.13 or newer." Bump only if the guide's guidance moves.
+# Newer Pythons pass automatically — nothing here breaks on a new 3.x.
 MIN_OK = (3, 11)      # works for the course
 IDEAL = (3, 13)       # current/recommended
 
@@ -50,7 +58,7 @@ if sys.platform == "darwin" and any(m in lower_exe for m in system_markers):
     )
 
 # Report.
-print("CS 1050 environment check")
+print("Computer Science 1 environment check")
 print("-" * 40)
 print(f"Python version : {platform.python_version()}")
 print(f"Interpreter    : {exe}")
@@ -66,5 +74,5 @@ if problems:
     print("\nRESULT: FAIL — fix the item(s) above, then run this again.")
     sys.exit(1)
 
-print("\nRESULT: PASS — your Python is ready for CS 1050.")
+print("\nRESULT: PASS — your Python is ready for Computer Science 1.")
 sys.exit(0)
