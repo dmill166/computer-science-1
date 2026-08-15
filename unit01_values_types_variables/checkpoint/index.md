@@ -21,7 +21,7 @@ Everything you need comes straight from [the Unit 1 lesson](../index.md). If you
 
 ## The task
 
-Create a file named **`checkpoint_1.py`** (start from the one in `starter/`) that builds a tiny "movie card" out of variables — one of each of the four core types, using **exactly** these names:
+Create a file named **`checkpoint_1.py`** (start from the one in the checkpoint's **starter folder** — [how to get it](#getting-the-files-turning-it-in) is just below) that builds a tiny "movie card" out of variables — one of each of the four core types, using **exactly** these names:
 
 | Variable name | Type it must hold | What to put in it |
 |---|---|---|
@@ -39,7 +39,7 @@ That's the whole thing. No math, no user input, no tricks — those come later, 
 
 ## Check your own work first
 
-The starter folder includes **`check_my_work.py`**. Keep it in the same folder as your `checkpoint_1.py` and run it:
+The starter folder ([grab it here](#getting-the-files-turning-it-in) if you haven't) includes **`check_my_work.py`**. Keep it in the same folder as your `checkpoint_1.py` and run it:
 
 ```text
 macOS / Linux:  python3 check_my_work.py

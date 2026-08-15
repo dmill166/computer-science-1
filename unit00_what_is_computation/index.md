@@ -5,8 +5,7 @@ date_published: 2026-07-03
 
 <!--
 LECTURE STATUS: voice-core APPROVED by Dakota 2026-06-24 (author_status: dakota-authored). Finalized.
-Repo push still gated on: the publish-lock CI gate (oneshot_build_requirements.md §5, gate 1) AND the remaining Week-1 drafts (Unit 1) — a repo push syncs ALL lectures, so don't push until 01 is finalized or the gate suppresses drafts.
-author_status legend: dakota-authored = Dakota's, final · assistant-mechanical = assistant-drafted · assistant-shared = shared (Dakota narrates, assistant drafts).
+author_status taxonomy: see cs-teaching/voice_provenance.md (the SSOT — definitions live there only).
 Spine: Unit 0 · Objectives → MSU Denver obj 12 → ABET SO-1, SO-6 / CS2023 SE.
 -->
 
@@ -171,12 +170,14 @@ Quick, low-stakes retrieval — no grade, just to see if it stuck. The first few
   "questions": [
     {
       "prompt": "True or false: the order of a program's steps usually doesn't matter.",
+      "hint": "Picture the coffee recipe from this lesson — try mentally swapping two of its steps and see what comes out of the machine.",
       "options": ["True", "False"],
       "answer": 1,
       "explain": "Steps run **in order**, and the order often changes the result — press start before adding water and nothing brews."
     },
     {
       "prompt": "A friend says, \"My computer did something I didn't tell it to.\" Using today's lesson, what most likely happened?",
+      "hint": "This lesson made one big promise about machines: they never improvise. If the outcome still surprised your friend, what's left to explain it?",
       "options": [
         "The computer improvised a new step on its own.",
         "The computer followed its instructions exactly — the steps (or the inputs) just weren't what your friend thought they were.",
@@ -259,7 +260,7 @@ In **3–4 sentences**, explain to a friend who's never coded what a "program" i
 |---|---|
 | **Computation** | Turning inputs into a predictable output by following a well-defined set of steps. |
 | **Program** | A set of steps a machine follows. |
-| **Input / Output** | What goes *into* a program; what comes *out* of it. |
+| **Input / Output (I/O)** | What goes *into* a program; what comes *out* of it. |
 | **Syntax** | The exact code you type. |
 | **Semantics** | What that code actually means — the rules of the language. |
 

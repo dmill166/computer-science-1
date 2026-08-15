@@ -1,6 +1,6 @@
 # Computer Science 1 (Python)
 
-<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored) -->
+<!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's reviews 2026-07-21 through 2026-08-02 — naming sweep, evergreen status line, audience framing, solutions-transparency call; promoted 2026-08-02) -->
 
 Open, beginner-first course materials for **Computer Science 1**, taught in **Python 3** using Zelle's *Python Programming: An Introduction to Computer Science* (4th ed, 2024). Designed to be portable — a strong CS1 you'd recognize anywhere — and aligned to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and, for alignment only, MSU Denver's CS 1050 objectives.
 
@@ -8,7 +8,7 @@ I'm building this in the open, one unit at a time — on top of a full-time job,
 
 > **Affiliation:** Independent materials by Dakota Hollmann. **Not affiliated with, endorsed by, or sponsored by Metropolitan State University of Denver.** MSU Denver course codes and objectives are referenced for curriculum alignment only.
 
-> **Status:** building in public. Unit 0 and Unit 1 are live (lectures, Lab 1, Checkpoint 1, interactive self-checks), along with the syllabus, outcomes map, and setup guide. The remaining units land as they're built — watch the [blog](https://dakotalearns.com/blog/) for each release.
+> **Status:** building in public. The [course hub](https://dakotalearns.com/courses/computer-science-1/) always shows what's live; each new unit announces on the [blog](https://dakotalearns.com/blog/).
 
 > **Where to read this:** This public repo is the **single source of truth** for the course — prose *and* code, authored once here. The readable lessons render on **[dakotalearns.com](https://dakotalearns.com)**, pulled from this repo at build time; the **runnable code** is grabbed here as a ZIP. The site is a read surface, never a second copy.
 

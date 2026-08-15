@@ -7,7 +7,7 @@ date_published: 2026-07-03
 LECTURE STATUS: voice-core APPROVED by Dakota 2026-07-02 (author_status: dakota-authored). Finalized.
 Scope: Week 1 portion of spine Unit 1 — values, types, variables, first program. Expressions + interactive input() are deferred to WEEK 2 (per the Week-1 board card). Do not pull them forward here.
 Confirmed with Dakota (2026-07-02): first program uses his own examples (bank_balance, "21 Jump Street", …); expressions + input() stay in Week 2; the examples carry the topic (no personal "clicked" story).
-author_status legend: dakota-authored = Dakota's, final · assistant-mechanical = assistant-drafted · assistant-shared = shared (Dakota narrates, assistant drafts).
+author_status taxonomy: see cs-teaching/voice_provenance.md (the SSOT — definitions live there only).
 Objectives → MSU Denver obj 6, 7, 8 → ABET SO-2, SO-6 / CS2023 SDF, FPL.
 -->
 
@@ -115,7 +115,7 @@ Before you go wild naming things, Python has a few **hard rules** — break one 
 |---|---|---|
 | `bank_balance`, `player1` | `bank-balance`, `my variable` | letters, digits, and `_` only (that `-` is a minus sign; spaces aren't allowed) |
 | `score1` | `1score` | can't start with a digit |
-| `total`, `class_size` | `class`, `if`, `for` | can't be one of Python's reserved words |
+| `total`, `class_size` | `class`, `if`, `for` | can't be one of Python's **keywords** (its reserved words — [the full list](https://docs.python.org/3/reference/lexical_analysis.html#keywords) is short) |
 
 One more gotcha (not an error, just surprising): **case matters** — `score`, `Score`, and `SCORE` are three *different* names.
 
@@ -215,12 +215,14 @@ No grade — just retrieval. These score themselves, so be honest with your firs
   "questions": [
     {
       "prompt": "What type is the value `4.3`?",
+      "hint": "Whole numbers never carry a decimal point — `4.3` does.",
       "options": ["`int`", "`float`", "`str`", "`bool`"],
       "answer": 1,
       "explain": "The decimal part is the giveaway — `650` and `75`, with no decimal part, are `int` values."
     },
     {
       "prompt": "Is `\"21 Jump Street\"` a number or text?",
+      "hint": "Don't look at the characters inside — look at what's wrapped *around* them.",
       "options": [
         "A number — it starts with `21`.",
         "Text — the quotes are the giveaway.",
@@ -231,18 +233,21 @@ No grade — just retrieval. These score themselves, so be honest with your firs
     },
     {
       "prompt": "In `bank_balance = 650`, which part is the variable?",
+      "hint": "One side of the `=` is a name somebody invented; the other side is the value that name points to.",
       "options": ["`bank_balance`", "`650`", "The `=` sign"],
       "answer": 0,
       "explain": "`bank_balance` is the **name**; `650` is the **value** it refers to. The name isn't the value itself — hold onto that for Week 5/6."
     },
     {
       "prompt": "Which type fits a statement that's either true or false, like \"My flight is cancelled\"?",
+      "hint": "Count the possible answers to a true-or-false question. One of the four types holds exactly that many values.",
       "options": ["`int`", "`float`", "`str`", "`bool`"],
       "answer": 3,
       "explain": "A **boolean** (`bool`) — its only two values are `True` and `False`."
     },
     {
       "prompt": "What does Python do when it runs a line like `# update this next week`?",
+      "hint": "Ask yourself who a `#` line is written *for* — the computer, or the humans reading the code later?",
       "options": [
         "Prints the note to the screen.",
         "Stops with an error — that isn't valid code.",

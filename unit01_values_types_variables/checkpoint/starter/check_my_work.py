@@ -21,6 +21,9 @@ except Exception as e:  # missing file, syntax error, crash while running
     _IMPORT_ERROR = e
 
 
+# A note on the f"{...!r}" pattern in the messages below: !r formats a
+# value the way Python sees it — text keeps its quotes ('12' vs 12) —
+# so an error message reveals a TYPE mistake, not just a wrong value.
 def _value(name, hint):
     """Fetch variable `name` from checkpoint_1, with friendly failures."""
     assert checkpoint_1 is not None, (
