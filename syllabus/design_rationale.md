@@ -1,10 +1,8 @@
 # Computer Science 1 — Course Design Rationale
 
-<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored) -->
+<!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's line-by-line review 2026-07-21 + 2026-08-02, revisions executed and approved; promoted 2026-08-02) -->
 
-> **Purpose:** define the *content scope* of this CS1 (**CS1** is the discipline's generic shorthand for any first programming course — a term of art, not any university's catalog number) from first principles — portable enough to teach anywhere, but compatible with MSU Denver's program and the courses that follow it. This doc explains **what** we teach and **why**; the syllabus says **when**.
->
-> **Design date:** 2026-06-14.
+> **Purpose:** define the *content scope* of this CS1 (**CS1** is the discipline's generic shorthand for any first programming course — a term of art, not any university's catalog number. In other words, shorthand for Computer Science 1.) from first principles — portable enough to teach anywhere, but compatible with MSU Denver's program and the courses that follow it. This doc explains **what** we teach and **why**; the syllabus says **when**.
 
 ??? note "How to read this page"
     This is the **"why" document** — where the course scope comes from and what every decision protects. **Students:** you never *need* this page, but if you've wondered "why are we learning it in this order?", the answer lives here. **Instructors:** read this before proposing scope changes; every unit traces to a source and a downstream need.
@@ -63,6 +61,8 @@ Ordered for a no-prerequisite learner; each unit lists the MSU Denver objective(
 
 ★ = touches a CS2 prerequisite; ★★★ = critical CS2 bridge.
 
+The SE & SDLC thread's **documentation strand is deliberately front-loaded and persistent**: comments land in Unit 1, docstrings arrive with functions in Unit 5, and every unit after that reinforces documentation in both the lecture and the rubric — writing for the next human is a habit built weekly, not a topic visited once.
+
 > **Editions:** **Zelle 4e is the structural reference** (the locked textbook); the **3e** column is a budget-friendly fallback (cheap used copies — accessibility goal). The 4e reorg split 3e's combined "Sequences" chapter (3e Ch 5) into **Strings (8)**, **Data Collections (9)**, and **Persistent Data (10)**. Divergences to flag for 3e learners: 4e teaches **f-strings** (8.6) where 3e uses `.format()`; 4e's **pathlib** (10.2.2) is absent in 3e; 4e ends at **Ch 14**, 3e at **Ch 13**. Dictionaries are *Optional* in Zelle (4e 9.5.2) and **sets** are essentially uncovered — both are original content here, by design.
 
 ## Deliberate scope decisions
@@ -91,6 +91,8 @@ I'm deliberately building for multiple learning and reinforcement styles — the
 The design is governed by accreditation-recognized outcomes (ABET CAC, ACM/IEEE-CS CS2023) — university catalogs change; the outcomes are the stable target. As a worked example of the portability claim, the crosswalk in [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md) shows every one of MSU Denver's 12 course-of-record objectives (as of the Fall 2016 course-of-record + 2026 Curriculog revision) covered by this design. We **add** depth where MIT and the CS2 prerequisites justify it (aliasing, recursion, Big-O, inheritance), and the communication thread serves SO-3 whether or not any institution asks for it. The result aligns with MSU Denver without being shaped *only* for MSU Denver.
 
 ## Sources
+
+All sources as verified June 2026.
 
 - MIT 6.100L, *Introduction to CS and Programming using Python*, OCW (Fall 2022): https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/ — see "Materials by Lecture" for the 26-lecture spine.
 - MIT 6.100A / 6.100B course descriptions, MIT EECS catalog / OCW.

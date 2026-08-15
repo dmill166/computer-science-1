@@ -1,7 +1,7 @@
 # Computer Science 1 — Outcomes Mapping
 ## Course objectives → ABET CAC student outcomes → ACM/IEEE-CS CS2023 knowledge areas
 
-<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant-drafted 2026-07-09 per Dakota's no-exempt call — review + promote to dakota-authored) -->
+<!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's review 2026-07-21 + 2026-08-02 incl. reworded objective labels; promoted 2026-08-02) -->
 
 > **Purpose:** demonstrate that these Computer Science 1 materials are deliberately aligned to (1) the **ABET Computing Accreditation Commission** student outcomes under which MSU Denver's CS B.S. is accredited, and (2) the **ACM/IEEE-CS CS2023** curricular knowledge areas. Doubles as a build-in-public content asset and a tested-experience artifact. Why an independent course bothers with this at all: I seek out the public course objectives and accreditation standards precisely so learners here get genuine preparation — whether they ever enroll in a formal program or are consuming this entirely on their own time.
 >
@@ -44,7 +44,7 @@
 | 11 | Test and debug systematically | SO-2, SO-6 | SE, SDF | 3 |
 | 12 | Describe the software development life cycle | SO-1, SO-6 | SE | 2 |
 
-> **Wording note:** objective texts here and in the syllabus are this course's own phrasing; the **numbering** is aligned 1:1 with MSU Denver's course-of-record objectives so the crosswalk below joins cleanly on objective #.
+> **Wording note:** objective texts here and in the syllabus are this course's own phrasing; the **numbering** is aligned 1:1 with MSU Denver's course-of-record objectives so the crosswalk below joins cleanly on the course objective # (column 1 of the mapping table above).
 | — | Written report / oral presentation (course-of-record) | SO-3, SO-4 | SEP, SE | labs/assignments writing thread |
 
 > **Reading the last column — and how to tag a lecture.** The **Course-of-record unit(s)** column uses the **9 catalog (course-of-record) units** (the course-of-record coverage scheme; e.g. CoR unit 4 = *Data Types & Variables*). These are **NOT** the 13-unit teaching-spine numbers used for unit folders (`unitNN_topic/`), where 4 = *Strings*. The two schemes deliberately reuse the same integers, so **never tag a lecture by matching unit numbers.** The stable join key is the **objective # (1–12)**: a lecture declares the objective(s) it covers (see the [crosswalk below](#lecture-to-objective-crosswalk-tagging-key)), then this table maps each objective → ABET SO + CS2023 KA.

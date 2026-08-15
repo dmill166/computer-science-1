@@ -1,6 +1,6 @@
 # Computer Science 1 — Sample Term Schedule
 
-<!-- author_status: dakota-voice-draft | section: full page, light voice pass (assistant reviewed 2026-07-09 per Dakota's no-exempt call — framing prose read as already in-voice, near-zero edits; review + promote to dakota-authored) -->
+<!-- author_status: dakota-authored | section: full page (framing read as in-voice 2026-07-09; Dakota's review 2026-08-02 added the 16-week-assumption note; promoted 2026-08-02) -->
 
 > **What this is:** a *sample* dated instance of the portable course design ([`design_rationale.md`](design_rationale.md)), showing how the course maps onto a real semester. **This example uses MSU Denver's Fall 2026 academic calendar** — it is an illustration of the method (schedule, deadlines, and how assessment is timed around an institution's drop/withdraw dates), not a commitment to a specific offering. Retargeting another term or school means swapping this one overlay; the course design itself is date-free.
 
@@ -70,3 +70,5 @@ Because the **100% drop deadline is the end of Week 1** and the **50% deadline i
 ## Portability note
 
 Everything above except the **dates, holidays, and drop/withdraw deadlines** comes straight from the portable design. To run this course at another institution or term, swap this single file for that calendar — the units, assessments, and outcomes mapping don't change. That separation (portable core + dated overlay) is intentional.
+
+One honest assumption: this overlay is built for a **traditional 16-week semester** (15 instructional weeks + finals). Quarters, 8-week minimesters, thirds, or any other calendar can absolutely run this course — the unit *order* and the assess-before-the-drop-deadline rhythm are what matter — but compressing or re-chunking the weeks is deliberately left to the instructor who knows their calendar.

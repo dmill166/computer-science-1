@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =====================================================================
-# setup_env.sh — OPTIONAL isolated environment (macOS / Linux)
+# setup_venv.sh — OPTIONAL isolated environment (macOS / Linux)
 # Computer Science 1
 #
 # You do NOT need this for the course. Computer Science 1 installs no
@@ -14,7 +14,7 @@
 # this is great practice.
 #
 # Run it from the course folder root (the unzipped repo):
-#     bash resources/setup/setup_env.sh
+#     bash resources/setup/setup_venv.sh
 # =====================================================================
 
 # --- Safety settings (three separate switches, explained) -----------

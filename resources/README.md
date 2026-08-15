@@ -10,6 +10,10 @@ Everything course-adjacent lives here — the textbook reference, toolchain setu
 
 I've recommended this book since my own first Python coursework back in 2012 — Zelle's writing style and teaching approach earn it. It covers all 12 of the course's learning objectives. Note: this book is intentionally scoped to *introductory* CS — it ends at recursion and basic searching/sorting and does **not** cover abstract data types, linked lists, stacks, queues, or trees. Those belong to Computer Science 2, which will use a dedicated data-structures text.
 
+**Funds a bit tight?** If you know you learn better with a book in hand but the 4th edition doesn't fit the budget right now, the [**3rd edition**](https://amzn.to/4vJmxTT)[^aff] (Franklin, Beedle & Associates, 2016; ISBN-13: 978-1590282755 print, 978-1590282779 eText) is a solid lower-cost pick — used copies go cheap — or take either edition's ISBN to your local library and rent it. You'll still get a quality experience out of the course either way; the chapter numbering differs a little between editions, and the course materials flag those differences wherever they matter.
+
+**And one book that isn't about Python at all:** the course's writing-and-presentation thread is anchored by **Barbara Oakley, [*A Mind for Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)*](https://amzn.to/4xI5piu)[^aff]** (TarcherPerigee, 2014; ISBN-13: 978-0399165245). It's the learning-how-to-learn book — written for students who don't yet believe they're "math people" — and it teaches the same study techniques this course's own design is built on. Which chapters, and exactly how they feed the written report and oral presentation, arrive with that thread later in the course; it's listed now so you can plan ahead or put in a library reservation (physical, eBook, and audiobook variants all exist).
+
 ## Toolchain
 
 - **Python 3** — the current stable release (3.13 or newer) from python.org; 3.11/3.12 also run everything in this course.

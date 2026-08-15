@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    setup_env.ps1 — OPTIONAL isolated environment (Windows / PowerShell)
+    setup_venv.ps1 — OPTIONAL isolated environment (Windows / PowerShell)
     for Computer Science 1.
 
 .DESCRIPTION
@@ -15,7 +15,7 @@
 
 .EXAMPLE
     Run it from the course folder root (the unzipped repo):
-    powershell -ExecutionPolicy Bypass -File resources\setup\setup_env.ps1
+    powershell -ExecutionPolicy Bypass -File resources\setup\setup_venv.ps1
 #>
 
 # --- Safety setting ---------------------------------------------------

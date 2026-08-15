@@ -139,10 +139,10 @@ A virtual environment is a project-local sandbox so one project's packages can't
 
 ```bash
 # macOS / Linux, from the course folder root:
-bash resources/setup/setup_env.sh
+bash resources/setup/setup_venv.sh
 
 # Windows (PowerShell), from the course folder root:
-powershell -ExecutionPolicy Bypass -File resources\setup\setup_env.ps1
+powershell -ExecutionPolicy Bypass -File resources\setup\setup_venv.ps1
 ```
 
 Or do it by hand (again, from inside your project folder):
@@ -173,7 +173,7 @@ The reason to isolate environments is third-party *package* conflicts, and this 
 One predictable, official source keeps everyone's setup the same and easy to support. Homebrew/Anaconda/Store installs each have their own quirks and PATH behaviors that generate avoidable confusion in a beginner course.
 
 **Why the "latest stable" version and not the one in "security" status?**
-Older guides (including my own earlier posts) suggested the oldest still-supported version. For a *learner* that's backwards — you want a current, fully supported release. Any 3.13 or newer is ideal; 3.11/3.12 still work.
+Older guides (including my own earlier posts) suggested the oldest still-supported version. For a *learner* that's backwards — you want a current, fully supported release. There's a bonus you'll feel every day, too: newer Pythons explain their errors far better — they point at the exact spot that broke and even offer "did you mean…?" suggestions — and when you're learning, good error messages are half the battle. Any 3.13 or newer is ideal; 3.11/3.12 still work.
 
 **On macOS, am I installing a second Python that conflicts with the system one?**
 No — modern macOS has no general-use system Python (just a stub). Your python.org install becomes the `python3` you use. `check_env.py` confirms you're on it.

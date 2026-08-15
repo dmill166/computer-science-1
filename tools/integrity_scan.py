@@ -68,14 +68,22 @@ VALID_STATUSES = (
 )
 STATUS_MARKER = re.compile(r"author_status:\s*([A-Za-z-]+)")
 
-# Naming-rule ratchet (check v). The course is never called "CS 1050";
-# MSU course codes appear only as reviewed alignment references. This
-# is deliberately a RATCHET, not a classifier: the baseline below is
-# the human-reviewed occurrence count per file (as of 2026-08-02), and
-# ANY change — new mention or removed mention — fails until a human
-# re-reviews and updates the baseline. The machine never judges
-# legitimacy; it just makes unreviewed drift impossible.
-NAME_TOKEN = re.compile(r"CS ?1050", re.IGNORECASE)
+# Naming-rule ratchet (check v). Our courses are never named by a
+# university course code; codes appear only as reviewed alignment
+# references. This is deliberately a RATCHET, not a classifier: the
+# baseline below is the human-reviewed occurrence count per file (as
+# of 2026-08-02), and ANY change — new mention or removed mention —
+# fails until a human re-reviews and updates the baseline. The machine
+# never judges legitimacy; it just makes unreviewed drift impossible.
+#
+# To extend (e.g., when another university's code, or a sibling
+# course's code, enters this repo's prose): add its regex to
+# COURSE_CODE_PATTERNS, then add the reviewed per-file counts to
+# NAME_BASELINE. When course repo #2 exists, this whole block is the
+# candidate to hoist into cs-teaching as shared code with per-repo
+# config (see the maintenance trigger index).
+COURSE_CODE_PATTERNS = (r"CS ?1050",)
+NAME_TOKEN = re.compile("|".join(COURSE_CODE_PATTERNS), re.IGNORECASE)
 NAME_SUFFIXES = {".md", ".py", ".sh", ".ps1", ".yml", ".txt", ".json"}
 NAME_BASELINE = {
     "README.md": 1,
@@ -209,9 +217,9 @@ def check_name_ratchet(root: Path) -> list[str]:
         if actual != expected:
             failures.append(
                 _fail(
-                    f"{rel}: {actual} CS-1050-token mention(s), baseline "
-                    f"says {expected} — review the change (our course is "
-                    "never 'CS 1050'), then update NAME_BASELINE"
+                    f"{rel}: {actual} course-code mention(s), baseline "
+                    f"says {expected} — review the change (course codes "
+                    "never name our courses), then update NAME_BASELINE"
                 )
             )
     print(f"  compared {len(found)} file(s) against the naming baseline")
