@@ -24,6 +24,12 @@ file" — needs both repos and therefore lives on the private side
 (``computer-science-1-solutions/grading/scan_public_leak.py``): the private
 repo reaches across to read the public one, never the reverse.
 
+(v)   Course-code mentions match the reviewed baseline. The naming
+      ratchet: forbidden-code patterns and the human-reviewed per-file
+      occurrence counts live in ``tools/integrity_config.json`` (data),
+      while this engine stays course-agnostic. Any drift fails until a
+      human re-reviews and updates the config.
+
 (iv)  Every public markdown page carries an ``author_status`` marker.
       Voice-provenance convention (locked 2026-07-09; no exempt class —
       every page is Dakota's public work and gets his hand): pages that
@@ -42,6 +48,7 @@ Usage (from the repo root):
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import subprocess
 import sys
@@ -71,29 +78,15 @@ STATUS_MARKER = re.compile(r"author_status:\s*([A-Za-z-]+)")
 # Naming-rule ratchet (check v). Our courses are never named by a
 # university course code; codes appear only as reviewed alignment
 # references. This is deliberately a RATCHET, not a classifier: the
-# baseline below is the human-reviewed occurrence count per file (as
-# of 2026-08-02), and ANY change — new mention or removed mention —
-# fails until a human re-reviews and updates the baseline. The machine
-# never judges legitimacy; it just makes unreviewed drift impossible.
-#
-# To extend (e.g., when another university's code, or a sibling
-# course's code, enters this repo's prose): add its regex to
-# COURSE_CODE_PATTERNS, then add the reviewed per-file counts to
-# NAME_BASELINE. When course repo #2 exists, this whole block is the
-# candidate to hoist into cs-teaching as shared code with per-repo
-# config (see the maintenance trigger index).
-COURSE_CODE_PATTERNS = (r"CS ?1050",)
-NAME_TOKEN = re.compile("|".join(COURSE_CODE_PATTERNS), re.IGNORECASE)
-NAME_SUFFIXES = {".md", ".py", ".sh", ".ps1", ".yml", ".txt", ".json"}
-NAME_BASELINE = {
-    "README.md": 1,
-    "syllabus/index.md": 1,
-    "syllabus/design_rationale.md": 5,
-    "unit00_what_is_computation/index.md": 1,
-    "unit01_values_types_variables/index.md": 1,
-    "unit01_values_types_variables/lab/index.md": 1,
-    "unit01_values_types_variables/checkpoint/index.md": 1,
-}
+# COURSE DATA (code patterns + the human-reviewed per-file baseline)
+# lives in tools/integrity_config.json, and ANY drift — new mention
+# or removed mention — fails until a human re-reviews and updates
+# that file. The machine never judges legitimacy; it just makes
+# unreviewed drift impossible. Engine/data split (2026-08-02): this
+# script stays course-agnostic so course repo #2 can hoist the engine
+# to cs-teaching (pinned checkout in CI) and keep only its own config
+# — see the maintenance trigger index.
+NAME_SUFFIXES = {".md", ".py", ".sh", ".ps1", ".yml", ".txt"}
 
 
 def _fail(msg: str) -> str:
@@ -104,7 +97,8 @@ def _fail(msg: str) -> str:
 def check_starters_fail_empty(root: Path) -> list[str]:
     """Run each starter's self-check; a PASS on the shipped starter fails us.
 
-    Returns a list of human-readable failure messages (empty = all good).
+    Returns:
+        Human-readable failure messages (empty = all good).
     """
     failures: list[str] = []
     checked = 0
@@ -135,7 +129,11 @@ def check_starters_fail_empty(root: Path) -> list[str]:
 
 
 def check_no_solution_markers(root: Path) -> list[str]:
-    """Grep starter code files for solution-shaped comment markers."""
+    """Grep starter code files for solution-shaped comment markers.
+
+    Returns:
+        One failure message per marker hit; empty means clean.
+    """
     failures: list[str] = []
     scanned = 0
     for py in sorted(root.glob("unit*/**/starter/*.py")):
@@ -161,6 +159,10 @@ def check_marker_coverage(root: Path) -> list[str]:
     An unmarked page is invisible to the site-side publish-lock gate, so
     "unmarked" must be impossible rather than silently passing. Markers
     with values outside ``VALID_STATUSES`` fail too (typo protection).
+
+    Returns:
+        One failure message per unmarked page plus one per invalid
+        marker value; empty means clean.
     """
     failures: list[str] = []
     scanned = 0
@@ -191,13 +193,26 @@ def check_marker_coverage(root: Path) -> list[str]:
     return failures
 
 
-def check_name_ratchet(root: Path) -> list[str]:
-    """Fail when MSU-course-code mentions drift from the reviewed baseline.
+def check_name_ratchet(
+    root: Path, token: re.Pattern, baseline: dict[str, int]
+) -> list[str]:
+    """Fail when course-code mentions drift from the reviewed baseline.
 
-    Counts "CS 1050"/"CS1050" occurrences per text file and compares
-    against NAME_BASELINE. Higher = an unreviewed new mention; lower =
+    Counts course-code occurrences per text file and compares against
+    the config's baseline. Higher = an unreviewed new mention; lower =
     a removed mention the baseline should reflect. Either way a human
-    looks, then updates the table.
+    looks, then updates tools/integrity_config.json.
+
+    Args:
+        root: Course repo root to scan.
+        token: Compiled pattern of forbidden course codes (from the
+            config's course_code_patterns).
+        baseline: Human-reviewed occurrence count per repo-relative
+            file path (from the config's name_baseline).
+
+    Returns:
+        One failure message per file whose count drifted from the
+        baseline; empty means no drift.
     """
     failures: list[str] = []
     found: dict[str, int] = {}
@@ -209,17 +224,18 @@ def check_name_ratchet(root: Path) -> list[str]:
         if path.name == "integrity_scan.py":
             continue
         rel = str(path.relative_to(root))
-        n = len(NAME_TOKEN.findall(path.read_text(encoding="utf-8")))
+        n = len(token.findall(path.read_text(encoding="utf-8")))
         if n:
             found[rel] = n
-    for rel in sorted(set(found) | set(NAME_BASELINE)):
-        actual, expected = found.get(rel, 0), NAME_BASELINE.get(rel, 0)
+    for rel in sorted(set(found) | set(baseline)):
+        actual, expected = found.get(rel, 0), baseline.get(rel, 0)
         if actual != expected:
             failures.append(
                 _fail(
                     f"{rel}: {actual} course-code mention(s), baseline "
                     f"says {expected} — review the change (course codes "
-                    "never name our courses), then update NAME_BASELINE"
+                    "never name our courses), then update "
+                    "tools/integrity_config.json"
                 )
             )
     print(f"  compared {len(found)} file(s) against the naming baseline")
@@ -227,7 +243,12 @@ def check_name_ratchet(root: Path) -> list[str]:
 
 
 def main() -> int:
-    """Run the public integrity checks; report and return an exit code."""
+    """Run the public integrity checks and report the results.
+
+    Returns:
+        Process exit code: 0 when every check passes, 1 when any
+        check fails.
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--root",
@@ -244,8 +265,15 @@ def main() -> int:
     failures += check_no_solution_markers(args.root)
     print("[iv] markdown pages must carry author_status markers:")
     failures += check_marker_coverage(args.root)
-    print("[v] MSU course-code mentions must match the reviewed baseline:")
-    failures += check_name_ratchet(args.root)
+    print("[v] course-code mentions must match the reviewed baseline:")
+    config_path = args.root / "tools" / "integrity_config.json"
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    token = re.compile(
+        "|".join(config["course_code_patterns"]), re.IGNORECASE
+    )
+    failures += check_name_ratchet(
+        args.root, token, config["name_baseline"]
+    )
 
     print()
     if failures:

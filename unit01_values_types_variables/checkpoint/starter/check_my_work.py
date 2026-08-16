@@ -25,7 +25,21 @@ except Exception as e:  # missing file, syntax error, crash while running
 # value the way Python sees it — text keeps its quotes ('12' vs 12) —
 # so an error message reveals a TYPE mistake, not just a wrong value.
 def _value(name, hint):
-    """Fetch variable `name` from checkpoint_1, with friendly failures."""
+    """Fetch variable `name` from checkpoint_1, with friendly failures.
+
+    Args:
+        name: Exact variable name expected in checkpoint_1.py.
+        hint: What the variable should hold, echoed in the error
+            message.
+
+    Returns:
+        The variable's current value.
+
+    Raises:
+        AssertionError: If checkpoint_1.py couldn't be imported at
+            all, or no variable named `name` exists — with a message
+            written for students.
+    """
     assert checkpoint_1 is not None, (
         "I couldn't load checkpoint_1.py at all: "
         f"{_IMPORT_ERROR!r}. Make sure checkpoint_1.py is in this same "
@@ -77,7 +91,12 @@ def test_saw_it_in_theaters_is_a_bool():
 
 
 def _main():
-    """Run every check with friendly PASS/FAIL output; return exit code."""
+    """Run every check with friendly PASS/FAIL output.
+
+    Returns:
+        0 when every check passes, 1 otherwise (used as the exit
+        code).
+    """
     checks = [
         test_favorite_movie_is_text,
         test_movies_watched_is_a_whole_number,
