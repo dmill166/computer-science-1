@@ -24,7 +24,7 @@ That's a mouthful. Let's break it down into the shape that actually matters, one
 ```mermaid
 flowchart LR
     accTitle: The shape of computation as an inputs-to-output flow
-    accDescr: A left-to-right flowchart with three stages. First, Inputs - what you start with. An arrow leads to Steps - a set of rules, followed exactly and in order. A second arrow leads to Predictable output - the same result every time. This is the inputs-to-steps-to-output shape the whole lecture is built on.
+    accDescr: A left-to-right flowchart with three stages. First, Inputs: what you start with. An arrow leads to Steps: a set of rules, followed exactly and in order. A second arrow leads to Predictable output: the same result every time. This is the inputs-to-steps-to-output shape the whole lecture is built on.
     I[Inputs<br/>what you start with] --> P[Steps<br/>a set of rules, followed<br/>exactly and in order] --> O[Predictable output<br/>the same result, every time]
 ```
 
@@ -81,7 +81,7 @@ A coffee maker takes a specific set of **inputs** (beans or grounds, water, mayb
 ```mermaid
 flowchart LR
     accTitle: A coffee maker as an inputs-to-output computation
-    accDescr: A left-to-right flowchart of making coffee. Inputs - grounds, water, and creamer - flow by an arrow into Steps, where the machine brews. A second arrow leads to the Output - your coffee. It is the same inputs-to-steps-to-output shape as the definition of computation, shown with an everyday machine.
+    accDescr: A left-to-right flowchart of making coffee. Inputs (grounds, water, and creamer) flow by an arrow into Steps, where the machine brews. A second arrow leads to the Output: your coffee. It is the same inputs-to-steps-to-output shape as the definition of computation, shown with an everyday machine.
     A[Inputs<br/>grounds · water · creamer] --> B[Steps<br/>the machine brews]
     B --> C[Output<br/>your coffee]
 ```
@@ -138,7 +138,7 @@ Trace it the way the machine would: one step at a time, top to bottom:
 ```mermaid
 flowchart TD
     accTitle: Tracing the make_coffee program from top to bottom
-    accDescr: A top-to-bottom flowchart of the five make_coffee steps, one arrow flowing from each step down to the next. Step 1, add grounds to the basket - the basket is now full. Step 2, add water to the reservoir - the reservoir is now full. Step 3, press start - the machine is now brewing. Step 4, wait for the brew to finish - the pot is now full of coffee. Step 5, pour into a mug - the mug is full.
+    accDescr: A top-to-bottom flowchart of the five make_coffee steps, one arrow flowing from each step down to the next. Step 1, add grounds to the basket; the basket is now full. Step 2, add water to the reservoir; the reservoir is now full. Step 3, press start; the machine is now brewing. Step 4, wait for the brew to finish; the pot is now full of coffee. Step 5, pour into a mug; the mug is full.
     S1["1 · Add grounds to the basket<br/>state: basket full"]
     S2["2 · Add water to the reservoir<br/>state: reservoir full"]
     S3["3 · Press start<br/>state: brewing…"]
