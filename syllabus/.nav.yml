@@ -1,6 +1,6 @@
 # Controls how the syllabus bucket renders on dakotalearns.com. This file is
 # pulled into the site at build time (single source of truth = this repo), so
-# the course repo owns its own navigation — order and short titles included.
+# the course repo owns its own navigation - order and short titles included.
 title: Syllabus & schedule
 nav:
   - Syllabus: index.md

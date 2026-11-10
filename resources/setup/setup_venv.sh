@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =====================================================================
-# setup_venv.sh — OPTIONAL isolated environment (macOS / Linux)
+# setup_venv.sh - OPTIONAL isolated environment (macOS / Linux)
 # Computer Science 1
 #
 # You do NOT need this for the course. Computer Science 1 installs no
@@ -9,7 +9,7 @@
 # separation anyway (or already have some experience). The "why" lives
 # in the Advanced Instructions section of README.md.
 #
-# This script is also meant to be READ, not just run — every step
+# This script is also meant to be READ, not just run - every step
 # below is explained in plain language. Reading a small script like
 # this is great practice.
 #
@@ -23,7 +23,7 @@ set -e            # stop immediately if any step fails, instead of
 set -u            # treat using a misspelled/unset variable as an
                   # error, instead of silently using empty text
 set -o pipefail   # if commands are chained with pipes, the chain
-                  # fails when ANY link fails — no hidden failures
+                  # fails when ANY link fails - no hidden failures
 
 # --- Find out where this script lives --------------------------------
 # We need this so we can find check_env.py, which sits in the same
@@ -37,9 +37,9 @@ echo "Using: $(python3 --version)"
 # --- Create the virtual environment (if it doesn't already exist) ----
 # ".venv" is the industry-standard name you'll see in tutorials and
 # real projects everywhere, so we teach the real convention. The
-# leading dot means "hidden folder" — it's machinery, not your work.
+# leading dot means "hidden folder" - it's machinery, not your work.
 if [ -d .venv ]; then
-    echo ".venv already exists here — reusing it."
+    echo ".venv already exists here - reusing it."
 else
     python3 -m venv .venv
     echo "Created .venv/"
@@ -54,7 +54,7 @@ source .venv/bin/activate
 # --- Prove it worked --------------------------------------------------
 # Run the course environment check using the environment we just
 # activated. The `|| true` at the end means "even if the check reports
-# a problem, keep going" — so you still see the reminders below.
+# a problem, keep going" - so you still see the reminders below.
 python "$SCRIPT_DIR/check_env.py" || true
 
 cat <<'EOF'

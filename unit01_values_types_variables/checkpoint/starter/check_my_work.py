@@ -22,7 +22,7 @@ except Exception as e:  # missing file, syntax error, crash while running
 
 
 # A note on the f"{...!r}" pattern in the messages below: !r formats a
-# value the way Python sees it — text keeps its quotes ('12' vs 12) —
+# value the way Python sees it (text keeps its quotes: '12' vs 12),
 # so an error message reveals a TYPE mistake, not just a wrong value.
 def _value(name, hint):
     """Fetch variable `name` from checkpoint_1, with friendly failures.
@@ -37,7 +37,7 @@ def _value(name, hint):
 
     Raises:
         AssertionError: If checkpoint_1.py couldn't be imported at
-            all, or no variable named `name` exists — with a message
+            all, or no variable named `name` exists - with a message
             written for students.
     """
     assert checkpoint_1 is not None, (

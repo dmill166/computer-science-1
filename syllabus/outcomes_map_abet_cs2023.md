@@ -1,14 +1,14 @@
-# Computer Science 1 — Outcomes Mapping
+# Computer Science 1: Outcomes Mapping
 ## Course objectives → ABET CAC student outcomes → ACM/IEEE-CS CS2023 knowledge areas
 
 <!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's review 2026-07-21 + 2026-08-02 incl. reworded objective labels; promoted 2026-08-02) -->
 
-> **Purpose:** demonstrate that these Computer Science 1 materials are deliberately aligned to (1) the **ABET Computing Accreditation Commission** student outcomes under which MSU Denver's CS B.S. is accredited, and (2) the **ACM/IEEE-CS CS2023** curricular knowledge areas. Doubles as a build-in-public content asset and a tested-experience artifact. Why an independent course bothers with this at all: I seek out the public course objectives and accreditation standards precisely so learners here get genuine preparation — whether they ever enroll in a formal program or are consuming this entirely on their own time.
+> **Purpose:** demonstrate that these Computer Science 1 materials are deliberately aligned to (1) the **ABET Computing Accreditation Commission** student outcomes under which MSU Denver's CS B.S. is accredited, and (2) the **ACM/IEEE-CS CS2023** curricular knowledge areas. Doubles as a build-in-public content asset and a tested-experience artifact. Why an independent course bothers with this at all: I seek out the public course objectives and accreditation standards precisely so learners here get genuine preparation, whether they ever enroll in a formal program or are consuming this entirely on their own time.
 >
 > **Independent alignment:** these mappings are my reasoned alignment, not an official department or ABET determination.
 
 ??? note "How to read this page"
-    This page is **instructor- and accreditation-facing** — the formal crosswalk from course objectives to ABET student outcomes and CS2023 knowledge areas. **Students:** nothing here is required reading; it exists so every lecture's "For instructors" note can trace its alignment claim to a source. **Instructors:** tag content by joining on the **objective number**, never on a unit integer (the spine and catalog use different unit schemes).
+    This page is **instructor- and accreditation-facing**; the formal crosswalk from course objectives to ABET student outcomes and CS2023 knowledge areas. **Students:** nothing here is required reading; it exists so every lecture's "For instructors" note can trace its alignment claim to a source. **Instructors:** tag content by joining on the **objective number**, never on a unit integer (the spine and catalog use different unit schemes).
 
 ## Reference: ABET CAC student outcomes (computing programs)
 
@@ -21,11 +21,11 @@
 
 ## Reference: CS2023 knowledge areas used here
 
-- **SDF** — Software Development Fundamentals
-- **FPL** — Foundations of Programming Languages
-- **SE** — Software Engineering
-- **AL** — Algorithmic Foundations
-- **SEP** — Society, Ethics, and Professionalism
+- **SDF**: Software Development Fundamentals
+- **FPL**: Foundations of Programming Languages
+- **SE**: Software Engineering
+- **AL**: Algorithmic Foundations
+- **SEP**: Society, Ethics, and Professionalism
 
 ## Mapping table
 
@@ -45,9 +45,9 @@
 | 12 | Describe the software development life cycle | SO-1, SO-6 | SE | 2 |
 
 > **Wording note:** objective texts here and in the syllabus are this course's own phrasing; the **numbering** is aligned 1:1 with MSU Denver's course-of-record objectives so the crosswalk below joins cleanly on the course objective # (column 1 of the mapping table above).
-| — | Written report / oral presentation (course-of-record) | SO-3, SO-4 | SEP, SE | labs/assignments writing thread |
+| - | Written report / oral presentation (course-of-record) | SO-3, SO-4 | SEP, SE | labs/assignments writing thread |
 
-> **Reading the last column — and how to tag a lecture.** The **Course-of-record unit(s)** column uses the **9 catalog (course-of-record) units** (the course-of-record coverage scheme; e.g. CoR unit 4 = *Data Types & Variables*). These are **NOT** the 13-unit teaching-spine numbers used for unit folders (`unitNN_topic/`), where 4 = *Strings*. The two schemes deliberately reuse the same integers, so **never tag a lecture by matching unit numbers.** The stable join key is the **objective # (1–12)**: a lecture declares the objective(s) it covers (see the [crosswalk below](#lecture-to-objective-crosswalk-tagging-key)), then this table maps each objective → ABET SO + CS2023 KA.
+> **Reading the last column, and how to tag a lecture.** The **Course-of-record unit(s)** column uses the **9 catalog (course-of-record) units** (the course-of-record coverage scheme; e.g. CoR unit 4 = *Data Types & Variables*). These are **NOT** the 13-unit teaching-spine numbers used for unit folders (`unitNN_topic/`), where 4 = *Strings*. The two schemes deliberately reuse the same integers, so **never tag a lecture by matching unit numbers.** The stable join key is the **objective # (1–12)**: a lecture declares the objective(s) it covers (see the [crosswalk below](#lecture-to-objective-crosswalk-tagging-key)), then this table maps each objective → ABET SO + CS2023 KA.
 
 ## Coverage summary (ABET SO → where assessed)
 
@@ -60,11 +60,11 @@
 | SO-5 (teamwork) | *not a primary CS1 outcome* | optional paired lab(s); revisit at course level |
 | SO-6 (CS theory + dev fundamentals) | 1–12 | assignments, labs, exams |
 
-> **Gap note:** SO-5 (teamwork) is only lightly touched by a single-author CS1. That's expected — it's carried more heavily by later courses. If the department wants CS1 to contribute to SO-5, add at least one paired/collaborative lab and assess it explicitly.
+> **Gap note:** SO-5 (teamwork) is only lightly touched by a single-author CS1. That's expected; it's carried more heavily by later courses. If the department wants CS1 to contribute to SO-5, add at least one paired/collaborative lab and assess it explicitly.
 
 ## Lecture-to-objective crosswalk (tagging key)
 
-> Added 2026-06-20. **The authoritative source for tagging a lecture's outcomes — join on the `objective #`, never on a unit integer.** Spine unit + week are exact (spine→obj mirrors [`design_rationale`](design_rationale.md); weeks from [`schedule_fall2026`](schedule.md)). The **CoR unit** column is a best-effort accreditation cross-reference only — the 9-unit catalog scheme doesn't map 1:1 to the spine.
+> Added 2026-06-20. **The authoritative source for tagging a lecture's outcomes: join on the `objective #`, never on a unit integer.** Spine unit + week are exact (spine→obj mirrors [`design_rationale`](design_rationale.md); weeks from [`schedule_fall2026`](schedule.md)). The **CoR unit** column is a best-effort accreditation cross-reference only; the 9-unit catalog scheme doesn't map 1:1 to the spine.
 
 | Spine unit (folder `NN_`) | Topic | Week(s) | Objective(s) | CoR unit(s) |
 |---|---|---|---|---|
@@ -79,9 +79,9 @@
 | 8 | Files & exceptions | 9 | 8 | 5 |
 | 9 | Testing & debugging | 7 | 11 | 3 |
 | 10 | Classes & OOP (+ intro inheritance) | 10–11 | 4, 10 | 6 |
-| 11 | Recursion | 12 | 1, 9 | — (problem-solving; no clean CoR unit) |
+| 11 | Recursion | 12 | 1, 9 | - (problem-solving; no clean CoR unit) |
 | 12 | Algorithms: search, sort, intro Big-O | 13 | 1, 9 | 9 |
 
-*(Module 0 — Python setup — is an enabler with no objective mapping.)*
+*(Module 0, Python setup, is an enabler with no objective mapping.)*
 
 **To fill a lecture's "Objectives (ABET-mapped)" section:** spine unit → its **Objective(s)** here → each objective's **ABET SO + CS2023 KA** from the [mapping table](#mapping-table). Example: `00_what_is_computation` (spine 0) → objective 12 → **SO-1, SO-6 / CS2023 SE**.

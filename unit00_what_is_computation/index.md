@@ -3,40 +3,37 @@ title: "What Is Computation (and How Do Programs Actually Run)?"
 date_published: 2026-07-03
 ---
 
-<!--
-LECTURE STATUS: voice-core APPROVED by Dakota 2026-06-24 (author_status: dakota-authored). Finalized.
-author_status taxonomy: see cs-teaching/voice_provenance.md (the SSOT — definitions live there only).
-Spine: Unit 0 · Objectives → MSU Denver obj 12 → ABET SO-1, SO-6 / CS2023 SE.
--->
-
 # What Is Computation (and How Do Programs Actually Run)?
 
-??? note "For instructors — outcome alignment"
-    This lesson aligns with **MSU Denver CS 1050 objective 12** (state the steps of the software development process); more broadly, with **ABET** student outcomes **SO-1** (analyze a computing problem) and **SO-6** (apply CS fundamentals), under the **ACM/IEEE-CS CS2023** *Software Engineering* knowledge area. *(Alignment only — not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
+<!-- author_status: assistant-mechanical | section: For instructors note (alignment from the outcomes map) -->
+??? note "For instructors: outcome alignment"
+    This lesson aligns with **MSU Denver CS 1050 objective 12** (state the steps of the software development process); more broadly, with **ABET** student outcomes **SO-1** (analyze a computing problem) and **SO-6** (apply CS fundamentals), under the **ACM/IEEE-CS CS2023** *Software Engineering* knowledge area. *(Alignment only; not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*
+<!-- /author_status -->
+
 <!-- author_status: dakota-authored | section: Frame -->
 Oh, hello there 👋 and welcome to the very first real lesson. Before we touch a single line of Python, let's answer the question hiding under this whole course: **what *is* computation, anyway?**
 
-I'll be honest with you about how I started this answer: I Googled it. (I do this a lot — it's what every good programmer does, and you should never feel bad about it either.) Here's what came back:
+I'll be honest with you about how I started this answer: I Googled it. (I do this a lot; it's what every good programmer does, and you should never feel bad about it either.) Here's what came back:
 
 > Computation is the process of calculating or determining an outcome by following a well-defined set of rules, algorithms, or mathematical steps. It involves taking an initial set of inputs and transforming them into a predictable output.[^def]
 
-*(Quick gut-check before we lean on that: it's an AI-generated search summary, not gospel. I tracked down where it seems to come from and cited it below — always worth knowing who you're quoting, even when it's a computer handing you the answer.)*
+*(Quick gut-check before we lean on that: it's an AI-generated search summary, not gospel. I tracked down where it seems to come from and cited it below; always worth knowing who you're quoting, even when it's a computer handing you the answer.)*
 
-That's a mouthful. Let's break it down into the shape that actually matters — one you'll see again and again:
+That's a mouthful. Let's break it down into the shape that actually matters, one you'll see again and again:
 
 ```mermaid
 flowchart LR
     accTitle: The shape of computation as an inputs-to-output flow
-    accDescr: A left-to-right flowchart with three stages. First, Inputs — what you start with. An arrow leads to Steps — a set of rules, followed exactly and in order. A second arrow leads to Predictable output — the same result every time. This is the inputs-to-steps-to-output shape the whole lecture is built on.
+    accDescr: A left-to-right flowchart with three stages. First, Inputs - what you start with. An arrow leads to Steps - a set of rules, followed exactly and in order. A second arrow leads to Predictable output - the same result every time. This is the inputs-to-steps-to-output shape the whole lecture is built on.
     I[Inputs<br/>what you start with] --> P[Steps<br/>a set of rules, followed<br/>exactly and in order] --> O[Predictable output<br/>the same result, every time]
 ```
 
 !!! tip "You'll see this in your textbook, too"
-    Zelle (and most CS texts) call this same shape **Input → Process → Output (IPO)**. When you're reading the book, that's the phrase to look for; in my lessons I'll usually just say **inputs → steps → output** — same idea, my words for it.
+    Zelle (and most CS texts) call this same shape **Input → Process → Output (IPO)**. When you're reading the book, that's the phrase to look for; in my lessons I'll usually just say **inputs → steps → output**; same idea, my words for it.
 
-That's it. That's the whole idea. And here's why I want you to care about it before anything else: **this applies to everyone — technical and non-technical folks alike.**
+That's it. That's the whole idea. And here's why I want you to care about it before anything else: **this applies to everyone, technical and non-technical folks alike.**
 
-In my case, I'm a Data Engineer. My whole job is building things that pull and transform data *reliably and accurately every time* — same inputs, same steps, same output. But you don't have to write code for this to matter to you. Think about buying groceries: if there's a specific set of groceries you always buy, wouldn't it be nice to have them show up on a consistent schedule with a consistent result? (Hint, hint — there's an entire *market* built on exactly that.) Computation is in all of our lives — the same **inputs → steps → output** shape, whether you notice it or not:
+In my case, I'm a Data Engineer. My whole job is building things that pull and transform data *reliably and accurately every time*: same inputs, same steps, same output. But you don't have to write code for this to matter to you. Think about buying groceries: if there's a specific set of groceries you always buy, wouldn't it be nice to have them show up on a consistent schedule with a consistent result? (Hint, hint: there's an entire *market* built on exactly that.) Computation is in all of our lives, the same **inputs → steps → output** shape, whether you notice it or not:
 
 | Everyday setup | Same inputs + steps → | Predictable output |
 |---|---|---|
@@ -45,16 +42,16 @@ In my case, I'm a Data Engineer. My whole job is building things that pull and t
 
 Some of us use it directly in our jobs, some directly in our personal lives, and some of us indirectly without ever thinking about it.
 
-And here's the encouraging part: computers are more accessible than they have ever been. I'd bet most of you reading this are holding one right now — your cell phone. In fact, the phone in your pocket has **far more computing power than the systems that put a person on the moon**[^moon].
+And here's the encouraging part: computers are more accessible than they have ever been. I'd bet most of you reading this are holding one right now: your cell phone. In fact, the phone in your pocket has **far more computing power than the systems that put a person on the moon**[^moon].
 
-So when you watch a movie with a "hacking" scene, or someone hammering 200 keys a minute like they're casting a spell — it can look like magic. I'm here to tell you: **you can do this too, and it's not nearly as hard as you think.**
+So when you watch a movie with a "hacking" scene, or someone hammering 200 keys a minute like they're casting a spell; it can look like magic. I'm here to tell you: **you can do this too, and it's not nearly as hard as you think.**
 <!-- /author_status -->
 
-[^def]: That definition is an AI-generated search summary — it appears synthesized from [Wolfram MathWorld — *Computation*](https://mathworld.wolfram.com/Computation.html) and [a CS StackExchange discussion](https://cs.stackexchange.com/questions/43938/what-exactly-is-computation).
+[^def]: That definition is an AI-generated search summary; it appears synthesized from [Wolfram MathWorld: *Computation*](https://mathworld.wolfram.com/Computation.html) and [a CS StackExchange discussion](https://cs.stackexchange.com/questions/43938/what-exactly-is-computation).
 
-[^moon]: A modern smartphone dwarfs the 1960s NASA flight computers by an enormous margin — see [EIT](https://www.eit.edu.au/smartphones-hold-more-tech-than-60s-nasa-computers/) and [this 2025 iPhone teardown comparison](https://global.dday.it/2025/10/08/509/apple-iphone-17-review-ordinary-but-only-on-the-surface).
+[^moon]: A modern smartphone dwarfs the 1960s NASA flight computers by an enormous margin; see [EIT](https://www.eit.edu.au/smartphones-hold-more-tech-than-60s-nasa-computers/) and [this 2025 iPhone teardown comparison](https://global.dday.it/2025/10/08/509/apple-iphone-17-review-ordinary-but-only-on-the-surface).
 
-[^toc]: For the curious: **Theory of Computation** is an upper-level CS course about what machines can compute *at all*, and how efficiently — using precise mathematical models of a "machine." Want a taste? [This introduction](https://www.geeksforgeeks.org/theory-of-computation/introduction-of-theory-of-computation/) is a reasonable place to peek — but fair warning before you click: it may seem really, *really* dense or confusing. That's not just because it's brand new to you; it's a genuinely complicated topic to begin with, especially if you're new to computer science as a whole. Absolutely **not** required background for this course; it just happens to be where this idea finally clicked for me.
+[^toc]: For the curious: **Theory of Computation** is an upper-level CS course about what machines can compute *at all*, and how efficiently, using precise mathematical models of a "machine." Want a taste? [This introduction](https://www.geeksforgeeks.org/theory-of-computation/introduction-of-theory-of-computation/) is a reasonable place to peek, but fair warning before you click: it may seem really, *really* dense or confusing. That's not just because it's brand new to you; it's a genuinely complicated topic to begin with, especially if you're new to computer science as a whole. Absolutely **not** required background for this course; it just happens to be where this idea finally clicked for me.
 
 ---
 
@@ -63,10 +60,10 @@ So when you watch a movie with a "hacking" scene, or someone hammering 200 keys 
 <!-- author_status: assistant-mechanical | section: Objectives -->
 By the end of this lesson, you'll be able to:
 
-1. **Explain, in your own words, what computation is** — inputs, a set of well-defined steps, and a predictable output.
+1. **Explain, in your own words, what computation is**: inputs, a set of well-defined steps, and a predictable output.
 2. **Describe what a program is** and give an example of one from your own life.
 3. **Explain why "exact" and "in order" matter** to how a machine runs your instructions.
-4. **Recognize that programming is a language** with its own rules — and that you already learn rules like this all the time.
+4. **Recognize that programming is a language** with its own rules, and that you already learn rules like this all the time.
 
 <!-- /author_status -->
 
@@ -84,39 +81,39 @@ A coffee maker takes a specific set of **inputs** (beans or grounds, water, mayb
 ```mermaid
 flowchart LR
     accTitle: A coffee maker as an inputs-to-output computation
-    accDescr: A left-to-right flowchart of making coffee. Inputs — grounds, water, and creamer — flow by an arrow into Steps, where the machine brews. A second arrow leads to the Output — your coffee. It is the same inputs-to-steps-to-output shape as the definition of computation, shown with an everyday machine.
+    accDescr: A left-to-right flowchart of making coffee. Inputs - grounds, water, and creamer - flow by an arrow into Steps, where the machine brews. A second arrow leads to the Output - your coffee. It is the same inputs-to-steps-to-output shape as the definition of computation, shown with an everyday machine.
     A[Inputs<br/>grounds · water · creamer] --> B[Steps<br/>the machine brews]
     B --> C[Output<br/>your coffee]
 ```
 
 Notice that this is the *exact same shape* as the definition we Googled: **inputs → a well-defined set of steps → a predictable output.** Hold onto that shape, because you're going to see it everywhere for the rest of this course.
 
-Now here's the part that explains **how a program actually runs** — and it comes in two words: *exact* and *in order*.
+Now here's the part that explains **how a program actually runs**, and it comes in two words: *exact* and *in order*.
 
-- **Exact.** A machine does *exactly* what it was built or told to do — no more, no less. If I have a $20 drip carafe I grabbed at Walmart, it is not going to make me a flat white or a vanilla latte. Its "spec" is black coffee, and black coffee is what I get. The machine doesn't guess what I *meant*; it does what it actually does.
-- **In order.** The steps run in a sequence, and the sequence matters. My cheap coffee maker might be built so that I load the grounds **first**, *then* the water — do it in the wrong order and it simply won't work.
+- **Exact.** A machine does *exactly* what it was built or told to do; no more, no less. If I have a $20 drip carafe I grabbed at Walmart, it is not going to make me a flat white or a vanilla latte. Its "spec" is black coffee, and black coffee is what I get. The machine doesn't guess what I *meant*; it does what it actually does.
+- **In order.** The steps run in a sequence, and the sequence matters. My cheap coffee maker might be built so that I load the grounds **first**, *then* the water; do it in the wrong order and it simply won't work.
 
-Put those together and you've got the big secret of this whole lesson: **computation and programming are exactly the same idea.** A computer, like that coffee pot, follows your steps *exactly* and *in order*. It is not reading your mind — it is following your instructions. That's not a limitation to fear; once you really believe it, it becomes the thing that makes everything else make sense.
+Put those together and you've got the big secret of this whole lesson: **computation and programming are exactly the same idea.** A computer, like that coffee pot, follows your steps *exactly* and *in order*. It is not reading your mind; it is following your instructions. That's not a limitation to fear; once you really believe it, it becomes the thing that makes everything else make sense.
 <!-- /author_status -->
 
 ### Okay, so what's a "program"?
 
 <!-- author_status: dakota-authored | section: Core explanation (cont.) -->
-A **program** is just *a set of steps followed by a machine* — and in our case, that machine is almost always a computer (and yes, the phone in your pocket counts as one).
+A **program** is just *a set of steps followed by a machine*, and in our case, that machine is almost always a computer (and yes, the phone in your pocket counts as one).
 
 Programs can be tiny. A simple one I built recently was a little shortcut to open folders on my Mac in an app that Apple doesn't list in the normal "Open with…" menu. That's a program.
 
-Or they can be big. Years ago, when I was first learning Python, I rebuilt the card game *Memory* — complete with a timer and a leaderboard. There was **input** (someone running my game and playing it), there were **steps** (flipping cards, removing matched pairs, tracking your progress), and there was **output** (your final score, the leaderboard, and a little arcade-style prompt for your name). Big or small — same shape. Input, steps, output.
+Or they can be big. Years ago, when I was first learning Python, I rebuilt the card game *Memory*, complete with a timer and a leaderboard. There was **input** (someone running my game and playing it), there were **steps** (flipping cards, removing matched pairs, tracking your progress), and there was **output** (your final score, the leaderboard, and a little arcade-style prompt for your name). Big or small; same shape. Input, steps, output.
 <!-- /author_status -->
 
 ### Programming is a language (and you already learn languages)
 
 <!-- author_status: dakota-authored | section: Core explanation (cont.) -->
-This finally clicked for me in one of the most trying courses I ever took — Theory of Computation.[^toc] (I didn't feel the specific section I was enrolled in was taught or supported well at the time, and I struggled — and that's okay; I still walked away with something worth keeping.) Here it is:
+This finally clicked for me in one of the most trying courses I ever took: Theory of Computation.[^toc] (I didn't feel the specific section I was enrolled in was taught or supported well at the time, and I struggled, and that's okay; I still walked away with something worth keeping.) Here it is:
 
-**Programming is a language, like any other.** A language has **syntax** (the exact words and symbols you write) and **semantics** (what those words actually *mean* — the rules of the language). Together, those two things power every piece of technology around you.
+**Programming is a language, like any other.** A language has **syntax** (the exact words and symbols you write) and **semantics** (what those words actually *mean*: the rules of the language). Together, those two things power every piece of technology around you.
 
-And honestly? You already do this. Go back to coffee for a second: the world of coffee has its own vocabulary and its own rules for how you *use* that knowledge. "Pull a double shot," "bloom the grounds" — that's the language of coffee. Learning to program is the same kind of thing. You're not becoming a different person; you're picking up one more language, the same way you've picked up others.
+And honestly? You already do this. Go back to coffee for a second: the world of coffee has its own vocabulary and its own rules for how you *use* that knowledge. "Pull a double shot," "bloom the grounds": that's the language of coffee. Learning to program is the same kind of thing. You're not becoming a different person; you're picking up one more language, the same way you've picked up others.
 <!-- /author_status -->
 
 ---
@@ -124,7 +121,7 @@ And honestly? You already do this. Go back to coffee for a second: the world of 
 ## Let's trace one together
 
 <!-- author_status: assistant-shared | section: Worked example -->
-We don't have any Python yet — that's next lesson — so let's "run" a program we both already know: making coffee. Watch how a machine would have to follow it.
+We don't have any Python yet (that's next lesson), so let's "run" a program we both already know: making coffee. Watch how a machine would have to follow it.
 
 **Program: `make_coffee`**
 
@@ -136,12 +133,12 @@ We don't have any Python yet — that's next lesson — so let's "run" a program
 5. Pour into a mug.
 ```
 
-Trace it the way the machine would — one step at a time, top to bottom:
+Trace it the way the machine would: one step at a time, top to bottom:
 
 ```mermaid
 flowchart TD
     accTitle: Tracing the make_coffee program from top to bottom
-    accDescr: A top-to-bottom flowchart of the five make_coffee steps, one arrow flowing from each step down to the next. Step 1, add grounds to the basket — the basket is now full. Step 2, add water to the reservoir — the reservoir is now full. Step 3, press start — the machine is now brewing. Step 4, wait for the brew to finish — the pot is now full of coffee. Step 5, pour into a mug — the mug is full.
+    accDescr: A top-to-bottom flowchart of the five make_coffee steps, one arrow flowing from each step down to the next. Step 1, add grounds to the basket - the basket is now full. Step 2, add water to the reservoir - the reservoir is now full. Step 3, press start - the machine is now brewing. Step 4, wait for the brew to finish - the pot is now full of coffee. Step 5, pour into a mug - the mug is full.
     S1["1 · Add grounds to the basket<br/>state: basket full"]
     S2["2 · Add water to the reservoir<br/>state: reservoir full"]
     S3["3 · Press start<br/>state: brewing…"]
@@ -152,8 +149,8 @@ flowchart TD
 
 Now break the rules on purpose and feel why *exact* and *in order* matter:
 
-- **Out of order:** press start (step 3) *before* adding water (step 2). Nothing brews. The machine didn't "figure it out" — it did exactly what the steps said, in the order they came.
-- **Wrong input:** load tea leaves instead of coffee grounds. It runs every step perfectly and hands you a cup of tea — exactly what its inputs told it to make. **What you put in shapes what you get out.**
+- **Out of order:** press start (step 3) *before* adding water (step 2). Nothing brews. The machine didn't "figure it out"; it did exactly what the steps said, in the order they came.
+- **Wrong input:** load tea leaves instead of coffee grounds. It runs every step perfectly and hands you a cup of tea, exactly what its inputs told it to make. **What you put in shapes what you get out.**
 
 That's the entire mental model you need going forward: **the computer follows your steps exactly, in order, on the inputs you actually gave it.**
 <!-- /author_status -->
@@ -162,29 +159,30 @@ That's the entire mental model you need going forward: **the computer follows yo
 
 ## Check yourself
 
-<!-- author_status: assistant-mechanical | section: Retrieval checks (quiz/parsons data — rendered by the site) -->
-Quick, low-stakes retrieval — no grade, just to see if it stuck. The first few score themselves (be honest with your first answer!); the last two are yours to say out loud before peeking.
+<!-- author_status: assistant-mechanical | section: Retrieval checks (quiz/parsons data - rendered by the site) -->
+Quick, low-stakes retrieval; no grade, just to see if it stuck. The first few score themselves (be honest with your first answer!); the last two are yours to say out loud before peeking.
 
 ```quiz
 {
   "questions": [
     {
       "prompt": "True or false: the order of a program's steps usually doesn't matter.",
-      "hint": "Picture the coffee recipe from this lesson — try mentally swapping two of its steps and see what comes out of the machine.",
+      "hint": "Picture the coffee recipe from this lesson - try mentally swapping two of its steps and see what comes out of the machine.",
       "options": ["True", "False"],
-      "answer": 1,
-      "explain": "Steps run **in order**, and the order often changes the result — press start before adding water and nothing brews."
+      "answer": "False",
+      "fixed_order": true,
+      "explain": "Steps run **in order**, and the order often changes the result - press start before adding water and nothing brews."
     },
     {
       "prompt": "A friend says, \"My computer did something I didn't tell it to.\" Using today's lesson, what most likely happened?",
       "hint": "This lesson made one big promise about machines: they never improvise. If the outcome still surprised your friend, what's left to explain it?",
       "options": [
         "The computer improvised a new step on its own.",
-        "The computer followed its instructions exactly — the steps (or the inputs) just weren't what your friend thought they were.",
+        "The computer followed its instructions exactly - the steps (or the inputs) just weren't what your friend thought they were.",
         "The computer ran the right steps, but in a random order."
       ],
-      "answer": 1,
-      "explain": "Machines don't improvise — they follow the steps, exactly and **in order**, on the inputs they were actually given."
+      "answer": "The computer followed its instructions exactly - the steps (or the inputs) just weren't what your friend thought they were.",
+      "explain": "Machines don't improvise - they follow the steps, exactly and **in order**, on the inputs they were actually given."
     }
   ]
 }
@@ -216,7 +214,7 @@ Quick, low-stakes retrieval — no grade, just to see if it stuck. The first few
 ## Your turn (practice)
 
 <!-- author_status: assistant-shared | section: Independent practice -->
-No code required. Pick something you do on autopilot — making coffee, a morning routine, a game you know — and write it out as a **program**:
+No code required. Pick something you do on autopilot (making coffee, a morning routine, a game you know) and write it out as a **program**:
 
 1. List the **inputs**.
 2. List the **steps**, in order.
@@ -232,13 +230,13 @@ Keep it short. The goal is just to start seeing the input → steps → output s
 
 <!-- author_status: assistant-shared | section: Misconceptions & FAQ (Dakota seeded #1) -->
 ??? faq "Don't I have to be some kind of nerd, or learn a whole programming language, to do this?"
-    Nope — and I mean that. Technology keeps getting more accessible to everyone. My wife recently set up a routine in our smart-home system to turn the lights on at a certain time of day. She doesn't work in tech and doesn't code for fun, but she built a real *program* through a visual interface all the same. The biggest takeaway of this whole lesson: **this is something everyone can do.** What you do with it is up to you.
+    Nope, and I mean that. Technology keeps getting more accessible to everyone. My wife recently set up a routine in our smart-home system to turn the lights on at a certain time of day. She doesn't work in tech and doesn't code for fun, but she built a real *program* through a visual interface all the same. The biggest takeaway of this whole lesson: **this is something everyone can do.** What you do with it is up to you.
 
 ??? faq "Why are we doing coffee makers instead of writing code already?"
     Because the *idea* is the hard part, not the typing. Once "inputs → exact, in-order steps → predictable output" feels obvious, Python is mostly learning the words for things you already understand. We write your first real program in the very next lesson.
 
 ??? faq "Do I need to memorize 'syntax' and 'semantics'?"
-    Not to pass — they're here so the words don't surprise you later. You'll find them in **Key terms** below. We'll mostly just say "the code you write" and "what it means."
+    Not to pass; they're here so the words don't surprise you later. You'll find them in **Key terms** below. We'll mostly just say "the code you write" and "what it means."
 <!-- /author_status -->
 
 ---
@@ -248,7 +246,7 @@ Keep it short. The goal is just to start seeing the input → steps → output s
 <!-- author_status: dakota-authored | section: Communicate -->
 One of the most underrated skills in this field is explaining a technical idea to a normal human being. So let's practice it from day one.
 
-In **3–4 sentences**, explain to a friend who's never coded what a "program" is — and use your *own* everyday analogy, not my coffee pot. If you can make someone who's nervous about computers nod and go "oh, that's it?", you've understood this better than most.
+In **3–4 sentences**, explain to a friend who's never coded what a "program" is, and use your *own* everyday analogy, not my coffee pot. If you can make someone who's nervous about computers nod and go "oh, that's it?", you've understood this better than most.
 <!-- /author_status -->
 
 ---
@@ -262,7 +260,7 @@ In **3–4 sentences**, explain to a friend who's never coded what a "program" i
 | **Program** | A set of steps a machine follows. |
 | **Input / Output (I/O)** | What goes *into* a program; what comes *out* of it. |
 | **Syntax** | The exact code you type. |
-| **Semantics** | What that code actually means — the rules of the language. |
+| **Semantics** | What that code actually means: the rules of the language. |
 
 *(Durable terms also live in the site-wide [Glossary](https://dakotalearns.com/glossary/).)*
 <!-- /author_status -->
@@ -276,13 +274,13 @@ The one shape to remember:
 
 > **Inputs → a well-defined set of steps → a predictable output**, run *exactly* and *in order*.
 
-- A **program** is the *recipe* — the written set of steps. **Computation** is what happens when a machine actually *follows* that recipe, on real inputs, to produce an output.
-- A machine follows your instructions *exactly* and *in order* — it isn't reading your mind (the Walmart coffee pot won't make you a latte, and it won't brew before you add water).
-- **Programming is a language** — syntax + semantics — and you already learn languages like this all the time.
+- A **program** is the *recipe*: the written set of steps. **Computation** is what happens when a machine actually *follows* that recipe, on real inputs, to produce an output.
+- A machine follows your instructions *exactly* and *in order*; it isn't reading your mind (the Walmart coffee pot won't make you a latte, and it won't brew before you add water).
+- **Programming is a language** (syntax + semantics) and you already learn languages like this all the time.
 
-**Next lesson (Unit 1):** you'll write and run your *first real program*, and meet the building blocks every program is made of — **values, types, and variables**. Remember the "a name for a thing" idea — it comes back in a big way later when we get to how Python really stores your data.
+**Next lesson (Unit 1):** you'll write and run your *first real program*, and meet the building blocks every program is made of: **values, types, and variables**. Remember the "a name for a thing" idea; it comes back in a big way later when we get to how Python really stores your data.
 <!-- /author_status -->
 
-<!-- author_status: dakota-authored | section: Sign-off (Dakota's standard skeleton — confirm/customize the day) -->
+<!-- author_status: dakota-authored | section: Sign-off (Dakota's standard skeleton - confirm/customize the day) -->
 Thanks for taking the time to read this first lesson. Until the next time we learn something together, have a wonderful day! 👋
 <!-- /author_status -->

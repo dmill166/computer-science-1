@@ -1,11 +1,11 @@
-# Computer Science 1 — Course Design Rationale
+# Computer Science 1: Course Design Rationale
 
 <!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's line-by-line review 2026-07-21 + 2026-08-02, revisions executed and approved; promoted 2026-08-02) -->
 
-> **Purpose:** define the *content scope* of this CS1 (**CS1** is the discipline's generic shorthand for any first programming course — a term of art, not any university's catalog number. In other words, shorthand for Computer Science 1.) from first principles — portable enough to teach anywhere, but compatible with MSU Denver's program and the courses that follow it. This doc explains **what** we teach and **why**; the syllabus says **when**.
+> **Purpose:** define the *content scope* of this CS1 (**CS1** is the discipline's generic shorthand for any first programming course; a term of art, not any university's catalog number. In other words, shorthand for Computer Science 1.) from first principles: portable enough to teach anywhere, but compatible with MSU Denver's program and the courses that follow it. This doc explains **what** we teach and **why**; the syllabus says **when**.
 
 ??? note "How to read this page"
-    This is the **"why" document** — where the course scope comes from and what every decision protects. **Students:** you never *need* this page, but if you've wondered "why are we learning it in this order?", the answer lives here. **Instructors:** read this before proposing scope changes; every unit traces to a source and a downstream need.
+    This is the **"why" document**: where the course scope comes from and what every decision protects. **Students:** you never *need* this page, but if you've wondered "why are we learning it in this order?", the answer lives here. **Instructors:** read this before proposing scope changes; every unit traces to a source and a downstream need.
 
 ## Design goals
 
@@ -18,7 +18,7 @@
 
 | Source | What we took from it |
 |---|---|
-| **[MIT 6.100L](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/)** *Introduction to CS and Programming using Python* (the current single-semester combined CS1; OCW Fall 2022, Dr. Ana Bell) | The gold-standard topic spine and ordering for a no-prerequisite Python CS1 — including the parts a weaker CS1 skips: recursion, aliasing/mutability, intro complexity (Big-O), classes + inheritance, hashing. |
+| **[MIT 6.100L](https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/)** *Introduction to CS and Programming using Python* (the current single-semester combined CS1; OCW Fall 2022, Dr. Ana Bell) | The gold-standard topic spine and ordering for a no-prerequisite Python CS1, including the parts a weaker CS1 skips: recursion, aliasing/mutability, intro complexity (Big-O), classes + inheritance, hashing. |
 | **MSU Denver CS 1050 objectives** (course-of-record + 2026 Curriculog revision) | The 12 required objectives and 9 content units; the accessibility/no-prereq mandate; the writing + oral-presentation requirement (atypical for CS1, and worth keeping). |
 | **MSU Denver CS 2050 description** (the very next course) | What CS1 must prepare students *for*: "introduces the abstract data type (ADT)… linked-lists, trees, stacks, queues, classes, recursion, data representation… sorting and searching." Prereq for CS2 is CS 1050 **and** MTH 1110. |
 
@@ -28,10 +28,10 @@ CS 2050 assumes students arrive able to do these. CS1 must deliver them, not jus
 
 | CS2 needs… | …so CS1 must solidly teach |
 |---|---|
-| Building ADTs (stacks, queues, lists) as classes | **Classes & objects** — attributes, methods, `__init__`, `__str__`, encapsulation; at least intro **inheritance** |
-| Linked structures (nodes pointing to nodes) | **References, mutability, and aliasing** — the mental model of "a variable is a name bound to an object." This is the #1 thing weak CS1 courses underteach and the #1 reason linked lists confuse students. |
-| Recursive structures (trees) and algorithms | **Recursion** — base case / recursive case, on numbers *and* non-numeric data (strings, lists) |
-| Reasoning about which structure/algorithm to use | **Intro algorithmic complexity** — counting operations, Big-O intuition (not proofs), why linear vs. binary search differ |
+| Building ADTs (stacks, queues, lists) as classes | **Classes & objects**: attributes, methods, `__init__`, `__str__`, encapsulation; at least intro **inheritance** |
+| Linked structures (nodes pointing to nodes) | **References, mutability, and aliasing**: the mental model of "a variable is a name bound to an object." This is the #1 thing weak CS1 courses underteach and the #1 reason linked lists confuse students. |
+| Recursive structures (trees) and algorithms | **Recursion**: base case / recursive case, on numbers *and* non-numeric data (strings, lists) |
+| Reasoning about which structure/algorithm to use | **Intro algorithmic complexity**: counting operations, Big-O intuition (not proofs), why linear vs. binary search differ |
 | Sorting & searching | **Linear search, binary search, at least one O(n²) sort** built and traced by hand |
 
 If a student leaves CS1 shaky on **aliasing**, **classes**, or **recursion**, they will struggle in CS2. These get extra time and dedicated assessment.
@@ -42,59 +42,59 @@ Ordered for a no-prerequisite learner; each unit lists the MSU Denver objective(
 
 | # | Unit | Covers MSU Denver obj. | CS2 bridge | Zelle 4e | Zelle 3e | MIT 6.100L |
 |---|---|---|---|---|---|---|
-| M0 | **Module 0 — Set up Python** (per-OS install, editor, verify) | — (enabler) | — | — | — | — |
-| 0 | What is computation; how programs run | 12 (SDLC intro) | — | 1 | 1 | L1 |
-| 1 | Values, types, variables, expressions, interactive I/O | 6, 7, 8 | — | 2–3 | 2–3 | L2 |
-| 2 | Decisions / branching | 6 | — | 6 | 7 | L2 |
-| 3 | Iteration / loops | 6 | — | 7 | 8 | L3–4 |
-| 4 | Strings & sequence basics | 6, 7 | — | 8 | 5 | L2, L4 |
+| M0 | **Module 0: Set up Python** (per-OS install, editor, verify) | - (enabler) | - | - | - | - |
+| 0 | What is computation; how programs run | 12 (SDLC intro) | - | 1 | 1 | L1 |
+| 1 | Values, types, variables, expressions, interactive I/O | 6, 7, 8 | - | 2–3 | 2–3 | L2 |
+| 2 | Decisions / branching | 6 | - | 6 | 7 | L2 |
+| 3 | Iteration / loops | 6 | - | 7 | 8 | L3–4 |
+| 4 | Strings & sequence basics | 6, 7 | - | 8 | 5 | L2, L4 |
 | 5 | Functions: decomposition, abstraction, parameters/return, scope | 3, 4, 5, 10 | indirect | 5 | 6 | L7–8 |
 | 6 | Lists, tuples, **mutability & aliasing** | 7 | ★★★ | 9 | 11 | L9–11 |
 | 7 | Dictionaries & sets | 7 | ★ | 9 (9.5; sets orig.) | 11 | L14 |
-| 8 | Files & exceptions (interactive + file I/O) | 8 | — | 10, 6.4 | 5, 7 | L13 |
+| 8 | Files & exceptions (interactive + file I/O) | 8 | - | 10, 6.4 | 5, 7 | L13 |
 | 9 | Testing & debugging *(woven through, formalized here)* | 11 | ★ | 11.4, 6.4 | 9 | L12 |
 | 10 | **Classes & OOP** (attributes, methods, encapsulation, intro inheritance) | 4, 10 | ★★★ | 12, 13 | 10, 12 | L17–20 |
 | 11 | **Recursion** (numeric + non-numeric) | 1, 9 | ★★★ | 14 | 13 | L15–16 |
 | 12 | Algorithms: linear/binary **search**, a **sort**, **intro Big-O** | 1, 9 | ★★★ | 14 | 13 | L21–24 |
-| — | **SE & SDLC thread** (style, documentation, top-down design) | 2, 3, 9, 12 | — | 2, 11 | 2, 9 | woven |
-| — | **Communication thread** (research paper/report + oral presentation) | (MSU Denver-specific) | — | — | — | — |
+| - | **SE & SDLC thread** (style, documentation, top-down design) | 2, 3, 9, 12 | - | 2, 11 | 2, 9 | woven |
+| - | **Communication thread** (research paper/report + oral presentation) | (MSU Denver-specific) | - | - | - | - |
 
 ★ = touches a CS2 prerequisite; ★★★ = critical CS2 bridge.
 
-The SE & SDLC thread's **documentation strand is deliberately front-loaded and persistent**: comments land in Unit 1, docstrings arrive with functions in Unit 5, and every unit after that reinforces documentation in both the lecture and the rubric — writing for the next human is a habit built weekly, not a topic visited once.
+The SE & SDLC thread's **documentation strand is deliberately front-loaded and persistent**: comments land in Unit 1, docstrings arrive with functions in Unit 5, and every unit after that reinforces documentation in both the lecture and the rubric; writing for the next human is a habit built weekly, not a topic visited once.
 
-> **Editions:** **Zelle 4e is the structural reference** (the locked textbook); the **3e** column is a budget-friendly fallback (cheap used copies — accessibility goal). The 4e reorg split 3e's combined "Sequences" chapter (3e Ch 5) into **Strings (8)**, **Data Collections (9)**, and **Persistent Data (10)**. Divergences to flag for 3e learners: 4e teaches **f-strings** (8.6) where 3e uses `.format()`; 4e's **pathlib** (10.2.2) is absent in 3e; 4e ends at **Ch 14**, 3e at **Ch 13**. Dictionaries are *Optional* in Zelle (4e 9.5.2) and **sets** are essentially uncovered — both are original content here, by design.
+> **Editions:** **Zelle 4e is the structural reference** (the locked textbook); the **3e** column is a budget-friendly fallback (cheap used copies; accessibility goal). The 4e reorg split 3e's combined "Sequences" chapter (3e Ch 5) into **Strings (8)**, **Data Collections (9)**, and **Persistent Data (10)**. Divergences to flag for 3e learners: 4e teaches **f-strings** (8.6) where 3e uses `.format()`; 4e's **pathlib** (10.2.2) is absent in 3e; 4e ends at **Ch 14**, 3e at **Ch 13**. Dictionaries are *Optional* in Zelle (4e 9.5.2) and **sets** are essentially uncovered; both are original content here, by design.
 
 ## Deliberate scope decisions
 
 - **In, beyond a minimal CS1 (because MIT includes them and CS2 needs them):** aliasing/mutability as a first-class topic, recursion on non-numeric data, intro Big-O, intro inheritance.
-- **Light touch / optional:** Zelle's graphics chapters (Ch. 4, 10) are great for engagement but not load-bearing for CS2 — use as motivating examples, not required mastery. MIT's numerical methods (float approximation, bisection on functions) become *one* lesson on binary/bisection search rather than a numerical-methods unit, to stay math-light.
+- **Light touch / optional:** Zelle's graphics chapters (Ch. 4, 10) are great for engagement but not load-bearing for CS2; use as motivating examples, not required mastery. MIT's numerical methods (float approximation, bisection on functions) become *one* lesson on binary/bisection search rather than a numerical-methods unit, to stay math-light.
 - **Out (belongs to CS2 / later):** ADT *implementation* (linked lists, stacks, queues, trees), formal complexity proofs, advanced sorting (merge/quicksort analysis beyond a demo). CS1 builds the intuition; CS2 builds the structures.
-- **Kept because communication is a real outcome, not because anyone requires it:** the **written report + oral presentation**. Communication is an accreditation-recognized outcome (ABET SO-3) that's rarely assessed this early — a differentiator, not overhead. (It also happens to align with MSU Denver's course-of-record requirement — compatibility, not the cause.)
+- **Kept because communication is a real outcome, not because anyone requires it:** the **written report + oral presentation**. Communication is an accreditation-recognized outcome (ABET SO-3) that's rarely assessed this early: a differentiator, not overhead. (It also happens to align with MSU Denver's course-of-record requirement: compatibility, not the cause.)
 
-## Module 0 — environment setup (the true day-one step)
+## Module 0: environment setup (the true day-one step)
 
-A no-prerequisite course cannot assume a working interpreter, so **Module 0 is environment setup**, distinct from the conceptual Unit 0. It's a per-OS install guide (macOS / Windows / Linux), an IDLE-first editor recommendation aligned to Zelle (with Thonny and VS Code as alternatives), a copy-paste **verify** step, and a troubleshooting section for the predictable failures (Windows PATH, macOS `python` vs `python3`). It lives in `resources/setup/` so it doubles as a permanent reference, and it's the gate every later week depends on. Modernized from my two earlier install posts (current Python, Linux added, single-install discipline). This is also strong standalone build-in-public content — "how to install Python" is one of the most-searched beginner questions.
+A no-prerequisite course cannot assume a working interpreter, so **Module 0 is environment setup**, distinct from the conceptual Unit 0. It's a per-OS install guide (macOS / Windows / Linux), an IDLE-first editor recommendation aligned to Zelle (with Thonny and VS Code as alternatives), a copy-paste **verify** step, and a troubleshooting section for the predictable failures (Windows PATH, macOS `python` vs `python3`). It lives in `resources/setup/` so it doubles as a permanent reference, and it's the gate every later week depends on. Modernized from my two earlier install posts (current Python, Linux added, single-install discipline). This is also strong standalone build-in-public content; "how to install Python" is one of the most-searched beginner questions.
 
 ## Accessibility / no-prereq design principles
 
-I'm deliberately building for multiple learning and reinforcement styles — the lesson architecture should give as wide an audience as possible a way in, from complete beginners to university students whose formal program's presentation just isn't landing. The principles below are how that intent becomes structure:
+I'm deliberately building for multiple learning and reinforcement styles; the lesson architecture should give as wide an audience as possible a way in, from complete beginners to university students whose formal program's presentation just isn't landing. The principles below are how that intent becomes structure:
 
 - No concept assumes a prior concept the course hasn't taught, including math. Where a topic needs math (e.g., Big-O), build the intuition from counting, not algebra.
 - Lead with concrete, runnable examples; introduce vocabulary after the experience, not before.
-- Every unit ships a low-stakes **checkpoint** (our name for what MIT calls a "finger exercise"; numbered by unit — Checkpoint 1 covers Unit 1) before the graded assignment, so students self-check before they're evaluated.
+- Every unit ships a low-stakes **checkpoint** (our name for what MIT calls a "finger exercise"; numbered by unit; Checkpoint 1 covers Unit 1) before the graded assignment, so students self-check before they're evaluated.
 - Starter code runs on a stock Python install; no heavyweight setup gates participation.
-- **Informed-drop front-loading (calendar-aware instances):** when the course is mapped to a real term, Week 1–3 give an honest taste of the workload plus an early low-stakes graded signal *before* the institution's refund/drop deadlines, so students self-select on accurate information rather than after the refund window closes. The portable design stays date-free; a per-term overlay carries the dates, holidays, and deadlines when a real term exists — [`schedule.md`](schedule.md) demonstrates the method with a sample calendar. Swap that one file to retarget any term or school.
+- **Informed-drop front-loading (calendar-aware instances):** when the course is mapped to a real term, Week 1–3 give an honest taste of the workload plus an early low-stakes graded signal *before* the institution's refund/drop deadlines, so students self-select on accurate information rather than after the refund window closes. The portable design stays date-free; a per-term overlay carries the dates, holidays, and deadlines when a real term exists; [`schedule.md`](schedule.md) demonstrates the method with a sample calendar. Swap that one file to retarget any term or school.
 
 ## Alignment check: MSU Denver (one worked example of portability)
 
-The design is governed by accreditation-recognized outcomes (ABET CAC, ACM/IEEE-CS CS2023) — university catalogs change; the outcomes are the stable target. As a worked example of the portability claim, the crosswalk in [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md) shows every one of MSU Denver's 12 course-of-record objectives (as of the Fall 2016 course-of-record + 2026 Curriculog revision) covered by this design. We **add** depth where MIT and the CS2 prerequisites justify it (aliasing, recursion, Big-O, inheritance), and the communication thread serves SO-3 whether or not any institution asks for it. The result aligns with MSU Denver without being shaped *only* for MSU Denver.
+The design is governed by accreditation-recognized outcomes (ABET CAC, ACM/IEEE-CS CS2023); university catalogs change; the outcomes are the stable target. As a worked example of the portability claim, the crosswalk in [`outcomes_map_abet_cs2023.md`](outcomes_map_abet_cs2023.md) shows every one of MSU Denver's 12 course-of-record objectives (as of the Fall 2016 course-of-record + 2026 Curriculog revision) covered by this design. We **add** depth where MIT and the CS2 prerequisites justify it (aliasing, recursion, Big-O, inheritance), and the communication thread serves SO-3 whether or not any institution asks for it. The result aligns with MSU Denver without being shaped *only* for MSU Denver.
 
 ## Sources
 
 All sources as verified June 2026.
 
-- MIT 6.100L, *Introduction to CS and Programming using Python*, OCW (Fall 2022): https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/ — see "Materials by Lecture" for the 26-lecture spine.
+- MIT 6.100L, *Introduction to CS and Programming using Python*, OCW (Fall 2022): https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/; see "Materials by Lecture" for the 26-lecture spine.
 - MIT 6.100A / 6.100B course descriptions, MIT EECS catalog / OCW.
-- MSU Denver CS 2050 — Computer Science 2, catalog: https://catalog.msudenver.edu/preview_course_nopop.php?catoid=32&coid=90030
-- MSU Denver CS 1050 — course-of-record (Fall 2016; [public PDF](https://www.msudenver.edu/wp-content/uploads/2022/03/CS-1050-Fall-2016.pdf)) + 2026 Curriculog revision (prerequisite removal; accessibility framing — Curriculog is MSU Denver's internal curriculum system; the revision isn't publicly linkable).
+- MSU Denver CS 2050: Computer Science 2, catalog: https://catalog.msudenver.edu/preview_course_nopop.php?catoid=32&coid=90030
+- MSU Denver CS 1050: course-of-record (Fall 2016; [public PDF](https://www.msudenver.edu/wp-content/uploads/2022/03/CS-1050-Fall-2016.pdf)) + 2026 Curriculog revision (prerequisite removal; accessibility framing; Curriculog is MSU Denver's internal curriculum system; the revision isn't publicly linkable).

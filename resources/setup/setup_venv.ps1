@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    setup_venv.ps1 — OPTIONAL isolated environment (Windows / PowerShell)
+    setup_venv.ps1 - OPTIONAL isolated environment (Windows / PowerShell)
     for Computer Science 1.
 
 .DESCRIPTION
@@ -10,7 +10,7 @@
     separation anyway (or already have some experience). The "why"
     lives in the Advanced Instructions section of README.md.
 
-    This script is also meant to be READ, not just run — every step
+    This script is also meant to be READ, not just run - every step
     below is explained in plain language.
 
 .EXAMPLE
@@ -45,7 +45,7 @@ if (Test-Path ".venv") {
 
 # --- Prove it worked ----------------------------------------------------
 # Find the folder THIS script lives in (resources\setup\), so we can run
-# check_env.py that sits right next to it — no matter which folder you
+# check_env.py that sits right next to it - no matter which folder you
 # ran the script FROM.
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 python "$scriptDir\check_env.py"

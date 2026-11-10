@@ -1,4 +1,4 @@
-# Lab 1, Part C — Predict, then run.
+# Lab 1, Part C - Predict, then run.
 #
 # STEP 1 (before running!): read the four lines below and write down, in the
 # comment under "MY PREDICTION", exactly what you think Python will print.
@@ -22,8 +22,8 @@ print(is_a_good_boy)
 # STEP 2: run the file (the install guide's IDLE primer shows how) and compare.
 # Surprised anywhere? Find WHICH line and figure out why.
 
-# STEP 3: replace the example above with four variables of YOUR OWN —
-# one int, one float, one str, one bool — descriptive names, then print each.
+# STEP 3: replace the example above with four variables of YOUR OWN:
+# one int, one float, one str, one bool; descriptive names, then print each.
 
 # STEP 4 (Part D): in 2–3 sentences, for a friend who's never coded:
 # what's the difference between a variable and its value? Your own example.
