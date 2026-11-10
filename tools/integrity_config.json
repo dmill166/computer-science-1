@@ -1,8 +1,11 @@
 {
-  "_readme": "Course data for tools/integrity_scan.py (the engine stays course-agnostic). course_code_patterns: regexes for university course codes that must never name OUR courses. name_baseline: the human-reviewed occurrence count per file — every entry is a deliberate MSU-alignment reference; ANY drift fails check v until a human re-reviews and updates this file. Review record as of 2026-08-02.",
+  "_readme": "Course data for tools/integrity_scan.py (the engine stays course-agnostic). course_code_patterns: regexes for university course codes that must never name OUR courses. name_baseline: the human-reviewed occurrence count per file - every entry is a deliberate MSU-alignment reference; ANY drift fails check v until a human re-reviews and updates this file. Review record as of 2026-08-02.",
   "course": "Computer Science 1",
-  "course_code_patterns": ["CS ?1050"],
+  "course_code_patterns": [
+    "CS ?1050"
+  ],
   "name_baseline": {
+    "AGENTS.md": 1,
     "README.md": 1,
     "syllabus/index.md": 1,
     "syllabus/design_rationale.md": 5,
@@ -10,5 +13,12 @@
     "unit01_values_types_variables/index.md": 1,
     "unit01_values_types_variables/lab/index.md": 1,
     "unit01_values_types_variables/checkpoint/index.md": 1
-  }
+  },
+  "private_reference_patterns": [
+    "life-os",
+    "_author_inputs",
+    "session_transcript_",
+    "00_core/voice"
+  ],
+  "_readme_private_refs": "private_reference_patterns: names of private repos and voice files that must never appear in public content (check vi). Markers cite voice sources by code instead; codes resolve in the private voice index."
 }

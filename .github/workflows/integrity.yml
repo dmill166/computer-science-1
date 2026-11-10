@@ -3,13 +3,13 @@ name: Integrity & code quality
 # Academic-integrity firewall + published-code lint for the PUBLIC course
 # repo. Runs with no secrets and no access to the private solutions repo, so
 # it covers only the public-only checks:
-#   * tools/integrity_scan.py — public self-checks must FAIL on the shipped
+#   * tools/integrity_scan.py - public self-checks must FAIL on the shipped
 #     starter (a passing empty starter leaks the answer), and starter code
 #     carries no solution markers (B1 i + iii).
-#   * flake8 — every published .py is a style exemplar (STYLE.md: PEP 8/257).
+#   * flake8 - every published .py is a style exemplar (STYLE.md: PEP 8/257).
 # The cross-repo "no private solution code in public files" check (B1 ii) and
 # the green-on-correct autograder proof run PRIVATE-side, in
-# computer-science-1-solutions/grading/ — private reaches across to public,
+# computer-science-1-solutions/grading/ - private reaches across to public,
 # never the reverse.
 
 on:

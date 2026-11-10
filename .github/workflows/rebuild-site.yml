@@ -1,6 +1,6 @@
 name: Rebuild dakotalearns
 
-# When public course content changes, tell the dakotalearns site to rebuild —
+# When public course content changes, tell the dakotalearns site to rebuild -
 # it pulls this repo's prose at build time, so a push here must trigger a site
 # build. Requires the SITE_REBUILD_TOKEN secret: a fine-grained PAT scoped to
 # dmill166/dakotalearns with Contents: read and write.

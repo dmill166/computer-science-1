@@ -2,7 +2,7 @@
 """Public-side academic-integrity scan for the course repo.
 
 The leak vector this guards against is a solution living inside a
-legitimately-named PUBLIC file — which a filename regex can never see. So we
+legitimately-named PUBLIC file - which a filename regex can never see. So we
 scan CONTENT (oneshot_build_requirements.md B1). This script runs with no
 secrets and no access to the private solutions repo, so it covers the two
 checks that need only public files:
@@ -16,11 +16,11 @@ checks that need only public files:
 (iii) Starter code carries no solution markers.
       Grep ``*/starter/*.py`` for solution-shaped comment markers
       (``# solution``, ``# answer key``, …). Prose is deliberately NOT
-      scanned — the README and syllabus legitimately DESCRIBE the private
+      scanned - the README and syllabus legitimately DESCRIBE the private
       firewall, and that meta-discussion is not a leak.
 
-Check (ii) — "no private-solution logic appears verbatim in any public
-file" — needs both repos and therefore lives on the private side
+Check (ii) - "no private-solution logic appears verbatim in any public
+file" - needs both repos and therefore lives on the private side
 (``computer-science-1-solutions/grading/scan_public_leak.py``): the private
 repo reaches across to read the public one, never the reverse.
 
@@ -31,15 +31,15 @@ repo reaches across to read the public one, never the reverse.
       human re-reviews and updates the config.
 
 (iv)  Every public markdown page carries an ``author_status`` marker.
-      Voice-provenance convention (locked 2026-07-09; no exempt class —
+      Voice-provenance convention (locked 2026-07-09; no exempt class -
       every page is Dakota's public work and gets his hand): pages that
       sync to the site are re-checked there by ``dakotalearns/tools/
       check_content.py``, but GitHub-only pages (``resources/``, the repo
-      README) would otherwise be invisible to any gate — so the coverage
+      README) would otherwise be invisible to any gate - so the coverage
       check rides here too. Only ``LICENSE*`` files are skipped (third-
       party legal text, not authored prose). Canonical convention doc:
       ``cs-teaching/voice_provenance.md`` (implementation deliberately
-      vendored per repo — zero cross-repo CI dependency).
+      vendored per repo - zero cross-repo CI dependency).
 
 Usage (from the repo root):
 
@@ -66,7 +66,7 @@ LEAK_MARKERS = re.compile(
 )
 
 # Voice-provenance marker values a published page may carry (must match
-# dakotalearns/tools/check_content.py — the site-side half of this gate).
+# dakotalearns/tools/check_content.py - the site-side half of this gate).
 VALID_STATUSES = (
     "dakota-authored",
     "dakota-voice-draft",
@@ -79,13 +79,13 @@ STATUS_MARKER = re.compile(r"author_status:\s*([A-Za-z-]+)")
 # university course code; codes appear only as reviewed alignment
 # references. This is deliberately a RATCHET, not a classifier: the
 # COURSE DATA (code patterns + the human-reviewed per-file baseline)
-# lives in tools/integrity_config.json, and ANY drift — new mention
-# or removed mention — fails until a human re-reviews and updates
+# lives in tools/integrity_config.json, and ANY drift - new mention
+# or removed mention - fails until a human re-reviews and updates
 # that file. The machine never judges legitimacy; it just makes
 # unreviewed drift impossible. Engine/data split (2026-08-02): this
 # script stays course-agnostic so course repo #2 can hoist the engine
 # to cs-teaching (pinned checkout in CI) and keep only its own config
-# — see the maintenance trigger index.
+# - see the maintenance trigger index.
 NAME_SUFFIXES = {".md", ".py", ".sh", ".ps1", ".yml", ".txt"}
 
 
@@ -116,7 +116,7 @@ def check_starters_fail_empty(root: Path) -> list[str]:
             failures.append(
                 _fail(
                     f"{rel}/check_my_work.py PASSES on the shipped starter "
-                    "— the starter contains the answers, or the tests are "
+                    " - the starter contains the answers, or the tests are "
                     "vacuous. Public tests must FAIL until a student fills "
                     "in real work."
                 )
@@ -175,7 +175,7 @@ def check_marker_coverage(root: Path) -> list[str]:
         if not values:
             failures.append(
                 _fail(
-                    f"{rel} carries no author_status marker — add "
+                    f"{rel} carries no author_status marker - add "
                     "dakota-authored / dakota-voice-draft / "
                     "assistant-*, per cs-teaching/voice_provenance.md"
                 )
@@ -185,11 +185,142 @@ def check_marker_coverage(root: Path) -> list[str]:
                 failures.append(
                     _fail(
                         f"{rel} has unrecognized author_status value "
-                        f"{value!r} — expected one of "
+                        f"{value!r} - expected one of "
                         f"{', '.join(VALID_STATUSES)}"
                     )
                 )
     print(f"  scanned {scanned} markdown page(s) for provenance markers")
+    return failures
+
+
+def check_no_private_refs(root: Path, patterns: list[str]) -> list[str]:
+    """Fail when public files name private repos or private voice files.
+
+    Provenance markers cite voice sources by code (``source: CST-C1``),
+    never by private path; this keeps it that way. The config file that
+    holds the patterns is skipped, since it must contain them.
+
+    Args:
+        root: Course repo root to scan.
+        patterns: Regexes for private names, from the integrity config.
+
+    Returns:
+        One failure message per file and line that matches; empty means
+        clean.
+    """
+    failures: list[str] = []
+    token = re.compile("|".join(patterns), re.IGNORECASE)
+    for path in sorted(root.rglob("*")):
+        if (not path.is_file() or ".git" in path.parts
+                or path.suffix not in {".md", ".py", ".json", ".yml"}
+                or path.name == "integrity_config.json"):
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for n, line in enumerate(text.splitlines(), start=1):
+            if token.search(line):
+                failures.append(_fail(
+                    f"{path.relative_to(root)}:{n} names a private repo "
+                    "or file - cite voice sources by code "
+                    "(source: CST-C1), per cs-teaching/voice_provenance.md"
+                ))
+    return failures
+
+
+# Real HTML tags a page may use on purpose; anything else written as
+# <word ...> outside code is almost always a placeholder, and Markdown
+# would silently swallow it as an unknown HTML tag.
+HTML_TAGS_OK = frozenset("""a abbr b br button code details div em
+figcaption figure hr i iframe img input kbd label li mark ol p path
+picture pre section small source span strong sub summary sup svg table
+tbody td th thead tr ul video""".split())
+ANGLE_TAG = re.compile(r"(?<!\\)<(/?)([A-Za-z][A-Za-z0-9-]*)([^<>]*)>")
+
+
+def find_angle_placeholders(text: str) -> list[tuple[int, str]]:
+    """Find <word ...> text outside code that Markdown would hide.
+
+    Skips fenced and indented code, inline code, HTML comments,
+    autolinks (<https://...>), backslash-escaped brackets, and real
+    tags listed in ``HTML_TAGS_OK``.
+
+    Returns:
+        (line number, matched text) for each suspected placeholder.
+    """
+    found = []
+    in_fence = False
+    in_comment = False
+    for n, line in enumerate(text.splitlines(), start=1):
+        stripped = line.strip()
+        if stripped.startswith(("```", "~~~")):
+            in_fence = not in_fence
+            continue
+        if in_fence or line.startswith("    "):
+            continue
+        scan = re.sub(r"`[^`]*`", "", line)
+        if in_comment:
+            if "-->" not in scan:
+                continue
+            scan = scan.split("-->", 1)[1]
+            in_comment = False
+        scan = re.sub(r"<!--.*?-->", "", scan)
+        if "<!--" in scan:
+            scan = scan.split("<!--", 1)[0]
+            in_comment = True
+        for m in ANGLE_TAG.finditer(scan):
+            name = m.group(2).lower()
+            if name in HTML_TAGS_OK or name in ("http", "https", "mailto"):
+                continue
+            if m.group(3).startswith(":"):
+                continue  # autolink like <https://...>
+            found.append((n, m.group(0)[:60]))
+    return found
+
+
+def check_angle_placeholders(root: Path) -> list[str]:
+    """Fail on <placeholder> text that Markdown would silently hide.
+
+    Returns:
+        One failure message per suspected placeholder in any markdown
+        file; empty means clean.
+    """
+    failures: list[str] = []
+    for md in sorted(root.rglob("*.md")):
+        if ".git" in md.parts:
+            continue
+        text = md.read_text(encoding="utf-8")
+        for n, snippet in find_angle_placeholders(text):
+            failures.append(_fail(
+                f"{md.relative_to(root)}:{n} {snippet} would vanish when "
+                "rendered; use [square brackets] for placeholders"
+            ))
+    return failures
+
+
+EM_DASH = "\u2014"
+TEXT_SUFFIXES = {".md", ".py", ".sh", ".ps1", ".yml", ".yaml", ".json",
+                 ".txt", ".toml"}
+
+
+def check_no_em_dash(root: Path) -> list[str]:
+    """Fail on any em-dash in a public text file (cs-teaching/STYLE.md).
+
+    Returns:
+        One failure message per line that contains an em-dash; empty
+        means clean.
+    """
+    failures: list[str] = []
+    for path in sorted(root.rglob("*")):
+        if ".git" in path.parts or not path.is_file():
+            continue
+        if path.suffix not in TEXT_SUFFIXES and path.name != "LICENSE":
+            continue
+        text = path.read_text(encoding="utf-8")
+        for n, line in enumerate(text.splitlines(), start=1):
+            if EM_DASH in line:
+                failures.append(_fail(
+                    f"{path.relative_to(root)}:{n} em-dash found; use a "
+                    "semicolon, comma, parentheses, or colon instead"
+                ))
     return failures
 
 
@@ -233,7 +364,7 @@ def check_name_ratchet(
             failures.append(
                 _fail(
                     f"{rel}: {actual} course-code mention(s), baseline "
-                    f"says {expected} — review the change (course codes "
+                    f"says {expected} - review the change (course codes "
                     "never name our courses), then update "
                     "tools/integrity_config.json"
                 )
@@ -274,13 +405,21 @@ def main() -> int:
     failures += check_name_ratchet(
         args.root, token, config["name_baseline"]
     )
+    print("[vi] public files must not name private repos or files:")
+    failures += check_no_private_refs(
+        args.root, config["private_reference_patterns"]
+    )
+    print("[vii] markdown must not hide <placeholder> text:")
+    failures += check_angle_placeholders(args.root)
+    print("[viii] public text must not use em-dashes:")
+    failures += check_no_em_dash(args.root)
 
     print()
     if failures:
-        print(f"Integrity scan: FAIL — {len(failures)} issue(s):\n")
+        print(f"Integrity scan: FAIL - {len(failures)} issue(s):\n")
         print("\n".join(failures))
         return 1
-    print("Integrity scan: PASS — no leaks detected in public content.")
+    print("Integrity scan: PASS - no leaks detected in public content.")
     return 0
 
 
