@@ -1,3 +1,4 @@
+# Purpose: Keeps Python caches and local virtual environments out of the repo.
 # Python
 __pycache__/
 *.py[cod]
@@ -32,3 +33,6 @@ solutions/
 *_solution.py
 *.key
 secrets.*
+
+# Shared checker fetched by CI (cs-teaching), never committed
+.cs-teaching/

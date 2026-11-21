@@ -1,5 +1,7 @@
 # Computer Science 1 (Python)
 
+<!-- purpose: Front page of the course repo: what Computer Science 1 is, who it's for, how the repo is organized, and its licenses. -->
+
 <!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's reviews 2026-07-21 through 2026-08-02 - naming sweep, evergreen status line, audience framing, solutions-transparency call; promoted 2026-08-02) -->
 
 Open, beginner-first course materials for **Computer Science 1**, taught in **Python 3** using Zelle's *Python Programming: An Introduction to Computer Science* (4th ed, 2024). Designed to be portable (a strong CS1 you'd recognize anywhere) and aligned to recognized CS1 outcomes (ABET CAC, ACM/IEEE-CS CS2023) and, for alignment only, MSU Denver's CS 1050 objectives.

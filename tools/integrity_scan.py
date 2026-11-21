@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# Purpose: Public-side integrity checks: starters fail when untouched, no
+#   solution markers, provenance markers on every page, course-code
+#   mentions match the reviewed baseline, no private references, no
+#   hidden placeholders, no em-dashes.
 """Public-side academic-integrity scan for the course repo.
 
 The leak vector this guards against is a solution living inside a

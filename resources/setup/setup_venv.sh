@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Purpose: Optional helper that creates and verifies a virtual environment on
+#   macOS and Linux.
 # =====================================================================
 # setup_venv.sh - OPTIONAL isolated environment (macOS / Linux)
 # Computer Science 1

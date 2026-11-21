@@ -1,5 +1,7 @@
 # Computer Science 1: Course Design Rationale
 
+<!-- purpose: Why the course covers what it covers: the topic spine, its sources (MIT 6.100L, the textbook, CS2 needs) and every scope decision. -->
+
 <!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's line-by-line review 2026-07-21 + 2026-08-02, revisions executed and approved; promoted 2026-08-02) -->
 
 > **Purpose:** define the *content scope* of this CS1 (**CS1** is the discipline's generic shorthand for any first programming course; a term of art, not any university's catalog number. In other words, shorthand for Computer Science 1.) from first principles: portable enough to teach anywhere, but compatible with MSU Denver's program and the courses that follow it. This doc explains **what** we teach and **why**; the syllabus says **when**.

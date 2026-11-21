@@ -1,4 +1,6 @@
 # Computer Science 1
+
+<!-- purpose: The course syllabus: description, learning objectives, grading, schedule overview and policies. -->
 ## Syllabus
 
 <!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's line-by-line review 2026-07-21 + 2026-08-02 incl. reworded objectives + original course description; promoted 2026-08-02; Accessibility & use section separately marked below) -->

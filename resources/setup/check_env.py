@@ -1,3 +1,5 @@
+# Purpose: Environment check students run to confirm they have a supported
+#   Python; prints PASS or what to fix.
 """
 check_env.py - Computer Science 1 environment check.
 

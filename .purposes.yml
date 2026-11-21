@@ -1,0 +1,3 @@
+# purpose: Purpose lines for files that cannot carry their own comment (read by cs-teaching tools/file_map.py).
+"LICENSE": "License for the course code (PolyForm Noncommercial 1.0.0)."
+"tools/integrity_config.json": "This course's data for the integrity scan: course-code patterns, the reviewed mention baseline, and private-reference patterns."

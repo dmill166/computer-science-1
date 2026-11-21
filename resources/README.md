@@ -1,5 +1,7 @@
 # Resources
 
+<!-- purpose: Course-wide resources: the textbook, editions and budget options, the free Python docs and the learning-how-to-learn book. -->
+
 <!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota reviewed 2026-07-21 - CS2 recommendation pulled, affiliate link + disclosure added; promoted 2026-07-21) -->
 
 Everything course-adjacent lives here: the textbook reference, toolchain setup, and supplementary material for Computer Science 1.

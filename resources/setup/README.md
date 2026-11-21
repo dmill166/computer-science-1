@@ -1,5 +1,7 @@
 # Module 0: Set Up Python on Your Computer
 
+<!-- purpose: Module 0: installing Python on each OS, verifying it, editors, troubleshooting and the optional virtual environment. -->
+
 <!-- author_status: dakota-authored | section: full page (adapted from Dakota's 2023/2024 install posts - see footer; deep-dive reviewed by Dakota 2026-07-15/2026-07-21, two passes, 17 revisions executed; promoted 2026-07-21) -->
 
 > **Goal:** by the end of this guide you have a working, current Python on your machine and can run a one-line program; no prior experience assumed. This is the only "setup" step in the course; once it's done, every lab and assignment just works.

@@ -1,3 +1,5 @@
+# Purpose: Optional helper that creates and verifies a virtual environment on
+#   Windows (PowerShell).
 <#
 .SYNOPSIS
     setup_venv.ps1 - OPTIONAL isolated environment (Windows / PowerShell)

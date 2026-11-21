@@ -5,6 +5,8 @@ date_published: 2026-07-03
 
 # What Is Computation (and How Do Programs Actually Run)?
 
+<!-- purpose: Unit 0 lesson: what computation is and how programs run (inputs, exact in-order steps, predictable output). -->
+
 <!-- author_status: assistant-mechanical | section: For instructors note (alignment from the outcomes map) -->
 ??? note "For instructors: outcome alignment"
     This lesson aligns with **MSU Denver CS 1050 objective 12** (state the steps of the software development process); more broadly, with **ABET** student outcomes **SO-1** (analyze a computing problem) and **SO-6** (apply CS fundamentals), under the **ACM/IEEE-CS CS2023** *Software Engineering* knowledge area. *(Alignment only; not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*

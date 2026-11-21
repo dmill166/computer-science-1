@@ -1,4 +1,6 @@
 # Computer Science 1: Outcomes Mapping
+
+<!-- purpose: Instructor-facing crosswalk from each course objective to ABET student outcomes and CS2023 knowledge areas, and how to tag a lecture. -->
 ## Course objectives → ABET CAC student outcomes → ACM/IEEE-CS CS2023 knowledge areas
 
 <!-- author_status: dakota-authored | section: full page (light voice pass 2026-07-09; Dakota's review 2026-07-21 + 2026-08-02 incl. reworded objective labels; promoted 2026-08-02) -->

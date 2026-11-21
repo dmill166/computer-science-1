@@ -1,3 +1,4 @@
+# Purpose: Checkpoint 1 starter file students fill in.
 # Checkpoint 1 - Values, Types, and Variables
 # Full instructions: see the Checkpoint 1 page on the course site.
 #

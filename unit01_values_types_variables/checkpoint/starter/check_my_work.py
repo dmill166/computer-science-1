@@ -1,3 +1,5 @@
+# Purpose: Self-check students run on their Checkpoint 1 file; prints PASS or
+#   exactly what to fix.
 """Checkpoint 1 self-check.
 
 Keep this file in the SAME folder as your checkpoint_1.py, then run:

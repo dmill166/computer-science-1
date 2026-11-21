@@ -7,6 +7,8 @@ scope: "repo-local: adds to (and inside this repo, overrides) ~/agents/AGENTS.md
 
 # computer-science-1: Repo Rules for Agents
 
+<!-- purpose: Repo rules for AI agents: the privacy firewall with the solutions repo, the authorship rule, and where standards live. -->
+
 **PUBLIC** student-facing materials for Computer Science 1 (Python 3), part of the
 [`cs-teaching`](https://github.com/dmill166/cs-teaching) initiative. The private sibling
 `computer-science-1-solutions` holds everything that would compromise assessment.

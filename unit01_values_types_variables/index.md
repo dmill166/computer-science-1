@@ -5,6 +5,8 @@ date_published: 2026-07-03
 
 # Values, Types, and Variables (and Your First Program)
 
+<!-- purpose: Unit 1 lesson: values, the four core types, variables, comments and your first program. -->
+
 <!-- author_status: assistant-mechanical | section: For instructors note (alignment from the outcomes map) -->
 ??? note "For instructors: outcome alignment"
     Aligns with **MSU Denver CS 1050 objectives 6–8** (expressions, core data types, I/O); more broadly, with **ABET** student outcomes **SO-2** and **SO-6**, under the **ACM/IEEE-CS CS2023** *SDF + FPL* knowledge areas. *(Alignment only; not an accreditation claim. Full mapping in the [outcomes map](https://dakotalearns.com/courses/computer-science-1/syllabus/outcomes_map_abet_cs2023/); see also the [disclaimers](https://dakotalearns.com/disclaimers/).)*

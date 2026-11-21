@@ -5,6 +5,8 @@ date_published: 2026-07-03
 
 # Lab 1: Meet the Shell and Run Your First Program
 
+<!-- purpose: Lab 1: hands-on practice in the shell, a predict-then-run exercise, and explaining a program in your own words. -->
+
 <!-- author_status: assistant-shared | section: full page: instructor note + lab prompt (reviewed by Dakota 2026-11-09) -->
 
 ??? note "For instructors: outcome alignment"

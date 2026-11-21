@@ -1,3 +1,5 @@
+# Purpose: Lab 1 starter file with the predict-run exercise and step-by-step
+#   comments.
 # Lab 1, Part C - Predict, then run.
 #
 # STEP 1 (before running!): read the four lines below and write down, in the

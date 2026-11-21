@@ -5,6 +5,8 @@ date_published: 2026-07-03
 
 # Checkpoint 1: Values, Types, and Variables
 
+<!-- purpose: Checkpoint 1: the first low-stakes graded check (build a "movie card" from variables), due before the drop deadline. -->
+
 <!-- author_status: assistant-shared | section: full page: instructor note + checkpoint prompt (reviewed by Dakota 2026-11-10) -->
 
 ??? note "For instructors: outcome alignment"
