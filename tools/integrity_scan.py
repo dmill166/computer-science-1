@@ -2,7 +2,7 @@
 # Purpose: Public-side integrity checks: starters fail when untouched, no
 #   solution markers, provenance markers on every page, course-code
 #   mentions match the reviewed baseline, no private references, no
-#   hidden placeholders, no em-dashes.
+#   hidden placeholders, no em-dashes, no unfilled template slots.
 """Public-side academic-integrity scan for the course repo.
 
 The leak vector this guards against is a solution living inside a
@@ -377,6 +377,34 @@ def check_name_ratchet(
     return failures
 
 
+TEMPLATE_LEFTOVER = re.compile(r"\[FILL\b|[Pp]urpose:\s*Template:")
+
+
+def check_template_leftovers(root: Path) -> list[str]:
+    """Fail on slots left over from a cs-teaching template.
+
+    Returns:
+        One failure message per line with a ``[FILL`` slot or a purpose
+        line still starting "Template:"; empty means clean.
+    """
+    failures: list[str] = []
+    for path in sorted(root.rglob("*")):
+        if ".git" in path.parts or not path.is_file():
+            continue
+        if path.suffix not in TEXT_SUFFIXES:
+            continue
+        if path.resolve() == Path(__file__).resolve():
+            continue  # this file names the pattern it looks for
+        text = path.read_text(encoding="utf-8")
+        for n, line in enumerate(text.splitlines(), start=1):
+            if TEMPLATE_LEFTOVER.search(line):
+                failures.append(_fail(
+                    f"{path.relative_to(root)}:{n} unfilled template slot; "
+                    "replace it (cs-teaching/templates/README.md)"
+                ))
+    return failures
+
+
 def main() -> int:
     """Run the public integrity checks and report the results.
 
@@ -417,6 +445,8 @@ def main() -> int:
     failures += check_angle_placeholders(args.root)
     print("[viii] public text must not use em-dashes:")
     failures += check_no_em_dash(args.root)
+    print("[ix] no unfilled template slots ([FILL] or Template:):")
+    failures += check_template_leftovers(args.root)
 
     print()
     if failures:
