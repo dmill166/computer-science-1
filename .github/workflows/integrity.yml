@@ -40,4 +40,4 @@ jobs:
         run: python tools/integrity_scan.py
       - name: Lint published Python (PEP 8 / PEP 257)
         # Every file a student opens is a style exemplar. 79-char lines.
-        run: flake8 --max-line-length=79 .
+        run: flake8 --max-line-length=79 --extend-exclude=.cs-teaching .

@@ -93,6 +93,16 @@ STATUS_MARKER = re.compile(r"author_status:\s*([A-Za-z-]+)")
 NAME_SUFFIXES = {".md", ".py", ".sh", ".ps1", ".yml", ".txt"}
 
 
+# Folders that aren't this course's content: git internals, and the
+# cs-teaching checkout CI places at .cs-teaching/ for the file-map check.
+SKIP_DIRS = {".git", ".cs-teaching"}
+
+
+def _skipped(path: Path) -> bool:
+    """Return True for a path inside a folder the scan must ignore."""
+    return any(part in SKIP_DIRS for part in path.parts)
+
+
 def _fail(msg: str) -> str:
     """Format a failing line for the report."""
     return f"  FAIL  {msg}"
@@ -171,7 +181,7 @@ def check_marker_coverage(root: Path) -> list[str]:
     failures: list[str] = []
     scanned = 0
     for md in sorted(root.rglob("*.md")):
-        if ".git" in md.parts or md.name.upper().startswith("LICENSE"):
+        if _skipped(md) or md.name.upper().startswith("LICENSE"):
             continue
         scanned += 1
         rel = md.relative_to(root)
@@ -215,7 +225,7 @@ def check_no_private_refs(root: Path, patterns: list[str]) -> list[str]:
     failures: list[str] = []
     token = re.compile("|".join(patterns), re.IGNORECASE)
     for path in sorted(root.rglob("*")):
-        if (not path.is_file() or ".git" in path.parts
+        if (not path.is_file() or _skipped(path)
                 or path.suffix not in {".md", ".py", ".json", ".yml"}
                 or path.name == "integrity_config.json"):
             continue
@@ -289,7 +299,7 @@ def check_angle_placeholders(root: Path) -> list[str]:
     """
     failures: list[str] = []
     for md in sorted(root.rglob("*.md")):
-        if ".git" in md.parts:
+        if _skipped(md):
             continue
         text = md.read_text(encoding="utf-8")
         for n, snippet in find_angle_placeholders(text):
@@ -314,7 +324,7 @@ def check_no_em_dash(root: Path) -> list[str]:
     """
     failures: list[str] = []
     for path in sorted(root.rglob("*")):
-        if ".git" in path.parts or not path.is_file():
+        if _skipped(path) or not path.is_file():
             continue
         if path.suffix not in TEXT_SUFFIXES and path.name != "LICENSE":
             continue
@@ -352,7 +362,7 @@ def check_name_ratchet(
     failures: list[str] = []
     found: dict[str, int] = {}
     for path in sorted(root.rglob("*")):
-        if ".git" in path.parts or not path.is_file():
+        if _skipped(path) or not path.is_file():
             continue
         if path.suffix not in NAME_SUFFIXES:
             continue
@@ -389,7 +399,7 @@ def check_template_leftovers(root: Path) -> list[str]:
     """
     failures: list[str] = []
     for path in sorted(root.rglob("*")):
-        if ".git" in path.parts or not path.is_file():
+        if _skipped(path) or not path.is_file():
             continue
         if path.suffix not in TEXT_SUFFIXES:
             continue
