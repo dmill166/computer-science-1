@@ -212,46 +212,46 @@ No grade; just retrieval. These score themselves, so be honest with your first a
   "questions": [
     {
       "prompt": "What type is the value `4.3`?",
-      "hint": "Whole numbers never carry a decimal point - `4.3` does.",
+      "hint": "Whole numbers never carry a decimal point; `4.3` does.",
       "options": ["`int`", "`float`", "`str`", "`bool`"],
       "answer": "`float`",
-      "explain": "The decimal part is the giveaway - `650` and `75`, with no decimal part, are `int` values."
+      "explain": "The decimal part is the giveaway: `650` and `75`, with no decimal part, are `int` values."
     },
     {
       "prompt": "Is `\"21 Jump Street\"` a number or text?",
-      "hint": "Don't look at the characters inside - look at what's wrapped *around* them.",
+      "hint": "Don't look at the characters inside; look at what's wrapped *around* them.",
       "options": [
-        "A number - it starts with `21`.",
-        "Text - the quotes are the giveaway.",
-        "Both - Python splits it into a number and words."
+        "A number: it starts with `21`.",
+        "Text: the quotes are the giveaway.",
+        "Both: Python splits it into a number and words."
       ],
-      "answer": "Text - the quotes are the giveaway.",
-      "explain": "It's a **string** (`str`). That `21` is part of a name - a place - not a quantity."
+      "answer": "Text: the quotes are the giveaway.",
+      "explain": "It's a **string** (`str`). That `21` is part of a name (a place), not a quantity."
     },
     {
       "prompt": "In `bank_balance = 650`, which part is the variable?",
       "hint": "One side of the `=` is a name somebody invented; the other side is the value that name points to.",
       "options": ["`bank_balance`", "`650`", "The `=` sign"],
       "answer": "`bank_balance`",
-      "explain": "`bank_balance` is the **name**; `650` is the **value** it refers to. The name isn't the value itself - hold onto that for Week 5/6."
+      "explain": "`bank_balance` is the **name**; `650` is the **value** it refers to. The name isn't the value itself; hold onto that for Week 5/6."
     },
     {
       "prompt": "Which type fits a statement that's either true or false, like \"My flight is cancelled\"?",
       "hint": "Count the possible answers to a true-or-false question. One of the four types holds exactly that many values.",
       "options": ["`int`", "`float`", "`str`", "`bool`"],
       "answer": "`bool`",
-      "explain": "A **boolean** (`bool`) - its only two values are `True` and `False`."
+      "explain": "A **boolean** (`bool`): its only two values are `True` and `False`."
     },
     {
       "prompt": "What does Python do when it runs a line like `# update this next week`?",
-      "hint": "Ask yourself who a `#` line is written *for* - the computer, or the humans reading the code later?",
+      "hint": "Ask yourself who a `#` line is written *for*: the computer, or the humans reading the code later?",
       "options": [
         "Prints the note to the screen.",
-        "Stops with an error - that isn't valid code.",
-        "Skips it entirely - comments are notes for humans, not instructions."
+        "Stops with an error: that isn't valid code.",
+        "Skips it entirely: comments are notes for humans, not instructions."
       ],
-      "answer": "Skips it entirely - comments are notes for humans, not instructions.",
-      "explain": "Comments have zero effect on your program - they exist for future you (and anyone else reading your code)."
+      "answer": "Skips it entirely: comments are notes for humans, not instructions.",
+      "explain": "Comments have zero effect on your program; they exist for future you (and anyone else reading your code)."
     }
   ]
 }
@@ -260,7 +260,7 @@ No grade; just retrieval. These score themselves, so be honest with your first a
 ```parsons
 {
   "title": "Build the program",
-  "prompt": "Put the lines in order so the program stores a dash time, prints its value, and then prints its type - in that order.",
+  "prompt": "Put the lines in order so the program stores a dash time, prints its value, and then prints its type, in that order.",
   "code": true,
   "lines": [
     "dash_time = 4.3",

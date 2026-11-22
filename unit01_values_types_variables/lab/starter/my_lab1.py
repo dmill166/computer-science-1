@@ -1,6 +1,6 @@
 # Purpose: Lab 1 starter file with the predict-run exercise and step-by-step
 #   comments.
-# Lab 1, Part C - Predict, then run.
+# Lab 1, Part B: Predict, then run.
 #
 # STEP 1 (before running!): read the four lines below and write down, in the
 # comment under "MY PREDICTION", exactly what you think Python will print.
@@ -27,6 +27,6 @@ print(is_a_good_boy)
 # STEP 3: replace the example above with four variables of YOUR OWN:
 # one int, one float, one str, one bool; descriptive names, then print each.
 
-# STEP 4 (Part D): in 2–3 sentences, for a friend who's never coded:
+# STEP 4 (Part C): in 2–3 sentences, for a friend who's never coded:
 # what's the difference between a variable and its value? Your own example.
 #

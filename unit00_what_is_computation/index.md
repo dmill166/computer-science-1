@@ -169,22 +169,22 @@ Quick, low-stakes retrieval; no grade, just to see if it stuck. The first few sc
   "questions": [
     {
       "prompt": "True or false: the order of a program's steps usually doesn't matter.",
-      "hint": "Picture the coffee recipe from this lesson - try mentally swapping two of its steps and see what comes out of the machine.",
+      "hint": "Picture the coffee recipe from this lesson; try mentally swapping two of its steps and see what comes out of the machine.",
       "options": ["True", "False"],
       "answer": "False",
       "fixed_order": true,
-      "explain": "Steps run **in order**, and the order often changes the result - press start before adding water and nothing brews."
+      "explain": "Steps run **in order**, and the order often changes the result: press start before adding water and nothing brews."
     },
     {
       "prompt": "A friend says, \"My computer did something I didn't tell it to.\" Using today's lesson, what most likely happened?",
       "hint": "This lesson made one big promise about machines: they never improvise. If the outcome still surprised your friend, what's left to explain it?",
       "options": [
         "The computer improvised a new step on its own.",
-        "The computer followed its instructions exactly - the steps (or the inputs) just weren't what your friend thought they were.",
+        "The computer followed its instructions exactly; the steps (or the inputs) just weren't what your friend thought they were.",
         "The computer ran the right steps, but in a random order."
       ],
-      "answer": "The computer followed its instructions exactly - the steps (or the inputs) just weren't what your friend thought they were.",
-      "explain": "Machines don't improvise - they follow the steps, exactly and **in order**, on the inputs they were actually given."
+      "answer": "The computer followed its instructions exactly; the steps (or the inputs) just weren't what your friend thought they were.",
+      "explain": "Machines don't improvise; they follow the steps, exactly and **in order**, on the inputs they were actually given."
     }
   ]
 }

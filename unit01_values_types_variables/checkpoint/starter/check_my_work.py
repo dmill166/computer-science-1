@@ -8,7 +8,7 @@ Keep this file in the SAME folder as your checkpoint_1.py, then run:
     Windows:        python check_my_work.py
 
 Every check should say PASS before you submit. Running this is never a
-penalty -- it's the habit the whole course is built on: check your own
+penalty; it's the habit the whole course is built on: check your own
 work.
 
 (Course staff note: the checks below are plain test_ functions, so this
@@ -39,7 +39,7 @@ def _value(name, hint):
 
     Raises:
         AssertionError: If checkpoint_1.py couldn't be imported at
-            all, or no variable named `name` exists - with a message
+            all, or no variable named `name` exists, with a message
             written for students.
     """
     assert checkpoint_1 is not None, (
@@ -48,7 +48,7 @@ def _value(name, hint):
         "folder and runs without errors on its own first."
     )
     assert hasattr(checkpoint_1, name), (
-        f"I couldn't find a variable named {name}. Check the spelling -- "
+        f"I couldn't find a variable named {name}. Check the spelling; "
         f"it must be exactly {name}. Hint: {hint}"
     )
     return getattr(checkpoint_1, name)
@@ -68,16 +68,16 @@ def test_movies_watched_is_a_whole_number():
     v = _value("movies_watched_this_year", "a whole number, no quotes")
     assert isinstance(v, int) and not isinstance(v, bool), (
         f"movies_watched_this_year holds {v!r}, which isn't a whole "
-        "number (an int). No quotes, no decimal point -- just the count."
+        "number (an int). No quotes, no decimal point, just the count."
     )
 
 
 def test_movie_rating_is_a_float():
-    """movie_rating must hold a float -- the decimal part is the point."""
+    """movie_rating must hold a float; the decimal part is the point."""
     v = _value("movie_rating", "a rating with a decimal part, like 9.5")
     assert isinstance(v, float), (
         f"movie_rating holds {v!r}, which isn't a float. The decimal "
-        "part is the whole point here -- 9 is an int, but 9.5 (or 9.0) "
+        "part is the whole point here: 9 is an int, but 9.5 (or 9.0) "
         "is a float."
     )
 
@@ -87,7 +87,7 @@ def test_saw_it_in_theaters_is_a_bool():
     v = _value("saw_it_in_theaters", "True or False, no quotes")
     assert isinstance(v, bool), (
         f"saw_it_in_theaters holds {v!r}, which isn't a bool. It should "
-        'be True or False -- capitalized, and NOT in quotes ("True" is '
+        'be True or False, capitalized, and NOT in quotes ("True" is '
         "text)."
     )
 
@@ -123,7 +123,7 @@ def _main():
     print(
         f"{passed} of {len(checks)} checks pass. Read the FAIL messages "
         "above, fix, and run me again. (Reminder: your four print lines "
-        "are still required -- these checks can't see printing, but "
+        "are still required; these checks can't see printing, but "
         "your grader can.)"
     )
     return 1

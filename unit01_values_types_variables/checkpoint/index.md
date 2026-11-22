@@ -11,7 +11,7 @@ date_published: 2026-07-03
 
 ??? note "For instructors: outcome alignment"
     Assesses **MSU Denver CS 1050 objectives 6–8** (core data types, variables, output) at a formative level; aligns with **ABET** student outcomes **SO-2** and **SO-6**, under the **ACM/IEEE-CS CS2023** *SDF + FPL* knowledge areas. *(Alignment only; not an accreditation claim. Full mapping in the [outcomes map](../../syllabus/outcomes_map_abet_cs2023.md).)*
-This is your first graded check-in; and it's deliberately a small one. A **checkpoint** is a low-stakes exercise that tells *you* (and me) whether the week's core idea stuck, while the stakes are still tiny. It's also an honest preview of what working in this course feels like, **before** the drop deadline, so you can judge the fit with real information. (In Fall 2026, that means it's due **before Monday, Aug 24**; see the [schedule](../../syllabus/schedule.md).)
+This is your first graded check-in, and it's deliberately a small one. A **checkpoint** is a low-stakes exercise that tells *you* (and me) whether the week's core idea stuck, while the stakes are still tiny. It's also an honest preview of what working in this course feels like, **before** the drop deadline, so you can judge the fit with real information. (In Fall 2026, that means it's due **before Monday, Aug 24**; see the [schedule](../../syllabus/schedule.md).)
 
 Everything you need comes straight from [the Unit 1 lesson](../index.md). If you did the "Your turn" practice there, this will feel very familiar; that was the warm-up for exactly this.
 
