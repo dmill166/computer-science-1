@@ -59,3 +59,7 @@ This repository contains only original work. It teaches *from* the course textbo
 ## Contributing / corrections
 
 Spotted an error or have a suggestion? Open an issue. (Note the NoDerivatives terms: suggestions are welcome via issues; please don't publish modified copies.)
+
+---
+
+*How I use AI in my work: see [my profile](https://github.com/dmill166/dmill166#how-i-work-with-ai).*
